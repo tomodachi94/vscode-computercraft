@@ -1,14 +1,14 @@
-interface FactorioTypeMap {
-    [prop: string]: FactorioType
+interface L4RCTypeMap {
+    [prop: string]: L4RCType
 }
 
-interface FactorioType {
+interface L4RCType {
     type?: string
     name?: string
     doc?: string
     mode?: string
-    properties?: FactorioTypeMap
-    args?: FactorioTypeMap
+    properties?: L4RCTypeMap
+    args?: L4RCTypeMap
     returns?: string
     inherits?: string[]
 }

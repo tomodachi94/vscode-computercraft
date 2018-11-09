@@ -1,7 +1,7 @@
 "use strict"
 
 import vscode = require('vscode')
-import FactorioApiData from "./FactorioApiData"
+import L4RCApiData from "./ApiData"
 import { getLastMatch } from "./utils"
 
 const { isArray } = Array
@@ -9,8 +9,8 @@ const { assign, keys } = Object
 
 const wordsRegex = /([\w\[\]]+\.*[\w\[\]\.]*)/g
 
-export class FactorioHover implements vscode.HoverProvider {
-    constructor(private apiData: FactorioApiData) { }
+export class L4RCHover implements vscode.HoverProvider {
+    constructor(private apiData: L4RCApiData) { }
 
     provideHover(document: vscode.TextDocument, position: vscode.Position, token: vscode.CancellationToken): vscode.ProviderResult<vscode.Hover> {
         return new Promise<vscode.Hover>((resolve, reject) => {
@@ -41,10 +41,24 @@ export class FactorioHover implements vscode.HoverProvider {
                 return reject()
             }
 
-            let content = `_${target.type}_`
+            let content = "```javascript\n(property) " + word + ": " + target.type + "\n```"
 
-            if (target.name && target.name !== target.type) {
-                content = `**${target.name}**` + ": " + content
+            if (target.type === "function") {
+                content = "```javascript\n(function) " + target.name + "(" + Object.keys(target.args).join(", ") + "): " + target.returns + "\n```"
+            }
+            else if (target.type === "field") {
+                content = "```javascript\n(field) " + target.name + "\n```"
+            }
+            else if (target.type === "class") {
+                content = "```javascript\n(class) " + target.name + "\n```"
+            }
+            else if (target.type === "define") {
+                content = "```javascript\n(define) " + word + "\n```"
+            }
+
+
+            if (target.name && target.name !== word) {
+                content = content + "\n\n" + `**${target.name}**`
             }
 
             if (target.doc) {

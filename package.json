@@ -1,12 +1,12 @@
 {
-  "name": "factorio-lua-api-autocomplete",
-  "displayName": "Factorio Lua API autocomplete",
-  "description": "Autocompletion for the Factorio Lua API",
-  "version": "0.6.0",
-  "publisher": "svizzini",
+  "name": "vscode-lua4rc",
+  "displayName": "Lua4RC",
+  "description": "Autocompletion for the Lua4RC API",
+  "version": "0.1.0",
+  "publisher": "Michel Jansson",
   "repository": {
     "type": "git",
-    "url": "https://github.com/simonvizzini/vscode-factorio-lua-api-autocomplete.git"
+    "url": "https://github.com/MichelJansson/vscode-lua4rc.git"
   },
   "private": true,
   "license": "MIT",
@@ -34,23 +34,15 @@
       }
     ]
   },
+  "icon": "images/icon.png",
   "scripts": {
-    "vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -watch -p ./",
-    "postinstall": "node ./node_modules/vscode/bin/install",
-    "test": "node ./node_modules/vscode/bin/test"
-  },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  },
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
   "devDependencies": {
-    "@types/lodash": "^4.14.64",
-    "@types/mocha": "^2.2.32",
     "@types/node": "^6.0.40",
-    "html-to-text": "^3.2.0",
-    "mocha": "^2.3.3",
-    "osmosis": "^1.1.4",
-    "ts-node": "^3.0.4",
     "typescript": "^2.0.3",
     "vscode": "^1.0.0"
   }

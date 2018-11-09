@@ -15,26 +15,6 @@
             "preLaunchTask": "npm"
         },
         {
-            "name": "Launch Tests",
-            "type": "extensionHost",
-            "request": "launch",
-            "runtimeExecutable": "${execPath}",
-            "args": ["--extensionDevelopmentPath=${workspaceRoot}", "--extensionTestsPath=${workspaceRoot}/out/test" ],
-            "stopOnEntry": false,
-            "sourceMaps": true,
-            "outFiles": [ "${workspaceRoot}/out/test/**/*.js" ],
-            "preLaunchTask": "npm"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch scraper",
-            "program": "${workspaceRoot}/node_modules/ts-node/dist/_bin.js",
-            "args": ["scraper/index.ts"],
-            "cwd": "${workspaceRoot}",
-            "protocol": "inspector"
-        },
-        {
             "name": "Current TS File",
             "type": "node",
             "request": "launch",

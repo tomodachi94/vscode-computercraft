@@ -1,20 +1,20 @@
 "use strict"
 
 import vscode = require("vscode")
-import FactorioApiData from "./FactorioApiData"
-import { FactorioAutocomplete } from "./FactorioAutocomplete"
-import { FactorioHover } from "./FactorioHover"
+import L4RCApiData from "./ApiData"
+import { L4RCAutocomplete } from "./Autocomplete"
+import { L4RCHover } from "./Hover"
 
 const LUA_MODE = { language: "lua", scheme: "file" }
 
 export function activate(context: vscode.ExtensionContext) {
     let dataPath = context.asAbsolutePath("./data")
-    const factorioApiData = new FactorioApiData(dataPath)
+    const l4RCApiData = new L4RCApiData(dataPath)
 
     context.subscriptions.push(
         vscode.languages.registerCompletionItemProvider(
             LUA_MODE,
-            new FactorioAutocomplete(factorioApiData),
+            new L4RCAutocomplete(l4RCApiData),
             '.'
         )
     )
@@ -22,7 +22,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
         vscode.languages.registerHoverProvider(
             LUA_MODE,
-            new FactorioHover(factorioApiData)
+            new L4RCHover(l4RCApiData)
         )
     )
 }

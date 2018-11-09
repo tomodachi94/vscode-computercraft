@@ -1,32 +1,21 @@
 import * as fs from"fs"
-import * as _ from "lodash"
 
 const brackets = /\[.*\]/g
 
 const additionalTriggers = {
-    game: "LuaGameScript",
-    script: "LuaBootstrap",
-    remote: "LuaRemote",
-    commands: "LuaCommandProcessor",
-    player: "LuaPlayer",
-    entity: "LuaEntity",
-    inventory: "LuaInventory",
-    gui: "LuaGui",
-    force: "LuaForce",
-    style: "LuaStyle",
-    tile: "LuaTile",
+    // trigger: "Key",
 }
 
-export default class FactorioApiData {
+export default class L4RCApiData {
 
-    private classes: FactorioTypeMap
-    private defines: FactorioTypeMap
+    private classes: L4RCTypeMap
+    private defines: L4RCTypeMap
 
     constructor(private dataPath: string) {
         this.loadData(dataPath)
     }
 
-    public findType(words: string[]): FactorioType {
+    public findType(words: string[]): L4RCType {
         if (words.length === 0) {
             return { properties: this.classes }
         }
@@ -65,8 +54,11 @@ export default class FactorioApiData {
             if (/defines/.test(parentType)) {
                 let [__, defineName] = parentType.split(".")
                 //let define = this.defines[defineName]
-                return _.get(this.defines, [defineName, "properties"])
-                // return defineName && this.defines[defineName] || null
+                //return _.get(this.defines, [defineName, "properties"])
+                if (defineName && this.defines[defineName])
+                    return this.defines[defineName]
+                else
+                    return null
             }
 
             type = this.classes[parentType]
@@ -92,12 +84,6 @@ export default class FactorioApiData {
             }
         })
 
-        // LuaPlayer and LuaEntity inherit from LuaControl
-        // Instead of doing this manually it would be best to adjust the scraper to read the "extends" keyword
-        // in the docs and do this automatically.
-        // Object.assign(classes.LuaPlayer.properties, classes.LuaControl.properties)
-        // Object.assign(classes.LuaEntity.properties, classes.LuaControl.properties)
-
         this.classes = classes
         this.defines = defines
         // todo: revisit this
@@ -107,7 +93,7 @@ export default class FactorioApiData {
         }
     }
 
-    private loadDataFile(fileName: string): FactorioTypeMap {
+    private loadDataFile(fileName: string): L4RCTypeMap {
         const jsonStr = fs.readFileSync(fileName, "utf8")
         const data = JSON.parse(jsonStr)
         return data
