@@ -1,5 +1,5 @@
-# Lua4RC API autocomplete extension
-Extension to help the developement of Lua4RC scripts for the Schneider Electric SE8000 series room controllers
+# ComputerCraft API autocomplete extension
+This extension provides autocomplete for ComputerCraft 1.8.
 
 ## Features
 
