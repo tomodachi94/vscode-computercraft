@@ -436,7 +436,7 @@
         "name": "commands",
         "type": "field",
         "inherits": [],
-        "doc": "Command computers only: allows executing Minecraft commands",
+        "doc": "Command computers only: allows executing Minecraft commands (1.7+)",
         "properties": {
             "exec": {
                 "name": "exec",
@@ -624,161 +624,1830 @@
                     }
                 }
             }
-        },
-        "disk": {
-            "name": "disk",
-            "type": "field",
-            "inherits": [],
-            "doc": "Allows accessing data about disk drives",
-            "properties": {
-                "isPresent": {
-                    "name": "isPresent",
-                    "type": "function",
-                    "doc": "Returns whether an item is in the drive",
-                    "returns": "boolean",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "hasData": {
-                    "name": "hasData",
-                    "type": "function",
-                    "doc": "Returns whether a floppy disk is in the drive",
-                    "returns": "boolean",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "getMountPath": {
-                    "name": "getMountPath",
-                    "type": "function",
-                    "doc": "Returns the mount point of the disk",
-                    "returns": "string/nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "setLabel": {
-                    "name": "setLabel",
-                    "type": "function",
-                    "doc": "Sets the label of a disk",
-                    "returns": "nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        },
-                        "label": {
-                            "name": "label",
-                            "type": "string",
-                            "doc": "The name of the disk"
-                        }
-                    }
-                },
-                "getLabel": {
-                    "name": "getLabel",
-                    "type": "function",
-                    "doc": "Returns the label of a floppy disk",
-                    "returns": "string/nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "getID": {
-                    "name": "getID",
-                    "type": "function",
-                    "doc": "Returns the ID of a disk",
-                    "returns": "number/nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "hasAudio": {
-                    "name": "hasAudio",
-                    "type": "function",
-                    "doc": "Returns whether a music disc is in the drive",
-                    "returns": "boolean",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "getAudioTitle": {
-                    "name": "getAudioTitle",
-                    "type": "function",
-                    "doc": "Returns the name of the music disc inserted",
-                    "returns": "string/nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "playAudio": {
-                    "name": "playAudio",
-                    "type": "function",
-                    "doc": "Plays the music disc in the drive",
-                    "returns": "nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "stopAudio": {
-                    "name": "stopAudio",
-                    "type": "function",
-                    "doc": "Stops the music disc in the drive",
-                    "returns": "nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
-                    }
-                },
-                "eject": {
-                    "name": "eject",
-                    "type": "function",
-                    "doc": "Ejects the object from the drive",
-                    "returns": "nil",
-                    "args": {
-                        "side": {
-                            "name": "side",
-                            "type": "string",
-                            "doc": "The side to check"
-                        }
+        }
+    },
+    "disk": {
+        "name": "disk",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows accessing data about disk drives",
+        "properties": {
+            "isPresent": {
+                "name": "isPresent",
+                "type": "function",
+                "doc": "Returns whether an item is in the drive",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
                     }
                 }
+            },
+            "hasData": {
+                "name": "hasData",
+                "type": "function",
+                "doc": "Returns whether a floppy disk is in the drive",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getMountPath": {
+                "name": "getMountPath",
+                "type": "function",
+                "doc": "Returns the mount point of the disk",
+                "returns": "string/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setLabel": {
+                "name": "setLabel",
+                "type": "function",
+                "doc": "Sets the label of a disk",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "label": {
+                        "name": "label",
+                        "type": "string",
+                        "doc": "The name of the disk"
+                    }
+                }
+            },
+            "getLabel": {
+                "name": "getLabel",
+                "type": "function",
+                "doc": "Returns the label of a floppy disk",
+                "returns": "string/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getID": {
+                "name": "getID",
+                "type": "function",
+                "doc": "Returns the ID of a disk",
+                "returns": "number/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "hasAudio": {
+                "name": "hasAudio",
+                "type": "function",
+                "doc": "Returns whether a music disc is in the drive",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getAudioTitle": {
+                "name": "getAudioTitle",
+                "type": "function",
+                "doc": "Returns the name of the music disc inserted",
+                "returns": "string/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "playAudio": {
+                "name": "playAudio",
+                "type": "function",
+                "doc": "Plays the music disc in the drive",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "stopAudio": {
+                "name": "stopAudio",
+                "type": "function",
+                "doc": "Stops the music disc in the drive",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "eject": {
+                "name": "eject",
+                "type": "function",
+                "doc": "Ejects the object from the drive",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            }
+        }
+    },
+    "fs": {
+        "name": "fs",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows performing operations on files and directories",
+        "properties": {
+            "list": {
+                "name": "list",
+                "type": "function",
+                "doc": "Returns a list of files and folders in a directory",
+                "returns": "table",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "exists": {
+                "name": "exists",
+                "type": "function",
+                "doc": "Checks whether the path exists",
+                "returns": "boolean",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "isDir": {
+                "name": "isDir",
+                "type": "function",
+                "doc": "Checks whether the path is a directory",
+                "returns": "boolean",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "isReadOnly": {
+                "name": "isReadOnly",
+                "type": "function",
+                "doc": "Checks whether the path is read only",
+                "returns": "boolean",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "getName": {
+                "name": "getName",
+                "type": "function",
+                "doc": "Returns the basename of the path",
+                "returns": "string",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "getDrive": {
+                "name": "getDrive",
+                "type": "function",
+                "returns": "string/nil",
+                "doc": "Returns the storage medium holding a path",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "getSize": {
+                "name": "getSize",
+                "type": "function",
+                "returns": "number",
+                "doc": "Returns the size of a file in bytes",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "getFreeSpace": {
+                "name": "getFreeSpace",
+                "type": "function",
+                "returns": "number",
+                "doc": "Returns the space available in the directory",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "makeDir": {
+                "name": "makeDir",
+                "type": "function",
+                "returns": "nil",
+                "doc": "Creates a directory at the path, creating parents as needed",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to create"
+                    }
+                }
+            },
+            "move": {
+                "name": "move",
+                "type": "function",
+                "returns": "nil",
+                "doc": "Moves a file or directory to a new location",
+                "args": {
+                    "fromPath": {
+                        "name": "fromPath",
+                        "type": "string",
+                        "doc": "The source path"
+                    },
+                    "toPath": {
+                        "name": "toPath",
+                        "type": "string",
+                        "doc": "The destination path"
+                    }
+                }
+            },
+            "copy": {
+                "name": "copy",
+                "type": "function",
+                "returns": "nil",
+                "doc": "Copies a file or directory to a new location",
+                "args": {
+                    "fromPath": {
+                        "name": "fromPath",
+                        "type": "string",
+                        "doc": "The source path"
+                    },
+                    "toPath": {
+                        "name": "toPath",
+                        "type": "string",
+                        "doc": "The destination path"
+                    }
+                }
+            },
+            "delete": {
+                "name": "delete",
+                "type": "function",
+                "returns": "nil",
+                "doc": "Deletes a file or directory",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to delete"
+                    }
+                }
+            },
+            "combine": {
+                "name": "combine",
+                "type": "function",
+                "returns": "string",
+                "doc": "Combines two path components, so that the second path is nested inside the first",
+                "args": {
+                    "basePath": {
+                        "name": "basePath",
+                        "type": "string",
+                        "doc": "The base path"
+                    },
+                    "localPath": {
+                        "name": "localPath",
+                        "type": "string",
+                        "doc": "The local path"
+                    }
+                }
+            },
+            "open": {
+                "name": "open",
+                "type": "function",
+                "returns": "table",
+                "doc": "Opens a file for reading or writing",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The file to open"
+                    },
+                    "mode": {
+                        "name": "mode",
+                        "type": "string",
+                        "doc": "The mode to open the file in (r/w/a[b])"
+                    }
+                }
+            },
+            "find": {
+                "name": "find",
+                "type": "function",
+                "returns": "table",
+                "doc": "Searches the filesystem for files matching a pattern, and returns a list of results (1.6+)",
+                "args": {
+                    "wildcard": {
+                        "name": "wildcard",
+                        "type": "string",
+                        "doc": "The pattern to match against"
+                    }
+                }
+            },
+            "getDir": {
+                "name": "getDir",
+                "type": "function",
+                "returns": "string",
+                "doc": "Returns the parent directory of a path (1.63+)",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to query"
+                    }
+                }
+            },
+            "complete": {
+                "name": "complete",
+                "type": "function",
+                "returns": "table",
+                "doc": "Returns a list of possible completions for a directory and a partial name (1.74+)",
+                "args": {
+                    "partial name": {
+                        "name": "partial name",
+                        "type": "string",
+                        "doc": "The first part of a filename"
+                    },
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to complete from"
+                    },
+                    "[include files]": {
+                        "name": "[include files]",
+                        "type": "boolean",
+                        "doc": "Whether to include files (optional)"
+                    },
+                    "[include slashes]": {
+                        "name": "[include slashes]",
+                        "type": "boolean",
+                        "doc": "Whether to include slashes (optional)"
+                    }
+                }
+            }
+        }
+    },
+    "gps": {
+        "name": "gps",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows locating the position of a computer or turtle via trilateration over rednet",
+        "properties": {
+            "locate": {
+                "name": "locate",
+                "type": "function",
+                "doc": "Locates the current computer or turtle if possible",
+                "returns": "number, number, number; or nil",
+                "args": {
+                    "[timeout]": {
+                        "name": "[timeout]",
+                        "type": "number",
+                        "doc": "The maximim amount of time to wait for a response, defaults to 2"
+                    },
+                    "[debug]": {
+                        "name": "[debug]",
+                        "type": "boolean",
+                        "doc": "Whether to print debug messages (optional)"
+                    }
+                }
+            }
+        }
+    },
+    "help": {
+        "name": "help",
+        "type": "field",
+        "inherits": [],
+        "doc": "Provides functions for viewing help documents",
+        "properties": {
+            "path": {
+                "name": "path",
+                "type": "function",
+                "doc": "Returns a string listing the directories to search for help topics in, separated by colons",
+                "returns": "string",
+                "args": {}
+            },
+            "setPath": {
+                "name": "setPath",
+                "type": "function",
+                "doc": "Sets the paths to search for help topics",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The paths to search for help topics, separated by colons"
+                    }
+                }
+            },
+            "lookup": {
+                "name": "lookup",
+                "type": "function",
+                "doc": "Returns the path to the file containing a help topic",
+                "returns": "string/nil",
+                "args": {
+                    "topic": {
+                        "name": "topic",
+                        "type": "string",
+                        "doc": "The topic to search for"
+                    }
+                }
+            },
+            "topics": {
+                "name": "topics",
+                "type": "function",
+                "doc": "Returns a list of help topics available",
+                "returns": "table",
+                "args": {}
+            },
+            "completeTopic": {
+                "name": "completeTopic",
+                "type": "function",
+                "doc": "Returns a list of suffixes that can be appended to the prefix to create a topic name (1.74+)",
+                "returns": "table",
+                "args": {
+                    "topic prefix": {
+                        "name": "topic prefix",
+                        "type": "string",
+                        "doc": "The beginning of a topic name"
+                    }
+                }
+            }
+        }
+    },
+    "http": {
+        "name": "http",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows accessing the internet through HTTP requests",
+        "properties": {
+            "request": {
+                "name": "request",
+                "type": "function",
+                "doc": "Asynchronously sends an HTTP request",
+                "returns": "nil",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to send the request to"
+                    },
+                    "[postData]": {
+                        "name": "[postData]",
+                        "type": "string",
+                        "doc": "Any data to send in a POST request, set to nil to send a GET request (optional)"
+                    },
+                    "[headers]": {
+                        "name": "[headers]",
+                        "type": "table",
+                        "doc": "The headers to set in the request (optional)"
+                    }
+                }
+            },
+            "get": {
+                "name": "get",
+                "type": "function",
+                "doc": "Synchronously sends an HTTP GET request, and returns a file handle",
+                "returns": "table",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to send the request to"
+                    },
+                    "[headers]": {
+                        "name": "[headers]",
+                        "type": "table",
+                        "doc": "The headers to set in the request (optional)"
+                    }
+                }
+            },
+            "post": {
+                "name": "post",
+                "type": "function",
+                "doc": "Synchronously sends an HTTP POST request, and returns a file handle",
+                "returns": "table",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to send the request to"
+                    },
+                    "postData": {
+                        "name": "postData",
+                        "type": "string",
+                        "doc": "The data to send"
+                    },
+                    "[headers]": {
+                        "name": "[headers]",
+                        "type": "table",
+                        "doc": "The headers to set in the request (optional)"
+                    }
+                }
+            },
+            "checkURL": {
+                "name": "checkURL",
+                "type": "function",
+                "doc": "Checks if a URL is valid and in the whitelist",
+                "returns": "boolean[, string]",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL te check"
+                    }
+                }
+            }
+        }
+    },
+    "io": {
+        "name": "io",
+        "type": "field",
+        "inherits": [],
+        "doc": "Default Lua IO API",
+        "properties": {
+            "close": {
+                "name": "close",
+                "type": "function",
+                "doc": "Closes a file handle",
+                "returns": "nil",
+                "args": {
+                    "[file]": {
+                        "name": "[file]",
+                        "type": "table",
+                        "doc": "The file to operate on (nil for default output file)"
+                    }
+                }
+            },
+            "flush": {
+                "name": "flush",
+                "type": "function",
+                "doc": "Flushes the terminal",
+                "returns": "nil",
+                "args": {}
+            },
+            "input": {
+                "name": "input",
+                "type": "function",
+                "doc": "Either opens a filename and sets the default input file handle, sets the defualt input handle to the handle passed in, or returns the current input handle",
+                "returns": "table/nil",
+                "args": {
+                    "[file]": {
+                        "name": "[file]",
+                        "type": "string/table",
+                        "doc": "The file name or file handle to operate on, or nil to return the input file"
+                    }
+                }
+            },
+            "lines": {
+                "name": "lines",
+                "type": "function",
+                "doc": "Returns an iterator function that returns each line in a file",
+                "returns": "function",
+                "args": {
+                    "[filename]": {
+                        "name": "[filename]",
+                        "type": "string",
+                        "doc": "The filename to open, or nil for the default input file"
+                    }
+                }
+            },
+            "open": {
+                "name": "open",
+                "type": "function",
+                "doc": "Opens a file for reading or writing",
+                "returns": "table/(nil, string)",
+                "args": {
+                    "filename": {
+                        "name": "filename",
+                        "type": "string",
+                        "doc": "The file to open"
+                    },
+                    "[mode]": {
+                        "name": "[mode]",
+                        "type": "string",
+                        "doc": "The mode to open the file in (r/w/a) (optional)"
+                    }
+                }
+            },
+            "output": {
+                "name": "output",
+                "type": "function",
+                "doc": "Either opens a filename and sets the default output file handle, sets the defualt output handle to the handle passed in, or returns the current output handle",
+                "returns": "table/nil",
+                "args": {
+                    "[file]": {
+                        "name": "[file]",
+                        "type": "string/table",
+                        "doc": "The file name or file handle to operate on, or nil to return the output file"
+                    }
+                }
+            },
+            "read": {
+                "name": "read",
+                "type": "function",
+                "doc": "Reads the next line from the input file",
+                "returns": "string/nil...",
+                "args": {
+                    "...": {
+                        "name": "...",
+                        "type": "string",
+                        "doc": "*l for each line that will be read"
+                    }
+                }
+            },
+            "type": {
+                "name": "type",
+                "type": "function",
+                "doc": "Returns \"file\" if obj is an open file, \"closed file\" if obj is a closed file, or nil.",
+                "returns": "string/nil",
+                "args": {
+                    "obj": {
+                        "name": "obj",
+                        "type": "any",
+                        "doc": "The object to check"
+                    }
+                }
+            },
+            "write": {
+                "name": "write",
+                "type": "function",
+                "doc": "Writes a string or number to the default output",
+                "returns": "nil",
+                "args": {
+                    "str": {
+                        "name": "str",
+                        "type": "string/number",
+                        "doc": "The string or number to write"
+                    }
+                }
+            }
+        }
+    },
+    "keys": {
+        "name": "keys",
+        "type": "field",
+        "inherits": [],
+        "doc": "Provides constants for key codes",
+        "properties": {
+            "getName": {
+                "name": "getName",
+                "type": "function",
+                "doc": "Returns a human-readable string for the key code",
+                "returns": "string",
+                "args": {
+                    "code": {
+                        "name": "code",
+                        "type": "number",
+                        "doc": "The key code to translate"
+                    }
+                }
+            },
+            "a": {
+                "name": "a",
+                "type": "number",
+                "doc": "a"
+            },
+            "b": {
+                "name": "b",
+                "type": "number",
+                "doc": "b"
+            },
+            "c": {
+                "name": "c",
+                "type": "number",
+                "doc": "c"
+            },
+            "d": {
+                "name": "d",
+                "type": "number",
+                "doc": "d"
+            },
+            "e": {
+                "name": "e",
+                "type": "number",
+                "doc": "e"
+            },
+            "f": {
+                "name": "f",
+                "type": "number",
+                "doc": "f"
+            },
+            "g": {
+                "name": "g",
+                "type": "number",
+                "doc": "g"
+            },
+            "h": {
+                "name": "h",
+                "type": "number",
+                "doc": "h"
+            },
+            "i": {
+                "name": "i",
+                "type": "number",
+                "doc": "i"
+            },
+            "j": {
+                "name": "j",
+                "type": "number",
+                "doc": "j"
+            },
+            "k": {
+                "name": "k",
+                "type": "number",
+                "doc": "k"
+            },
+            "l": {
+                "name": "l",
+                "type": "number",
+                "doc": "l"
+            },
+            "m": {
+                "name": "m",
+                "type": "number",
+                "doc": "m"
+            },
+            "n": {
+                "name": "n",
+                "type": "number",
+                "doc": "n"
+            },
+            "o": {
+                "name": "o",
+                "type": "number",
+                "doc": "o"
+            },
+            "p": {
+                "name": "p",
+                "type": "number",
+                "doc": "p"
+            },
+            "q": {
+                "name": "q",
+                "type": "number",
+                "doc": "q"
+            },
+            "r": {
+                "name": "r",
+                "type": "number",
+                "doc": "r"
+            },
+            "s": {
+                "name": "s",
+                "type": "number",
+                "doc": "s"
+            },
+            "t": {
+                "name": "t",
+                "type": "number",
+                "doc": "t"
+            },
+            "u": {
+                "name": "u",
+                "type": "number",
+                "doc": "u"
+            },
+            "v": {
+                "name": "v",
+                "type": "number",
+                "doc": "v"
+            },
+            "w": {
+                "name": "w",
+                "type": "number",
+                "doc": "w"
+            },
+            "x": {
+                "name": "x",
+                "type": "number",
+                "doc": "x"
+            },
+            "y": {
+                "name": "y",
+                "type": "number",
+                "doc": "y"
+            },
+            "z": {
+                "name": "z",
+                "type": "number",
+                "doc": "z"
+            },
+            "one": {
+                "name": "one",
+                "type": "number",
+                "doc": "one"
+            },
+            "two": {
+                "name": "two",
+                "type": "number",
+                "doc": "two"
+            },
+            "three": {
+                "name": "three",
+                "type": "number",
+                "doc": "three"
+            },
+            "four": {
+                "name": "four",
+                "type": "number",
+                "doc": "four"
+            },
+            "five": {
+                "name": "five",
+                "type": "number",
+                "doc": "five"
+            },
+            "six": {
+                "name": "six",
+                "type": "number",
+                "doc": "six"
+            },
+            "seven": {
+                "name": "seven",
+                "type": "number",
+                "doc": "seven"
+            },
+            "eight": {
+                "name": "eight",
+                "type": "number",
+                "doc": "eight"
+            },
+            "nine": {
+                "name": "nine",
+                "type": "number",
+                "doc": "nine"
+            },
+            "zero": {
+                "name": "zero",
+                "type": "number",
+                "doc": "zero"
+            },
+            "minus": {
+                "name": "minus",
+                "type": "number",
+                "doc": "minus"
+            },
+            "equals": {
+                "name": "equals",
+                "type": "number",
+                "doc": "equals"
+            },
+            "backspace": {
+                "name": "backspace",
+                "type": "number",
+                "doc": "backspace"
+            },
+            "tab": {
+                "name": "tab",
+                "type": "number",
+                "doc": "tab"
+            },
+            "leftBracket": {
+                "name": "leftBracket",
+                "type": "number",
+                "doc": "leftBracket"
+            },
+            "rightBracket": {
+                "name": "rightBracket",
+                "type": "number",
+                "doc": "rightBracket"
+            },
+            "enter": {
+                "name": "enter",
+                "type": "number",
+                "doc": "enter"
+            },
+            "leftCtrl": {
+                "name": "leftCtrl",
+                "type": "number",
+                "doc": "leftCtrl"
+            },
+            "semiColon": {
+                "name": "semiColon",
+                "type": "number",
+                "doc": "semiColon"
+            },
+            "apostrophe": {
+                "name": "apostrophe",
+                "type": "number",
+                "doc": "apostrophe"
+            },
+            "grave": {
+                "name": "grave",
+                "type": "number",
+                "doc": "grave"
+            },
+            "leftShift": {
+                "name": "leftShift",
+                "type": "number",
+                "doc": "leftShift"
+            },
+            "backslash": {
+                "name": "backslash",
+                "type": "number",
+                "doc": "backslash"
+            },
+            "comma": {
+                "name": "comma",
+                "type": "number",
+                "doc": "comma"
+            },
+            "period": {
+                "name": "period",
+                "type": "number",
+                "doc": "period"
+            },
+            "slash": {
+                "name": "slash",
+                "type": "number",
+                "doc": "slash"
+            },
+            "rightShift": {
+                "name": "rightShift",
+                "type": "number",
+                "doc": "rightShift"
+            },
+            "multiply": {
+                "name": "multiply",
+                "type": "number",
+                "doc": "multiply"
+            },
+            "leftAlt": {
+                "name": "leftAlt",
+                "type": "number",
+                "doc": "leftAlt"
+            },
+            "space": {
+                "name": "space",
+                "type": "number",
+                "doc": "space"
+            },
+            "capsLock": {
+                "name": "capsLock",
+                "type": "number",
+                "doc": "capsLock"
+            },
+            "f1": {
+                "name": "f1",
+                "type": "number",
+                "doc": "f1"
+            },
+            "f2": {
+                "name": "f2",
+                "type": "number",
+                "doc": "f2"
+            },
+            "f3": {
+                "name": "f3",
+                "type": "number",
+                "doc": "f3"
+            },
+            "f4": {
+                "name": "f4",
+                "type": "number",
+                "doc": "f4"
+            },
+            "f5": {
+                "name": "f5",
+                "type": "number",
+                "doc": "f5"
+            },
+            "f6": {
+                "name": "f6",
+                "type": "number",
+                "doc": "f6"
+            },
+            "f7": {
+                "name": "f7",
+                "type": "number",
+                "doc": "f7"
+            },
+            "f8": {
+                "name": "f8",
+                "type": "number",
+                "doc": "f8"
+            },
+            "f9": {
+                "name": "f9",
+                "type": "number",
+                "doc": "f9"
+            },
+            "f10": {
+                "name": "f10",
+                "type": "number",
+                "doc": "f10"
+            },
+            "numLock": {
+                "name": "numLock",
+                "type": "number",
+                "doc": "numLock"
+            },
+            "scrollLock": {
+                "name": "scrollLock",
+                "type": "number",
+                "doc": "scrollLock"
+            },
+            "numPad7": {
+                "name": "numPad7",
+                "type": "number",
+                "doc": "numPad7"
+            },
+            "numPad8": {
+                "name": "numPad8",
+                "type": "number",
+                "doc": "numPad8"
+            },
+            "numPad9": {
+                "name": "numPad9",
+                "type": "number",
+                "doc": "numPad9"
+            },
+            "numPadSubtract": {
+                "name": "numPadSubtract",
+                "type": "number",
+                "doc": "numPadSubtract"
+            },
+            "numPad4": {
+                "name": "numPad4",
+                "type": "number",
+                "doc": "numPad4"
+            },
+            "numPad5": {
+                "name": "numPad5",
+                "type": "number",
+                "doc": "numPad5"
+            },
+            "numPad6": {
+                "name": "numPad6",
+                "type": "number",
+                "doc": "numPad6"
+            },
+            "numPadAdd": {
+                "name": "numPadAdd",
+                "type": "number",
+                "doc": "numPadAdd"
+            },
+            "numPad1": {
+                "name": "numPad1",
+                "type": "number",
+                "doc": "numPad1"
+            },
+            "numPad2": {
+                "name": "numPad2",
+                "type": "number",
+                "doc": "numPad2"
+            },
+            "numPad3": {
+                "name": "numPad3",
+                "type": "number",
+                "doc": "numPad3"
+            },
+            "numPad0": {
+                "name": "numPad0",
+                "type": "number",
+                "doc": "numPad0"
+            },
+            "numPadDecimal": {
+                "name": "numPadDecimal",
+                "type": "number",
+                "doc": "numPadDecimal"
+            },
+            "f11": {
+                "name": "f11",
+                "type": "number",
+                "doc": "f11"
+            },
+            "f12": {
+                "name": "f12",
+                "type": "number",
+                "doc": "f12"
+            },
+            "f13": {
+                "name": "f13",
+                "type": "number",
+                "doc": "f13"
+            },
+            "f14": {
+                "name": "f14",
+                "type": "number",
+                "doc": "f14"
+            },
+            "f15": {
+                "name": "f15",
+                "type": "number",
+                "doc": "f15"
+            },
+            "kana": {
+                "name": "kana",
+                "type": "number",
+                "doc": "kana"
+            },
+            "convert": {
+                "name": "convert",
+                "type": "number",
+                "doc": "convert"
+            },
+            "noconvert": {
+                "name": "noconvert",
+                "type": "number",
+                "doc": "noconvert"
+            },
+            "yen": {
+                "name": "yen",
+                "type": "number",
+                "doc": "yen"
+            },
+            "numPadEquals": {
+                "name": "numPadEquals",
+                "type": "number",
+                "doc": "numPadEquals"
+            },
+            "circumflex": {
+                "name": "circumflex",
+                "type": "number",
+                "doc": "circumflex"
+            },
+            "at": {
+                "name": "at",
+                "type": "number",
+                "doc": "at"
+            },
+            "colon": {
+                "name": "colon",
+                "type": "number",
+                "doc": "colon"
+            },
+            "underscore": {
+                "name": "underscore",
+                "type": "number",
+                "doc": "underscore"
+            },
+            "kanji": {
+                "name": "kanji",
+                "type": "number",
+                "doc": "kanji"
+            },
+            "stop": {
+                "name": "stop",
+                "type": "number",
+                "doc": "stop"
+            },
+            "ax": {
+                "name": "ax",
+                "type": "number",
+                "doc": "ax"
+            },
+            "numPadEnter": {
+                "name": "numPadEnter",
+                "type": "number",
+                "doc": "numPadEnter"
+            },
+            "rightCtrl": {
+                "name": "rightCtrl",
+                "type": "number",
+                "doc": "rightCtrl"
+            },
+            "numPadComma": {
+                "name": "numPadComma",
+                "type": "number",
+                "doc": "numPadComma"
+            },
+            "numPadDivide": {
+                "name": "numPadDivide",
+                "type": "number",
+                "doc": "numPadDivide"
+            },
+            "rightAlt": {
+                "name": "rightAlt",
+                "type": "number",
+                "doc": "rightAlt"
+            },
+            "pause": {
+                "name": "pause",
+                "type": "number",
+                "doc": "pause"
+            },
+            "home": {
+                "name": "home",
+                "type": "number",
+                "doc": "home"
+            },
+            "up": {
+                "name": "up",
+                "type": "number",
+                "doc": "up"
+            },
+            "pageUp": {
+                "name": "pageUp",
+                "type": "number",
+                "doc": "pageUp"
+            },
+            "left": {
+                "name": "left",
+                "type": "number",
+                "doc": "left"
+            },
+            "right": {
+                "name": "right",
+                "type": "number",
+                "doc": "right"
+            },
+            "end": {
+                "name": "end",
+                "type": "number",
+                "doc": "end"
+            },
+            "down": {
+                "name": "down",
+                "type": "number",
+                "doc": "down"
+            },
+            "pageDown": {
+                "name": "pageDown",
+                "type": "number",
+                "doc": "pageDown"
+            },
+            "insert": {
+                "name": "insert",
+                "type": "number",
+                "doc": "insert"
+            },
+            "delete": {
+                "name": "delete",
+                "type": "number",
+                "doc": "delete"
+            }
+        }
+    },
+    "math": {
+        "name": "math",
+        "type": "field",
+        "inherits": [],
+        "doc": "Default Lua Math API",
+        "properties": {
+            "abs": {
+                "name": "abs",
+                "type": "function",
+                "doc": "Returns the absolute value of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "acos": {
+                "name": "acos",
+                "type": "function",
+                "doc": "Returns the arc cosine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "asin": {
+                "name": "asin",
+                "type": "function",
+                "doc": "Returns the arc sine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "atan": {
+                "name": "atan",
+                "type": "function",
+                "doc": "Returns the arc tangent of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "atan2": {
+                "name": "atan2",
+                "type": "function",
+                "doc": "Returns the arc tangent of y/x",
+                "returns": "number",
+                "args": {
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "ceil": {
+                "name": "ceil",
+                "type": "function",
+                "doc": "Returns x rounded up to the nearest integer",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "cos": {
+                "name": "cos",
+                "type": "function",
+                "doc": "Returns the cosine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "cosh": {
+                "name": "cosh",
+                "type": "function",
+                "doc": "Returns the hyperbolic cosine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "deg": {
+                "name": "deg",
+                "type": "function",
+                "doc": "Converts radians to degrees",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "exp": {
+                "name": "exp",
+                "type": "function",
+                "doc": "Returns the value of e^x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "floor": {
+                "name": "floor",
+                "type": "function",
+                "doc": "Returns x rounded down to the nearest integer",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "fmod": {
+                "name": "fmod",
+                "type": "function",
+                "doc": "Returns the remainder of x/y",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "frexp": {
+                "name": "frexp",
+                "type": "function",
+                "doc": "Returns m and e such that x = m*2^e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero)",
+                "returns": "number, number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "huge": {
+                "name": "huge",
+                "type": "number",
+                "doc": "A number larger than or equal to any other number"
+            },
+            "ldexp": {
+                "name": "ldexp",
+                "type": "function",
+                "doc": "Returns m*2^e",
+                "returns": "number",
+                "args": {
+                    "m": {
+                        "name": "m",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "e": {
+                        "name": "e",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "log": {
+                "name": "log",
+                "type": "function",
+                "doc": "Returns the natural logarithm of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "log10": {
+                "name": "log10",
+                "type": "function",
+                "doc": "Returns the base-10 logarithm of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "max": {
+                "name": "max",
+                "type": "function",
+                "doc": "Returns the maximum value of a set of numbers",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "number",
+                        "doc": "More numbers"
+                    }
+                }
+            },
+            "min": {
+                "name": "min",
+                "type": "function",
+                "doc": "Returns the minimum value of a set of numbers",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "number",
+                        "doc": "More numbers"
+                    }
+                }
+            },
+            "modf": {
+                "name": "modf",
+                "type": "function",
+                "doc": "Returns the integral and fractional parts of x",
+                "returns": "number, number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "pi": {
+                "name": "pi",
+                "type": "number",
+                "value": "The mathematical constant pi"
+            },
+            "pow": {
+                "name": "pow",
+                "type": "function",
+                "doc": "Returns x^y",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "rad": {
+                "name": "rad",
+                "type": "function",
+                "doc": "Converts degrees to radians",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "random": {
+                "name": "random",
+                "type": "function",
+                "doc": "Returns a random number with the range [0, 1), [1, m], or [m, n]",
+                "returns": "number",
+                "args": {
+                    "[m]": {
+                        "name": "[m]",
+                        "type": "number",
+                        "doc": "A number"
+                    },
+                    "[n]": {
+                        "name": "[n]",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "randomseed": {
+                "name": "",
+                "type": "function",
+                "doc": "Seeds the RNG with x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "sin": {
+                "name": "sin",
+                "type": "function",
+                "doc": "Returns the sine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "sinh": {
+                "name": "sinh",
+                "type": "function",
+                "doc": "Returns the hyperbolic sine of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "sqrt": {
+                "name": "sqrt",
+                "type": "function",
+                "doc": "Returns the square root of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "tan": {
+                "name": "tan",
+                "type": "function",
+                "doc": "Returns the tangent of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            },
+            "tanh": {
+                "name": "tanh",
+                "type": "function",
+                "doc": "Returns the hyperbolic tangent of x",
+                "returns": "number",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            }
+        }
+    },
+    "multishell": {
+        "name": "multishell",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows running multiple terminal sessions at once (1.6+) (Advanced only)",
+        "properties": {
+            "getCurrent": {
+                "name": "getCurrent",
+                "type": "function",
+                "doc": "Returns the current tab ID",
+                "returns": "number",
+                "args": {}
+            },
+            "getCount": {
+                "name": "getCount",
+                "type": "function",
+                "doc": "Returns the number of tabs open",
+                "returns": "number",
+                "args": {}
+            },
+            "launch": {
+                "name": "launch",
+                "type": "function",
+                "doc": "Starts a program in a new tab",
+                "returns": "number",
+                "args": {
+                    "environment": {
+                        "name": "environment",
+                        "type": "table",
+                        "doc": "The environment of the new task"
+                    },
+                    "program path": {
+                        "name": "program path",
+                        "type": "string",
+                        "doc": "The path to the program to run"
+                    },
+                    "[arguments]": {
+                        "name": "arguments",
+                        "type": "string",
+                        "doc": "Any arguments to pass to the program"
+                    }
+                }
+            },
+            "setFocus": {
+                "name": "setFocus",
+                "type": "function",
+                "doc": "Sets the tab as the current tab",
+                "returns": "boolean",
+                "args": {
+                    "tabID": {
+                        "name": "tabID",
+                        "type": "number",
+                        "doc": "The ID of the tab"
+                    }
+                }
+            },
+            "setTitle": {
+                "name": "setTitle",
+                "type": "function",
+                "doc": "Sets the title of the tab",
+                "returns": "nil",
+                "args": {
+                    "tabID": {
+                        "name": "tabID",
+                        "type": "number",
+                        "doc": "The ID of the tab"
+                    },
+                    "title": {
+                        "name": "title",
+                        "type": "string",
+                        "doc": "The new name of the tab"
+                    }
+                }
+            },
+            "getTitle": {
+                "name": "getTitle",
+                "type": "function",
+                "doc": "Returns the title of a tab",
+                "returns": "string",
+                "args": {
+                    "tabID": {
+                        "name": "tabID",
+                        "type": "number",
+                        "doc": "The ID of the tab"
+                    }
+                }
+            },
+            "getFocus": {
+                "name": "getFocus",
+                "type": "function",
+                "doc": "Returns the ID of the current tab",
+                "returns": "number",
+                "args": {}
             }
         }
     }
