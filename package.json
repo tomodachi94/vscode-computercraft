@@ -43,7 +43,9 @@
   },
   "devDependencies": {
     "@types/node": "^6.0.40",
+    "fs": "0.0.1-security",
     "typescript": "^2.0.3",
-    "vscode": "^1.0.0"
+    "typings": "^2.1.1",
+    "vscode": "^1.1.22"
   }
 }

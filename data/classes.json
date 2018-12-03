@@ -1,1641 +1,785 @@
 {
-  "ME": {
-    "name": "ME",
-    "type": "field",
-    "doc": "SE8000 Series Room Controller Database",
-    "inherits": [],
-    "properties": {
-      "CAL1": {
-        "name": "Occupancy calendar",
-        "type": "userdata",
-        "doc": "<calendar,       1>"
-      },
-      "SCH1": {
-        "name": "Occupancy Schedule",
-        "type": "userdata",
-        "doc": "<schedule,       1>"
-      },
-      "AI2": {
-        "name": "Light Sensor Level",
-        "type": "number",
-        "doc": "<analog-input,       2>"
-      },
-      "AI5": {
-        "name": "UI20 Raw Value",
-        "type": "number",
-        "doc": "<analog-input,       5>"
-      },
-      "AI7": {
-        "name": "UI23 Raw value",
-        "type": "number",
-        "doc": "<analog-input,       7>"
-      },
-      "AI8": {
-        "name": "UI22 Raw Value",
-        "type": "number",
-        "doc": "<analog-input,       8>"
-      },
-      "AI9": {
-        "name": "UI24 Raw Value",
-        "type": "number",
-        "doc": "<analog-input,       9>"
-      },
-      "AI31": {
-        "name": "UI19 Raw value",
-        "type": "number",
-        "doc": "<analog-input,      31>"
-      },
-      "AO21": {
-        "name": "PI Heating Demand",
-        "type": "number",
-        "doc": "<analog-output,      21>"
-      },
-      "AO22": {
-        "name": "PI Cooling Demand",
-        "type": "number",
-        "doc": "<analog-output,      22>"
-      },
-      "AO123": {
-        "name": "UO11 Analog Output",
-        "type": "number",
-        "doc": "<analog-output,     123>"
-      },
-      "AO124": {
-        "name": "UO12 Analog Output",
-        "type": "number",
-        "doc": "<analog-output,     124>"
-      },
-      "AO125": {
-        "name": "UO9 Analog Output",
-        "type": "number",
-        "doc": "<analog-output,     125>"
-      },
-      "AO126": {
-        "name": "UO10 Analog Output",
-        "type": "number",
-        "doc": "<analog-output,     126>"
-      },
-      "AV100": {
-        "name": "Room Temperature",
-        "type": "number",
-        "doc": "<analog-value,     100>"
-      },
-      "AV101": {
-        "name": "Outdoor Temperature",
-        "type": "number",
-        "doc": "<analog-value,     101>"
-      },
-      "AV102": {
-        "name": "UI 22 Supply Temperature",
-        "type": "number",
-        "doc": "<analog-value,     102>"
-      },
-      "AV104": {
-        "name": "UI 19 Change over",
-        "type": "number",
-        "doc": "<analog-value,     104>"
-      },
-      "AV105": {
-        "name": "UI20 Remote Temperature",
-        "type": "number",
-        "doc": "<analog-value,     105>"
-      },
-      "AV106": {
-        "name": "CO2 Level",
-        "type": "number",
-        "doc": "<analog-value,     106>"
-      },
-      "AV107": {
-        "name": "Terminal24 10V",
-        "type": "number",
-        "doc": "<analog-value,     107>"
-      },
-      "AV109": {
-        "name": "UI24 Temperature",
-        "type": "number",
-        "doc": "<analog-value,     109>"
-      },
-      "AV16": {
-        "name": "BACnet Stack Poll Rate",
-        "type": "number",
-        "doc": "<analog-value,      16>"
-      },
-      "AV2": {
-        "name": "User HMI",
-        "type": "number",
-        "doc": "<analog-value,       2>"
-      },
-      "AV202": {
-        "name": "UI19 Lua",
-        "type": "number",
-        "doc": "<analog-value,     202>"
-      },
-      "AV203": {
-        "name": "UI20 Lua",
-        "type": "number",
-        "doc": "<analog-value,     203>"
-      },
-      "AV204": {
-        "name": "UI22 Lua",
-        "type": "number",
-        "doc": "<analog-value,     204>"
-      },
-      "AV205": {
-        "name": "UI23 Lua",
-        "type": "number",
-        "doc": "<analog-value,     205>"
-      },
-      "AV206": {
-        "name": "UI24 Lua",
-        "type": "number",
-        "doc": "<analog-value,     206>"
-      },
-      "AV25": {
-        "name": "Lua Parameter A (AV25)",
-        "type": "number",
-        "doc": "<analog-value,      25>"
-      },
-      "AV26": {
-        "name": "Lua Parameter B (AV26)",
-        "type": "number",
-        "doc": "<analog-value,      26>"
-      },
-      "AV27": {
-        "name": "Lua Parameter C (AV27)",
-        "type": "number",
-        "doc": "<analog-value,      27>"
-      },
-      "AV28": {
-        "name": "Lua Parameter D (AV28)",
-        "type": "number",
-        "doc": "<analog-value,      28>"
-      },
-      "AV29": {
-        "name": "Lua Parameter E (AV29)",
-        "type": "number",
-        "doc": "<analog-value,      29>"
-      },
-      "AV3": {
-        "name": "Low Backlight",
-        "type": "number",
-        "doc": "<analog-value,       3>"
-      },
-      "AV30": {
-        "name": "Lua Parameter F (AV30)",
-        "type": "number",
-        "doc": "<analog-value,      30>"
-      },
-      "AV39": {
-        "name": "Occupied Heat Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      39>"
-      },
-      "AV4": {
-        "name": "Night Backlight",
-        "type": "number",
-        "doc": "<analog-value,       4>"
-      },
-      "AV40": {
-        "name": "Occupied Cool Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      40>"
-      },
-      "AV41": {
-        "name": "Standby Heat Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      41>"
-      },
-      "AV42": {
-        "name": "Standby Cool Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      42>"
-      },
-      "AV43": {
-        "name": "Unoccupied Heat Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      43>"
-      },
-      "AV44": {
-        "name": "Unoccupied Cool Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      44>"
-      },
-      "AV45": {
-        "name": "Default Heating Setpoint",
-        "type": "number",
-        "doc": "<analog-value,      45>"
-      },
-      "AV46": {
-        "name": "Standby Temperature Differential",
-        "type": "number",
-        "doc": "<analog-value,      46>"
-      },
-      "AV5": {
-        "name": "Purge Sample Period",
-        "type": "number",
-        "doc": "<analog-value,       5>"
-      },
-      "AV52": {
-        "name": "Number of pipes",
-        "type": "number",
-        "doc": "<analog-value,      52>"
-      },
-      "AV56": {
-        "name": "Main Password",
-        "type": "number",
-        "doc": "<analog-value,      56>"
-      },
-      "AV57": {
-        "name": "User Password",
-        "type": "number",
-        "doc": "<analog-value,      57>"
-      },
-      "AV58": {
-        "name": "Heating Setpoint Limit",
-        "type": "number",
-        "doc": "<analog-value,      58>"
-      },
-      "AV59": {
-        "name": "Cooling Setpoint Limit",
-        "type": "number",
-        "doc": "<analog-value,      59>"
-      },
-      "AV6": {
-        "name": "Purge Open",
-        "type": "number",
-        "doc": "<analog-value,       6>"
-      },
-      "AV62": {
-        "name": "Temporary Occupancy Time",
-        "type": "number",
-        "doc": "<analog-value,      62>"
-      },
-      "AV63": {
-        "name": "Minimum Deadband",
-        "type": "number",
-        "doc": "<analog-value,      63>"
-      },
-      "AV65": {
-        "name": "Proportional Band",
-        "type": "number",
-        "doc": "<analog-value,      65>"
-      },
-      "AV67": {
-        "name": "Standby Timer",
-        "type": "number",
-        "doc": "<analog-value,      67>"
-      },
-      "AV68": {
-        "name": "Unoccupied Timer",
-        "type": "number",
-        "doc": "<analog-value,      68>"
-      },
-      "AV7": {
-        "name": "Calibrate Temperature Sensor",
-        "type": "number",
-        "doc": "<analog-value,       7>"
-      },
-      "AV84": {
-        "name": "CPH",
-        "type": "number",
-        "doc": "<analog-value,      84>"
-      },
-      "AV88": {
-        "name": "Heating Demand Limit",
-        "type": "number",
-        "doc": "<analog-value,      88>"
-      },
-      "AV89": {
-        "name": "Cooling Demand Limit",
-        "type": "number",
-        "doc": "<analog-value,      89>"
-      },
-      "AV90": {
-        "name": "Floating Actuator Timing",
-        "type": "number",
-        "doc": "<analog-value,      90>"
-      },
-      "AV92": {
-        "name": "Keyboard Value",
-        "type": "number",
-        "doc": "<analog-value,      92>"
-      },
-      "BI29": {
-        "name": "UI16 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      29>"
-      },
-      "BI30": {
-        "name": "UI17 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      30>"
-      },
-      "BI91": {
-        "name": "UI19 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      91>"
-      },
-      "BI94": {
-        "name": "UI20 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      94>"
-      },
-      "BI95": {
-        "name": "UI22 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      95>"
-      },
-      "BI96": {
-        "name": "UI23 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      96>"
-      },
-      "BI97": {
-        "name": "UI24 Binary Input",
-        "type": "number",
-        "doc": "<binary-input,      97>"
-      },
-      "BO101": {
-        "name": "UO11 Binary Output",
-        "type": "number",
-        "doc": "<binary-output,     101>"
-      },
-      "BO102": {
-        "name": "UO12 Binary Output",
-        "type": "number",
-        "doc": "<binary-output,     102>"
-      },
-      "BO93": {
-        "name": "UO9 Binary Output",
-        "type": "number",
-        "doc": "<binary-output,      93>"
-      },
-      "BO94": {
-        "name": "UO10 Binary Output",
-        "type": "number",
-        "doc": "<binary-output,      94>"
-      },
-      "BO95": {
-        "name": "BO4 High Speed Fan Output",
-        "type": "number",
-        "doc": "<binary-output,      95>"
-      },
-      "BO96": {
-        "name": "BO3 Medium Speed Fan Output",
-        "type": "number",
-        "doc": "<binary-output,      96>"
-      },
-      "BO97": {
-        "name": "BO2 Low Speed Fan Output",
-        "type": "number",
-        "doc": "<binary-output,      97>"
-      },
-      "BO98": {
-        "name": "BO8 Auxilary Binary Output",
-        "type": "number",
-        "doc": "<binary-output,      98>"
-      },
-      "BV1": {
-        "name": "Door Contact Status",
-        "type": "number",
-        "doc": "<binary-value,       1>"
-      },
-      "BV10": {
-        "name": "Exception Status",
-        "type": "number",
-        "doc": "<binary-value,      10>"
-      },
-      "BV2": {
-        "name": "Door Contact Installed",
-        "type": "number",
-        "doc": "<binary-value,       2>"
-      },
-      "BV3": {
-        "name": "Window Contact Status",
-        "type": "number",
-        "doc": "<binary-value,       3>"
-      },
-      "BV32": {
-        "name": "PIR Local Motion",
-        "type": "number",
-        "doc": "<binary-value,      32>"
-      },
-      "BV35": {
-        "name": "Window Alarm",
-        "type": "number",
-        "doc": "<binary-value,      35>"
-      },
-      "BV36": {
-        "name": "Filter Alarm",
-        "type": "number",
-        "doc": "<binary-value,      36>"
-      },
-      "BV37": {
-        "name": "Service Alarm",
-        "type": "number",
-        "doc": "<binary-value,      37>"
-      },
-      "BV4": {
-        "name": "Window Contact Installed",
-        "type": "number",
-        "doc": "<binary-value,       4>"
-      },
-      "BV40": {
-        "name": "Smart recovery status",
-        "type": "number",
-        "doc": "<binary-value,      40>"
-      },
-      "BV5": {
-        "name": "Low Battery Alarm",
-        "type": "number",
-        "doc": "<binary-value,       5>"
-      },
-      "BV6": {
-        "name": "Force High Backlight",
-        "type": "number",
-        "doc": "<binary-value,       6>"
-      },
-      "BV7": {
-        "name": "Display Long Screen Message",
-        "type": "number",
-        "doc": "<binary-value,       7>"
-      },
-      "BV8": {
-        "name": "Clock Alarm",
-        "type": "number",
-        "doc": "<binary-value,       8>"
-      },
-      "CSV1": {
-        "name": "Short Screen Message Text",
-        "type": "string",
-        "doc": "<characterstring_value,       1>"
-      },
-      "CSV2": {
-        "name": "Long Screen Message Text",
-        "type": "string",
-        "doc": "<characterstring_value,       2>"
-      },
-      "CSV3": {
-        "name": "External Memory Revision",
-        "type": "string",
-        "doc": "<characterstring_value,       3>"
-      },
-      "MSI33": {
-        "name": "Effective Occupancy",
-        "type": "number",
-        "doc": "<multi-state-input,      33>"
-      },
-      "MV1": {
-        "name": "Long Message Background Color",
-        "type": "number",
-        "doc": "<multi-state-value,       1>"
-      },
-      "MV10": {
-        "name": "Occupancy Command",
-        "type": "number",
-        "doc": "<multi-state-value,      10>"
-      },
-      "MV101": {
-        "name": "French",
-        "type": "number",
-        "doc": "<multi-state-value,     101>"
-      },
-      "MV102": {
-        "name": "Spanish",
-        "type": "number",
-        "doc": "<multi-state-value,     102>"
-      },
-      "MV103": {
-        "name": "Chinese",
-        "type": "number",
-        "doc": "<multi-state-value,     103>"
-      },
-      "MV104": {
-        "name": "Russian",
-        "type": "number",
-        "doc": "<multi-state-value,     104>"
-      },
-      "MV11": {
-        "name": "Standby Mode Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      11>"
-      },
-      "MV110": {
-        "name": "Occupancy Source",
-        "type": "number",
-        "doc": "<multi-state-value,     110>"
-      },
-      "MV111": {
-        "name": "Mode button",
-        "type": "number",
-        "doc": "<multi-state-value,     111>"
-      },
-      "MV112": {
-        "name": "Control Status",
-        "type": "number",
-        "doc": "<multi-state-value,     112>"
-      },
-      "MV114": {
-        "name": "Custom page",
-        "type": "number",
-        "doc": "<multi-state-value,     114>"
-      },
-      "MV115": {
-        "name": "Custom button behavior",
-        "type": "number",
-        "doc": "<multi-state-value,     115>"
-      },
-      "MV120": {
-        "name": "Arabic",
-        "type": "number",
-        "doc": "<multi-state-value,     120>"
-      },
-      "MV122": {
-        "name": "Czech",
-        "type": "number",
-        "doc": "<multi-state-value,     122>"
-      },
-      "MV123": {
-        "name": "Danish",
-        "type": "number",
-        "doc": "<multi-state-value,     123>"
-      },
-      "MV124": {
-        "name": "Dutch",
-        "type": "number",
-        "doc": "<multi-state-value,     124>"
-      },
-      "MV125": {
-        "name": "Finnish",
-        "type": "number",
-        "doc": "<multi-state-value,     125>"
-      },
-      "MV126": {
-        "name": "German",
-        "type": "number",
-        "doc": "<multi-state-value,     126>"
-      },
-      "MV127": {
-        "name": "Hungarian",
-        "type": "number",
-        "doc": "<multi-state-value,     127>"
-      },
-      "MV128": {
-        "name": "Indonesian",
-        "type": "number",
-        "doc": "<multi-state-value,     128>"
-      },
-      "MV129": {
-        "name": "Italian",
-        "type": "number",
-        "doc": "<multi-state-value,     129>"
-      },
-      "MV130": {
-        "name": "Norwegian",
-        "type": "number",
-        "doc": "<multi-state-value,     130>"
-      },
-      "MV131": {
-        "name": "Polish",
-        "type": "number",
-        "doc": "<multi-state-value,     131>"
-      },
-      "MV132": {
-        "name": "Portuguese",
-        "type": "number",
-        "doc": "<multi-state-value,     132>"
-      },
-      "MV133": {
-        "name": "Slovak",
-        "type": "number",
-        "doc": "<multi-state-value,     133>"
-      },
-      "MV134": {
-        "name": "Swedish",
-        "type": "number",
-        "doc": "<multi-state-value,     134>"
-      },
-      "MV135": {
-        "name": "Turkish",
-        "type": "number",
-        "doc": "<multi-state-value,     135>"
-      },
-      "MV136": {
-        "name": "Schedule Type",
-        "type": "number",
-        "doc": "<multi-state-value,     136>"
-      },
-      "MV140": {
-        "name": "UI19 Input Type",
-        "type": "number",
-        "doc": "<multi-state-value,     140>"
-      },
-      "MV141": {
-        "name": "UI20 Input Type",
-        "type": "number",
-        "doc": "<multi-state-value,     141>"
-      },
-      "MV142": {
-        "name": "UI22 Input Type",
-        "type": "number",
-        "doc": "<multi-state-value,     142>"
-      },
-      "MV143": {
-        "name": "UI23 Input Type",
-        "type": "number",
-        "doc": "<multi-state-value,     143>"
-      },
-      "MV144": {
-        "name": "UI24 Input Type",
-        "type": "number",
-        "doc": "<multi-state-value,     144>"
-      },
-      "MV145": {
-        "name": "Room Temperature Sensor",
-        "type": "number",
-        "doc": "<multi-state-value,     145>"
-      },
-      "MV146": {
-        "name": "CO2 Display",
-        "type": "number",
-        "doc": "<multi-state-value,     146>"
-      },
-      "MV147": {
-        "name": "CO2 Autocalibration",
-        "type": "number",
-        "doc": "<multi-state-value,     147>"
-      },
-      "MV15": {
-        "name": "Sequence of Operation",
-        "type": "number",
-        "doc": "<multi-state-value,      15>"
-      },
-      "MV16": {
-        "name": "System Mode",
-        "type": "number",
-        "doc": "<multi-state-value,      16>"
-      },
-      "MV17": {
-        "name": "Fan Mode",
-        "type": "number",
-        "doc": "<multi-state-value,      17>"
-      },
-      "MV2": {
-        "name": "HMI Colour",
-        "type": "number",
-        "doc": "<multi-state-value,       2>"
-      },
-      "MV3": {
-        "name": "Main Display",
-        "type": "number",
-        "doc": "<multi-state-value,       3>"
-      },
-      "MV32": {
-        "name": "Use Standby Screen",
-        "type": "number",
-        "doc": "<multi-state-value,      32>"
-      },
-      "MV4": {
-        "name": "Display Language",
-        "type": "number",
-        "doc": "<multi-state-value,       4>"
-      },
-      "MV46": {
-        "name": "UI16 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      46>"
-      },
-      "MV47": {
-        "name": "UI17 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      47>"
-      },
-      "MV49": {
-        "name": "UI19 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      49>"
-      },
-      "MV5": {
-        "name": "Time Format",
-        "type": "number",
-        "doc": "<multi-state-value,       5>"
-      },
-      "MV50": {
-        "name": "Auto Mode Enable",
-        "type": "number",
-        "doc": "<multi-state-value,      50>"
-      },
-      "MV51": {
-        "name": "Temperature Scale",
-        "type": "number",
-        "doc": "<multi-state-value,      51>"
-      },
-      "MV57": {
-        "name": "Fan Sequence",
-        "type": "number",
-        "doc": "<multi-state-value,      57>"
-      },
-      "MV58": {
-        "name": "Setpoint Function",
-        "type": "number",
-        "doc": "<multi-state-value,      58>"
-      },
-      "MV6": {
-        "name": "Network Units",
-        "type": "number",
-        "doc": "<multi-state-value,       6>"
-      },
-      "MV66": {
-        "name": "Auto Mode Fan Function",
-        "type": "number",
-        "doc": "<multi-state-value,      66>"
-      },
-      "MV7": {
-        "name": "Network Language",
-        "type": "number",
-        "doc": "<multi-state-value,       7>"
-      },
-      "MV71": {
-        "name": "Enable Smart Recovery",
-        "type": "number",
-        "doc": "<multi-state-value,      71>"
-      },
-      "MV73": {
-        "name": "Schedule Menu",
-        "type": "number",
-        "doc": "<multi-state-value,      73>"
-      },
-      "MV8": {
-        "name": "BACnet Baud Rate",
-        "type": "number",
-        "doc": "<multi-state-value,       8>"
-      },
-      "MV81": {
-        "name": "Control Type",
-        "type": "number",
-        "doc": "<multi-state-value,      81>"
-      },
-      "MV9": {
-        "name": "No Activity Sleep Mode Timer",
-        "type": "number",
-        "doc": "<multi-state-value,       9>"
-      },
-      "MV91": {
-        "name": "BO8 Aux Output Time Base",
-        "type": "number",
-        "doc": "<multi-state-value,      91>"
-      },
-      "MV92": {
-        "name": "BO8 Aux Output configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      92>"
-      },
-      "MV94": {
-        "name": "Action",
-        "type": "number",
-        "doc": "<multi-state-value,      94>"
-      },
-      "MV96": {
-        "name": "UO9 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      96>"
-      },
-      "MV97": {
-        "name": "UO10 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      97>"
-      },
-      "MV98": {
-        "name": "UO11 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      98>"
-      },
-      "MV99": {
-        "name": "UO12 Configuration",
-        "type": "number",
-        "doc": "<multi-state-value,      99>"
-      },
-      "AO21_PV": {
-        "name": "PI Heating Demand",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,      21>"
-      },
-      "AO22_PV": {
-        "name": "PI Cooling Demand",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,      22>"
-      },
-      "AO123_PV": {
-        "name": "UO11 Analog Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,     123>"
-      },
-      "AO124_PV": {
-        "name": "UO12 Analog Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,     124>"
-      },
-      "AO125_PV": {
-        "name": "UO9 Analog Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,     125>"
-      },
-      "AO126_PV": {
-        "name": "UO10 Analog Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-output,     126>"
-      },
-      "AV100_PV": {
-        "name": "Room Temperature",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     100>"
-      },
-      "AV101_PV": {
-        "name": "Outdoor Temperature",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     101>"
-      },
-      "AV102_PV": {
-        "name": "UI 22 Supply Temperature",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     102>"
-      },
-      "AV104_PV": {
-        "name": "UI 19 Change over",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     104>"
-      },
-      "AV105_PV": {
-        "name": "UI20 Remote Temperature",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     105>"
-      },
-      "AV106_PV": {
-        "name": "CO2 Level",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     106>"
-      },
-      "AV107_PV": {
-        "name": "Terminal24 10V",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     107>"
-      },
-      "AV109_PV": {
-        "name": "UI24 Temperature",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     109>"
-      },
-      "AV16_PV": {
-        "name": "BACnet Stack Poll Rate",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      16>"
-      },
-      "AV2_PV": {
-        "name": "User HMI",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       2>"
-      },
-      "AV202_PV": {
-        "name": "UI19 Lua",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     202>"
-      },
-      "AV203_PV": {
-        "name": "UI20 Lua",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     203>"
-      },
-      "AV204_PV": {
-        "name": "UI22 Lua",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     204>"
-      },
-      "AV205_PV": {
-        "name": "UI23 Lua",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     205>"
-      },
-      "AV206_PV": {
-        "name": "UI24 Lua",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,     206>"
-      },
-      "AV25_PV": {
-        "name": "Lua Parameter A (AV25)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      25>"
-      },
-      "AV26_PV": {
-        "name": "Lua Parameter B (AV26)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      26>"
-      },
-      "AV27_PV": {
-        "name": "Lua Parameter C (AV27)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      27>"
-      },
-      "AV28_PV": {
-        "name": "Lua Parameter D (AV28)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      28>"
-      },
-      "AV29_PV": {
-        "name": "Lua Parameter E (AV29)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      29>"
-      },
-      "AV3_PV": {
-        "name": "Low Backlight",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       3>"
-      },
-      "AV30_PV": {
-        "name": "Lua Parameter F (AV30)",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      30>"
-      },
-      "AV39_PV": {
-        "name": "Occupied Heat Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      39>"
-      },
-      "AV4_PV": {
-        "name": "Night Backlight",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       4>"
-      },
-      "AV40_PV": {
-        "name": "Occupied Cool Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      40>"
-      },
-      "AV41_PV": {
-        "name": "Standby Heat Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      41>"
-      },
-      "AV42_PV": {
-        "name": "Standby Cool Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      42>"
-      },
-      "AV43_PV": {
-        "name": "Unoccupied Heat Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      43>"
-      },
-      "AV44_PV": {
-        "name": "Unoccupied Cool Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      44>"
-      },
-      "AV45_PV": {
-        "name": "Default Heating Setpoint",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      45>"
-      },
-      "AV46_PV": {
-        "name": "Standby Temperature Differential",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      46>"
-      },
-      "AV5_PV": {
-        "name": "Purge Sample Period",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       5>"
-      },
-      "AV52_PV": {
-        "name": "Number of pipes",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      52>"
-      },
-      "AV56_PV": {
-        "name": "Main Password",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      56>"
-      },
-      "AV57_PV": {
-        "name": "User Password",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      57>"
-      },
-      "AV58_PV": {
-        "name": "Heating Setpoint Limit",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      58>"
-      },
-      "AV59_PV": {
-        "name": "Cooling Setpoint Limit",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      59>"
-      },
-      "AV6_PV": {
-        "name": "Purge Open",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       6>"
-      },
-      "AV62_PV": {
-        "name": "Temporary Occupancy Time",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      62>"
-      },
-      "AV63_PV": {
-        "name": "Minimum Deadband",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      63>"
-      },
-      "AV65_PV": {
-        "name": "Proportional Band",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      65>"
-      },
-      "AV67_PV": {
-        "name": "Standby Timer",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      67>"
-      },
-      "AV68_PV": {
-        "name": "Unoccupied Timer",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      68>"
-      },
-      "AV7_PV": {
-        "name": "Calibrate Temperature Sensor",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,       7>"
-      },
-      "AV84_PV": {
-        "name": "CPH",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      84>"
-      },
-      "AV88_PV": {
-        "name": "Heating Demand Limit",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      88>"
-      },
-      "AV89_PV": {
-        "name": "Cooling Demand Limit",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      89>"
-      },
-      "AV90_PV": {
-        "name": "Floating Actuator Timing",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      90>"
-      },
-      "AV92_PV": {
-        "name": "Keyboard Value",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<analog-value,      92>"
-      },
-      "BO101_PV": {
-        "name": "UO11 Binary Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,     101>"
-      },
-      "BO102_PV": {
-        "name": "UO12 Binary Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,     102>"
-      },
-      "BO93_PV": {
-        "name": "UO9 Binary Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      93>"
-      },
-      "BO94_PV": {
-        "name": "UO10 Binary Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      94>"
-      },
-      "BO95_PV": {
-        "name": "BO4 High Speed Fan Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      95>"
-      },
-      "BO96_PV": {
-        "name": "BO3 Medium Speed Fan Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      96>"
-      },
-      "BO97_PV": {
-        "name": "BO2 Low Speed Fan Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      97>"
-      },
-      "BO98_PV": {
-        "name": "BO8 Auxilary Binary Output",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-output,      98>"
-      },
-      "BV1_PV": {
-        "name": "Door Contact Status",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       1>"
-      },
-      "BV10_PV": {
-        "name": "Exception Status",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      10>"
-      },
-      "BV2_PV": {
-        "name": "Door Contact Installed",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       2>"
-      },
-      "BV3_PV": {
-        "name": "Window Contact Status",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       3>"
-      },
-      "BV32_PV": {
-        "name": "PIR Local Motion",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      32>"
-      },
-      "BV35_PV": {
-        "name": "Window Alarm",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      35>"
-      },
-      "BV36_PV": {
-        "name": "Filter Alarm",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      36>"
-      },
-      "BV37_PV": {
-        "name": "Service Alarm",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      37>"
-      },
-      "BV4_PV": {
-        "name": "Window Contact Installed",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       4>"
-      },
-      "BV40_PV": {
-        "name": "Smart recovery status",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,      40>"
-      },
-      "BV5_PV": {
-        "name": "Low Battery Alarm",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       5>"
-      },
-      "BV6_PV": {
-        "name": "Force High Backlight",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       6>"
-      },
-      "BV7_PV": {
-        "name": "Display Long Screen Message",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       7>"
-      },
-      "BV8_PV": {
-        "name": "Clock Alarm",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<binary-value,       8>"
-      },
-      "MV1_PV": {
-        "name": "Long Message Background Color",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       1>"
-      },
-      "MV10_PV": {
-        "name": "Occupancy Command",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      10>"
-      },
-      "MV101_PV": {
-        "name": "French",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     101>"
-      },
-      "MV102_PV": {
-        "name": "Spanish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     102>"
-      },
-      "MV103_PV": {
-        "name": "Chinese",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     103>"
-      },
-      "MV104_PV": {
-        "name": "Russian",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     104>"
-      },
-      "MV11_PV": {
-        "name": "Standby Mode Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      11>"
-      },
-      "MV110_PV": {
-        "name": "Occupancy Source",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     110>"
-      },
-      "MV111_PV": {
-        "name": "Mode button",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     111>"
-      },
-      "MV112_PV": {
-        "name": "Control Status",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     112>"
-      },
-      "MV114_PV": {
-        "name": "Custom page",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     114>"
-      },
-      "MV115_PV": {
-        "name": "Custom button behavior",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     115>"
-      },
-      "MV120_PV": {
-        "name": "Arabic",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     120>"
-      },
-      "MV122_PV": {
-        "name": "Czech",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     122>"
-      },
-      "MV123_PV": {
-        "name": "Danish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     123>"
-      },
-      "MV124_PV": {
-        "name": "Dutch",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     124>"
-      },
-      "MV125_PV": {
-        "name": "Finnish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     125>"
-      },
-      "MV126_PV": {
-        "name": "German",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     126>"
-      },
-      "MV127_PV": {
-        "name": "Hungarian",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     127>"
-      },
-      "MV128_PV": {
-        "name": "Indonesian",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     128>"
-      },
-      "MV129_PV": {
-        "name": "Italian",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     129>"
-      },
-      "MV130_PV": {
-        "name": "Norwegian",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     130>"
-      },
-      "MV131_PV": {
-        "name": "Polish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     131>"
-      },
-      "MV132_PV": {
-        "name": "Portuguese",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     132>"
-      },
-      "MV133_PV": {
-        "name": "Slovak",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     133>"
-      },
-      "MV134_PV": {
-        "name": "Swedish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     134>"
-      },
-      "MV135_PV": {
-        "name": "Turkish",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     135>"
-      },
-      "MV136_PV": {
-        "name": "Schedule Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     136>"
-      },
-      "MV140_PV": {
-        "name": "UI19 Input Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     140>"
-      },
-      "MV141_PV": {
-        "name": "UI20 Input Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     141>"
-      },
-      "MV142_PV": {
-        "name": "UI22 Input Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     142>"
-      },
-      "MV143_PV": {
-        "name": "UI23 Input Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     143>"
-      },
-      "MV144_PV": {
-        "name": "UI24 Input Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     144>"
-      },
-      "MV145_PV": {
-        "name": "Room Temperature Sensor",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     145>"
-      },
-      "MV146_PV": {
-        "name": "CO2 Display",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     146>"
-      },
-      "MV147_PV": {
-        "name": "CO2 Autocalibration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,     147>"
-      },
-      "MV15_PV": {
-        "name": "Sequence of Operation",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      15>"
-      },
-      "MV16_PV": {
-        "name": "System Mode",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      16>"
-      },
-      "MV17_PV": {
-        "name": "Fan Mode",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      17>"
-      },
-      "MV2_PV": {
-        "name": "HMI Colour",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       2>"
-      },
-      "MV3_PV": {
-        "name": "Main Display",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       3>"
-      },
-      "MV32_PV": {
-        "name": "Use Standby Screen",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      32>"
-      },
-      "MV4_PV": {
-        "name": "Display Language",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       4>"
-      },
-      "MV46_PV": {
-        "name": "UI16 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      46>"
-      },
-      "MV47_PV": {
-        "name": "UI17 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      47>"
-      },
-      "MV49_PV": {
-        "name": "UI19 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      49>"
-      },
-      "MV5_PV": {
-        "name": "Time Format",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       5>"
-      },
-      "MV50_PV": {
-        "name": "Auto Mode Enable",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      50>"
-      },
-      "MV51_PV": {
-        "name": "Temperature Scale",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      51>"
-      },
-      "MV57_PV": {
-        "name": "Fan Sequence",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      57>"
-      },
-      "MV58_PV": {
-        "name": "Setpoint Function",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      58>"
-      },
-      "MV6_PV": {
-        "name": "Network Units",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       6>"
-      },
-      "MV66_PV": {
-        "name": "Auto Mode Fan Function",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      66>"
-      },
-      "MV7_PV": {
-        "name": "Network Language",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       7>"
-      },
-      "MV71_PV": {
-        "name": "Enable Smart Recovery",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      71>"
-      },
-      "MV73_PV": {
-        "name": "Schedule Menu",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      73>"
-      },
-      "MV8_PV": {
-        "name": "BACnet Baud Rate",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       8>"
-      },
-      "MV81_PV": {
-        "name": "Control Type",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      81>"
-      },
-      "MV9_PV": {
-        "name": "No Activity Sleep Mode Timer",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,       9>"
-      },
-      "MV91_PV": {
-        "name": "BO8 Aux Output Time Base",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      91>"
-      },
-      "MV92_PV": {
-        "name": "BO8 Aux Output configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      92>"
-      },
-      "MV94_PV": {
-        "name": "Action",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      94>"
-      },
-      "MV96_PV": {
-        "name": "UO9 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      96>"
-      },
-      "MV97_PV": {
-        "name": "UO10 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      97>"
-      },
-      "MV98_PV": {
-        "name": "UO11 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      98>"
-      },
-      "MV99_PV": {
-        "name": "UO12 Configuration",
-        "type": "array[number]",
-        "doc": "Present Value Priority array  \n<multi-state-value,      99>"
-      },
-      "AV25_Desc": {
-        "name": "Lua Parameter A (AV25)",
-        "type": "string",
-        "doc": "Description, visible in HMI and BACnet  \n<analog-value,      25>"
-      },
-      "AV26_Desc": {
-        "name": "Lua Parameter B (AV26)",
-        "type": "string",
-        "doc": "Description, visible in HMI and BACnet  \n<analog-value,      26>"
-      },
-      "AV27_Desc": {
-        "name": "Lua Parameter C (AV27)",
-        "type": "string",
-        "doc": "Description, visible in HMI and BACnet  \n<analog-value,      27>"
-      },
-      "AV28_Desc": {
-        "name": "Lua Parameter D (AV28)",
-        "type": "string",
-        "doc": "Description, visible in HMI and BACnet  \n<analog-value,      28>"
-      },
-      "AV29_Desc": {
-        "name": "Lua Parameter E (AV29)",
-        "type": "string",
-        "doc": "Description, visible in HMI and BACnet  \n<analog-value,      29>"
-      }
-    }
-  },
-  "tools": {
-    "name": "tools",
-    "type": "class",
-    "inherits": [],
-    "doc": "Functions providing basic control over common Room Controller applications frequently used in most installations.",
-    "properties": {
-      "scale": {
-        "name": "scale",
-        "type": "function",
-        "doc": "This function returns the linear interpolation between two points. The function can also add the offset value to the final result if desired.\n\n**Parameters**  \nvariable :: number: Input variable.  \noffset :: number: Output offset.  \nx1 :: number: Input min value.  \ny1 :: number: Output min value.  \nx2 :: number: Input max value.  \ny2 :: number: Output max value.",
-        "returns": "number",
-        "args": {
-          "variable": {
-            "name": "variable",
-            "type": "number",
-            "doc": "Input variable."
-          },
-          "offset": {
-            "name": "offset",
-            "type": "number",
-            "doc": "Output offset."
-          },
-          "x1": {
-            "name": "x1",
-            "type": "number",
-            "doc": "Input min value."
-          },
-          "y1": {
-            "name": "y1",
-            "type": "number",
-            "doc": "Output min value."
-          },
-          "x2": {
-            "name": "x2",
-            "type": "number",
-            "doc": "Input max value."
-          },
-          "y2": {
-            "name": "y2",
-            "type": "number",
-            "doc": "Output max value."
-          }
+    "bit": {
+        "name": "bit",
+        "type": "field",
+        "doc": "Bit manipulation API",
+        "inherits": [],
+        "properties": {
+            "blshift": {
+                "name": "blshift",
+                "type": "function",
+                "returns": "number",
+                "doc": "Shifts bits left",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "Number to shift"
+                    },
+                    "bits": {
+                        "name": "bits",
+                        "type": "number",
+                        "doc": "Number of bits to shift by"
+                    }
+                }
+            },
+            "brshift": {
+                "name": "brshift",
+                "type": "function",
+                "doc": "Shifts bits right arithmetically",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "Number to shift"
+                    },
+                    "bits": {
+                        "name": "bits",
+                        "type": "number",
+                        "doc": "Number of bits to shift by"
+                    }
+                }
+            },
+            "blogic_rshift": {
+                "name": "blogic_rshift",
+                "type": "function",
+                "doc": "Shifts bits right logically",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "Number to shift"
+                    },
+                    "bits": {
+                        "name": "bits",
+                        "type": "number",
+                        "doc": "Number of bits to shift by"
+                    }
+                }
+            },
+            "bxor": {
+                "name": "bxor",
+                "type": "function",
+                "doc": "Performs an exclusive OR on two numbers",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "First number"
+                    },
+                    "m": {
+                        "name": "m",
+                        "type": "number",
+                        "doc": "Second number"
+                    }
+                }
+            },
+            "bor": {
+                "name": "bor",
+                "type": "function",
+                "doc": "Performs an OR on two numbers",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "First number"
+                    },
+                    "m": {
+                        "name": "m",
+                        "type": "number",
+                        "doc": "Second number"
+                    }
+                }
+            },
+            "band": {
+                "name": "band",
+                "type": "function",
+                "doc": "Performs an AND on two numbers",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "First number"
+                    },
+                    "m": {
+                        "name": "m",
+                        "type": "number",
+                        "doc": "Second number"
+                    }
+                }
+            },
+            "bnot": {
+                "name": "bnot",
+                "type": "function",
+                "doc": "Performs a NOT on a number",
+                "returns": "number",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "A number"
+                    }
+                }
+            }
         }
-      },
-      "switch": {
-        "name": "switch",
-        "type": "function",
-        "doc": "Switch function (on-off with deadband). Simulates the operation of a conventional ON-OFF thermostat. It also provides a deadband function so an Object does not continuously switch ON and OFF based on a specific value.\n\n**Parameters**  \noutput: Output variable.  \ninput: Input variable that will control the output.  \noff-expr: Value of input when output will turn off.  \non-expr: Value of input when output will turn on.  \n\n**Return value**  \nnumber: (0 or 1)",
-        "returns": "number",
-        "args": {
-          "output": {
-            "name": "output",
-            "type": "number",
-            "doc": "Output variable"
-          },
-          "input": {
-            "name": "input",
-            "type": "number",
-            "doc": "Input variable that will control the output"
-          },
-          "off-expr": {
-            "name": "off-expr",
-            "type": "number",
-            "doc": "Value of input when output will turn off"
-          },
-          "on-expr": {
-            "name": "on-expr",
-            "type": "number",
-            "doc": "Value of input when output will turn on"
-          }
+    },
+    "colors": {
+        "name": "colors",
+        "type": "field",
+        "inherits": [],
+        "doc": "Provides constants for colors",
+        "properties": {
+            "combine": {
+                "name": "combine",
+                "type": "function",
+                "doc": "Combines one or more colors (or sets of colors) into a larger set.",
+                "returns": "color",
+                "args": {
+                    "color1": {
+                        "name": "color1",
+                        "type": "color",
+                        "doc": "First color"
+                    },
+                    "color2": {
+                        "name": "color2",
+                        "type": "color",
+                        "doc": "Second color"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "color",
+                        "doc": "Other colors"
+                    }
+                }
+            },
+            "subtract": {
+                "name": "subtract",
+                "type": "function",
+                "doc": "Removes one or more colors (or sets of colors) from an initial set.",
+                "returns": "color",
+                "args": {
+                    "colors": {
+                        "name": "colors",
+                        "type": "color",
+                        "doc": "Combined color"
+                    },
+                    "color1": {
+                        "name": "color1",
+                        "type": "color",
+                        "doc": "First color"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "color",
+                        "doc": "Other colors"
+                    }
+                }
+            },
+            "test": {
+                "name": "test",
+                "type": "function",
+                "doc": "Tests whether color is contained within colors.",
+                "returns": "boolean",
+                "args": {
+                    "colors": {
+                        "name": "colors",
+                        "type": "color",
+                        "doc": "A set of colors"
+                    },
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The color to test for"
+                    }
+                }
+            },
+            "white": {
+                "name": "white",
+                "type": "color",
+                "doc": "White"
+            },
+            "orange": {
+                "name": "orange",
+                "type": "color",
+                "doc": "Orange"
+            },
+            "magenta": {
+                "name": "magenta",
+                "type": "color",
+                "doc": "Magenta"
+            },
+            "lightBlue": {
+                "name": "lightBlue",
+                "type": "color",
+                "doc": "Light blue"
+            },
+            "yellow": {
+                "name": "yellow",
+                "type": "color",
+                "doc": "Yellow"
+            },
+            "lime": {
+                "name": "lime",
+                "type": "color",
+                "doc": "Lime"
+            },
+            "pink": {
+                "name": "pink",
+                "type": "color",
+                "doc": "Pink"
+            },
+            "gray": {
+                "name": "gray",
+                "type": "color",
+                "doc": "Gray"
+            },
+            "lightGray": {
+                "name": "lightGray",
+                "type": "color",
+                "doc": "Light gray"
+            },
+            "cyan": {
+                "name": "cyan",
+                "type": "color",
+                "doc": "Cyan"
+            },
+            "purple": {
+                "name": "purple",
+                "type": "color",
+                "doc": "Purple"
+            },
+            "blue": {
+                "name": "blue",
+                "type": "color",
+                "doc": "Blue"
+            },
+            "brown": {
+                "name": "brown",
+                "type": "color",
+                "doc": "Brown"
+            },
+            "green": {
+                "name": "green",
+                "type": "color",
+                "doc": "Green"
+            },
+            "red": {
+                "name": "red",
+                "type": "color",
+                "doc": "Red"
+            },
+            "black": {
+                "name": "black",
+                "type": "color",
+                "doc": "Black"
+            }
         }
-      },
-      "memory": {
-        "name": "memory",
-        "type": "function",
-        "doc": "This function will get the amount of memory consumed in real time.",
-        "returns": "number",
-        "args": {}
-      }
+    },
+    "colours": {
+        "name": "colours",
+        "type": "field",
+        "inherits": [],
+        "doc": "Provides constants for colours (UK)",
+        "properties": {
+            "combine": {
+                "name": "combine",
+                "type": "function",
+                "doc": "Combines one or more colours (or sets of colours) into a larger set.",
+                "returns": "color",
+                "args": {
+                    "color1": {
+                        "name": "color1",
+                        "type": "color",
+                        "doc": "First colour"
+                    },
+                    "color2": {
+                        "name": "color2",
+                        "type": "color",
+                        "doc": "Second colour"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "color",
+                        "doc": "Other colours"
+                    }
+                }
+            },
+            "subtract": {
+                "name": "subtract",
+                "type": "function",
+                "doc": "Removes one or more colours (or sets of colours) from an initial set.",
+                "returns": "color",
+                "args": {
+                    "colors": {
+                        "name": "colors",
+                        "type": "color",
+                        "doc": "Combined colour"
+                    },
+                    "color1": {
+                        "name": "color1",
+                        "type": "color",
+                        "doc": "First colour"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "color",
+                        "doc": "Other colours"
+                    }
+                }
+            },
+            "test": {
+                "name": "test",
+                "type": "function",
+                "doc": "Tests whether colour is contained within colours.",
+                "returns": "boolean",
+                "args": {
+                    "colors": {
+                        "name": "colors",
+                        "type": "color",
+                        "doc": "A set of colours"
+                    },
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The colour to test for"
+                    }
+                }
+            },
+            "white": {
+                "name": "white",
+                "type": "color",
+                "doc": "White"
+            },
+            "orange": {
+                "name": "orange",
+                "type": "color",
+                "doc": "Orange"
+            },
+            "magenta": {
+                "name": "magenta",
+                "type": "color",
+                "doc": "Magenta"
+            },
+            "lightBlue": {
+                "name": "lightBlue",
+                "type": "color",
+                "doc": "Light blue"
+            },
+            "yellow": {
+                "name": "yellow",
+                "type": "color",
+                "doc": "Yellow"
+            },
+            "lime": {
+                "name": "lime",
+                "type": "color",
+                "doc": "Lime"
+            },
+            "pink": {
+                "name": "pink",
+                "type": "color",
+                "doc": "Pink"
+            },
+            "grey": {
+                "name": "grey",
+                "type": "color",
+                "doc": "Grey"
+            },
+            "lightGrey": {
+                "name": "lightGrey",
+                "type": "color",
+                "doc": "Light grey"
+            },
+            "cyan": {
+                "name": "cyan",
+                "type": "color",
+                "doc": "Cyan"
+            },
+            "purple": {
+                "name": "purple",
+                "type": "color",
+                "doc": "Purple"
+            },
+            "blue": {
+                "name": "blue",
+                "type": "color",
+                "doc": "Blue"
+            },
+            "brown": {
+                "name": "brown",
+                "type": "color",
+                "doc": "Brown"
+            },
+            "green": {
+                "name": "green",
+                "type": "color",
+                "doc": "Green"
+            },
+            "red": {
+                "name": "red",
+                "type": "color",
+                "doc": "Red"
+            },
+            "black": {
+                "name": "black",
+                "type": "color",
+                "doc": "Black"
+            }
+        }
+    },
+    "commands": {
+        "name": "commands",
+        "type": "field",
+        "inherits": [],
+        "doc": "Command computers only: allows executing Minecraft commands",
+        "properties": {
+            "exec": {
+                "name": "exec",
+                "type": "function",
+                "doc": "Executes a command string synchronously",
+                "returns": "boolean, table",
+                "args": {
+                    "command": {
+                        "name": "command",
+                        "type": "string",
+                        "doc": "The command string to run"
+                    }
+                }
+            },
+            "execAsync": {
+                "name": "execAsync",
+                "type": "function",
+                "doc": "Executes a command string asynchronously",
+                "returns": "number",
+                "args": {
+                    "command": {
+                        "name": "command",
+                        "type": "string",
+                        "doc": "The command string to run"
+                    }
+                }
+            },
+            "list": {
+                "name": "list",
+                "type": "function",
+                "doc": "Returns a list of commands",
+                "returns": "table",
+                "args": {}
+            },
+            "getBlockPosition": {
+                "name": "getBlockPosition",
+                "type": "function",
+                "doc": "Returns the world position of the computer",
+                "returns": "number, number, number",
+                "args": {}
+            },
+            "getBlockInfo": {
+                "name": "getBlockInfo",
+                "type": "function",
+                "doc": "Returns information about the block at a position",
+                "returns": "table",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "X coordinate"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "Y coordinate"
+                    },
+                    "z": {
+                        "name": "z",
+                        "type": "number",
+                        "doc": "Z coordinate"
+                    }
+                }
+            },
+            "getBlockInfos": {
+                "name": "getBlockInfos",
+                "type": "function",
+                "doc": "Returns information about blocks between two positions",
+                "returns": "table",
+                "args": {
+                    "x1": {
+                        "name": "x1",
+                        "type": "number",
+                        "doc": "First X coordinate"
+                    },
+                    "y1": {
+                        "name": "y1",
+                        "type": "number",
+                        "doc": "First Y coordinate"
+                    },
+                    "z1": {
+                        "name": "z1",
+                        "type": "number",
+                        "doc": "First Z coordinate"
+                    },
+                    "x2": {
+                        "name": "x2",
+                        "type": "number",
+                        "doc": "Second X coordinate"
+                    },
+                    "y2": {
+                        "name": "y2",
+                        "type": "number",
+                        "doc": "Second Y coordinate"
+                    },
+                    "z2": {
+                        "name": "z2",
+                        "type": "number",
+                        "doc": "Second Z coordinate"
+                    }
+                }
+            }
+        }
+    },
+    "coroutine": {
+        "name": "coroutine",
+        "type": "field",
+        "doc": "Creates and manages parallel tasks",
+        "inherits": [],
+        "properties": {
+            "create": {
+                "name": "create",
+                "type": "function",
+                "doc": "Creates a coroutine",
+                "returns": "coroutine",
+                "args": {
+                    "f": {
+                        "name": "f",
+                        "type": "function",
+                        "doc": "The function to run"
+                    }
+                }
+            },
+            "resume": {
+                "name": "resume",
+                "type": "function",
+                "doc": "Starts or resumes a coroutine",
+                "returns": "any",
+                "args": {
+                    "coro": {
+                        "name": "coro",
+                        "type": "coroutine",
+                        "doc": "The coroutine to resume"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "Any parameters to pass to the function, or values to return from coroutine.yield()"
+                    }
+                }
+            },
+            "running": {
+                "name": "running",
+                "type": "function",
+                "doc": "Returns the currently running coroutine",
+                "returns": "coroutine",
+                "args": {}
+            },
+            "status": {
+                "name": "status",
+                "type": "function",
+                "doc": "Returns the status of a coroutine",
+                "returns": "string",
+                "args": {
+                    "coro": {
+                        "name": "coro",
+                        "type": "coroutine",
+                        "doc": "The coroutine to check"
+                    }
+                }
+            },
+            "wrap": {
+                "name": "wrap",
+                "type": "function",
+                "doc": "Wraps a coroutine in a function",
+                "returns": "function",
+                "args": {
+                    "f": {
+                        "name": "f",
+                        "type": "function",
+                        "doc": "The function to run"
+                    }
+                }
+            },
+            "yield": {
+                "name": "yield",
+                "type": "function",
+                "doc": "Pauses the current coroutine and returns execution to the caller",
+                "returns": "any",
+                "args": {
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "Any values to return from coroutine.resume()"
+                    }
+                }
+            }
+        },
+        "disk": {
+            "name": "disk",
+            "type": "field",
+            "inherits": [],
+            "doc": "Allows accessing data about disk drives",
+            "properties": {
+                "isPresent": {
+                    "name": "isPresent",
+                    "type": "function",
+                    "doc": "Returns whether an item is in the drive",
+                    "returns": "boolean",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "hasData": {
+                    "name": "hasData",
+                    "type": "function",
+                    "doc": "Returns whether a floppy disk is in the drive",
+                    "returns": "boolean",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "getMountPath": {
+                    "name": "getMountPath",
+                    "type": "function",
+                    "doc": "Returns the mount point of the disk",
+                    "returns": "string/nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "setLabel": {
+                    "name": "setLabel",
+                    "type": "function",
+                    "doc": "Sets the label of a disk",
+                    "returns": "nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        },
+                        "label": {
+                            "name": "label",
+                            "type": "string",
+                            "doc": "The name of the disk"
+                        }
+                    }
+                },
+                "getLabel": {
+                    "name": "getLabel",
+                    "type": "function",
+                    "doc": "Returns the label of a floppy disk",
+                    "returns": "string/nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "getID": {
+                    "name": "getID",
+                    "type": "function",
+                    "doc": "Returns the ID of a disk",
+                    "returns": "number/nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "hasAudio": {
+                    "name": "hasAudio",
+                    "type": "function",
+                    "doc": "Returns whether a music disc is in the drive",
+                    "returns": "boolean",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "getAudioTitle": {
+                    "name": "getAudioTitle",
+                    "type": "function",
+                    "doc": "Returns the name of the music disc inserted",
+                    "returns": "string/nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "playAudio": {
+                    "name": "playAudio",
+                    "type": "function",
+                    "doc": "Plays the music disc in the drive",
+                    "returns": "nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "stopAudio": {
+                    "name": "stopAudio",
+                    "type": "function",
+                    "doc": "Stops the music disc in the drive",
+                    "returns": "nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                },
+                "eject": {
+                    "name": "eject",
+                    "type": "function",
+                    "doc": "Ejects the object from the drive",
+                    "returns": "nil",
+                    "args": {
+                        "side": {
+                            "name": "side",
+                            "type": "string",
+                            "doc": "The side to check"
+                        }
+                    }
+                }
+            }
+        }
     }
-  }
 }

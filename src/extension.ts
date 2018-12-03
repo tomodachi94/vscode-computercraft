@@ -1,6 +1,6 @@
 "use strict"
 
-import vscode = require("vscode")
+import * as vscode from 'vscode'
 import L4RCApiData from "./ApiData"
 import { L4RCAutocomplete } from "./Autocomplete"
 import { L4RCHover } from "./Hover"
