@@ -2918,5 +2918,713 @@
                 }
             }
         }
+    },
+    "peripheral": {
+        "name": "peripheral",
+        "type": "field",
+        "inherits": [],
+        "doc": "Interacts with peripherals",
+        "properties": {
+            "isPresent": {
+                "name": "isPresent",
+                "type": "function",
+                "doc": "Checks if a peripheral is present on a side",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getType": {
+                "name": "getType",
+                "type": "function",
+                "doc": "Returns the type of peripheral on a side",
+                "returns": "string/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getMethods": {
+                "name": "getMethods",
+                "type": "function",
+                "doc": "Returns a list of methods that the peripheral has",
+                "returns": "table/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "call": {
+                "name": "call",
+                "type": "function",
+                "doc": "Calls a method in a peripheral",
+                "returns": "any",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "method": {
+                        "name": "method",
+                        "type": "string",
+                        "doc": "The method to call"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "Any arguments to pass to the method"
+                    }
+                }
+            },
+            "wrap": {
+                "name": "wrap",
+                "type": "function",
+                "doc": "Returns a table containing all of the methods of a peripheral",
+                "returns": "table/nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "find": {
+                "name": "find",
+                "type": "function",
+                "doc": "Finds peripherals of a type and returns their tables of methods (1.6+)",
+                "returns": "table/nil",
+                "args": {
+                    "type": {
+                        "name": "type",
+                        "type": "string",
+                        "doc": "The type of peripheral to find"
+                    },
+                    "fnFilter": {
+                        "name": "fnFilter",
+                        "type": "function",
+                        "doc": "A function that filters through the entries",
+                        "returns": "boolean",
+                        "args": {
+                            "name": {
+                                "name": "name",
+                                "type": "string",
+                                "doc": "The name of the peripheral"
+                            },
+                            "object": {
+                                "name": "object",
+                                "type": "table",
+                                "doc": "The table of methods"
+                            }
+                        }
+                    }
+                }
+            },
+            "getNames": {
+                "name": "getNames",
+                "type": "function",
+                "doc": "Returns a list of names of connected peripherals",
+                "returns": "table",
+                "args": {}
+            }
+        }
+    },
+    "rednet": {
+        "name": "rednet",
+        "type": "field",
+        "inherits": [],
+        "doc": "Controls transferring data over modems",
+        "properties": {
+            "open": {
+                "name": "open",
+                "type": "function",
+                "doc": "Opens a side for transcieving",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to open"
+                    }
+                }
+            },
+            "close": {
+                "name": "close",
+                "type": "function",
+                "doc": "Closes a side for transcieving",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to close"
+                    }
+                }
+            },
+            "send": {
+                "name": "send",
+                "type": "function",
+                "doc": "Sends a message to a computer",
+                "returns": "nil",
+                "args": {
+                    "recieverID": {
+                        "name": "recieverID",
+                        "type": "string",
+                        "doc": "The ID of the computer to recieve the message"
+                    },
+                    "message": {
+                        "name": "message",
+                        "type": "any",
+                        "doc": "The message to send"
+                    },
+                    "[protocol]": {
+                        "name": "[protocol]",
+                        "type": "string",
+                        "doc": "The protocol to use (1.6+)"
+                    }
+                }
+            },
+            "broadcast": {
+                "name": "broadcast",
+                "type": "function",
+                "doc": "Sends a message to all computers",
+                "returns": "nil",
+                "args": {
+                    "message": {
+                        "name": "message",
+                        "type": "any",
+                        "doc": "The message to send"
+                    },
+                    "[protocol]": {
+                        "name": "[protocol]",
+                        "type": "string",
+                        "doc": "The protocol to use (1.6+)"
+                    }
+                }
+            },
+            "recieve": {
+                "name": "recieve",
+                "type": "function",
+                "doc": "Waits for a message to be sent",
+                "returns": "number, any, number/string",
+                "args": {
+                    "[protocolFilter]": {
+                        "name": "[protocolFilter]",
+                        "type": "string",
+                        "doc": "The protocol to search for, requires timeout to be specified after"
+                    },
+                    "[timeout]": {
+                        "name": "[timeout]",
+                        "type": "number",
+                        "doc": "The maximim amount of time to wait for a message, defaults to 2"
+                    }
+                }
+            },
+            "isOpen": {
+                "name": "isOpen",
+                "type": "function",
+                "doc": "Checks if a modem is open",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "host": {
+                "name": "host",
+                "type": "function",
+                "doc": "Adds a hostname for a protocol for rednet.lookup() (1.6+)",
+                "returns": "nil",
+                "args": {
+                    "protocol": {
+                        "name": "protocol",
+                        "type": "string",
+                        "doc": "The protocol to use"
+                    },
+                    "hostname": {
+                        "name": "hostname",
+                        "type": "string",
+                        "doc": "The hostname to use"
+                    }
+                }
+            },
+            "unhost": {
+                "name": "unhost",
+                "type": "function",
+                "doc": "Removes a hostname for a protocol for rednet.lookup() (1.6+)",
+                "returns": "nil",
+                "args": {
+                    "protocol": {
+                        "name": "protocol",
+                        "type": "string",
+                        "doc": "The protocol to use"
+                    },
+                    "hostname": {
+                        "name": "hostname",
+                        "type": "string",
+                        "doc": "The hostname to use"
+                    }
+                }
+            },
+            "lookup": {
+                "name": "lookup",
+                "type": "function",
+                "doc": "Searches for a hostname or a protocol (1.6+)",
+                "returns": "nil",
+                "args": {
+                    "protocol": {
+                        "name": "protocol",
+                        "type": "string",
+                        "doc": "The protocol to use"
+                    },
+                    "[hostname]": {
+                        "name": "[hostname]",
+                        "type": "string",
+                        "doc": "The hostname to use (optional)"
+                    }
+                }
+            }
+        }
+    },
+    "redstone": {
+        "name": "redstone",
+        "type": "field",
+        "inherits": [],
+        "doc": "Controls redstone inputs and outputs",
+        "properties": {
+            "getSides": {
+                "name": "getSides",
+                "type": "function",
+                "doc": "Returns the sides available for redstone",
+                "returns": "table",
+                "args": {}
+            },
+            "getInput": {
+                "name": "getInput",
+                "type": "function",
+                "doc": "Returns the digital value of the redstone on a side",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setOutput": {
+                "name": "setOutput",
+                "type": "function",
+                "doc": "Sets the digital value of the redstone output on a side",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "boolean",
+                        "doc": "The value to set"
+                    }
+                }
+            },
+            "getOutput": {
+                "name": "getOutput",
+                "type": "function",
+                "doc": "Returns the digital value of the redstone that's being output on a side",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getAnalogInput": {
+                "name": "getAnalogInput",
+                "type": "function",
+                "doc": "Returns the analog value of the redstone on a side (1.51+)",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setAnalogOutput": {
+                "name": "setAnalogOutput",
+                "type": "function",
+                "doc": "Sets the analog value of the redstone output on a side (1.51+)",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "number",
+                        "doc": "The value to set"
+                    }
+                }
+            },
+            "getAnalogOutput": {
+                "name": "getAnalogOutput",
+                "type": "function",
+                "doc": "Returns the analog value of the redstone that's being output on a side (1.51+)",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getBundledInput": {
+                "name": "getBundledInput",
+                "type": "function",
+                "doc": "Returns the value of the bundled redstone on a side",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setBundledOutput": {
+                "name": "setBundledOutput",
+                "type": "function",
+                "doc": "Sets the value of the bundled redstone output on a side",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "colors": {
+                        "name": "colors",
+                        "type": "number",
+                        "doc": "The value to set as a bitmask of colors"
+                    }
+                }
+            },
+            "getBundledOutput": {
+                "name": "getBundledOutput",
+                "type": "function",
+                "doc": "Returns the value of the bundled redstone that's being output on a side",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "testBundledOutput": {
+                "name": "testBundledOutput",
+                "type": "function",
+                "doc": "Checks if a color is active in a bundled redstone wire",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The value to set as a bitmask"
+                    }
+                }
+            }
+        }
+    },
+    "rs": {
+        "name": "rs",
+        "type": "field",
+        "inherits": [],
+        "doc": "Controls redstone inputs and outputs",
+        "properties": {
+            "getSides": {
+                "name": "getSides",
+                "type": "function",
+                "doc": "Returns the sides available for redstone",
+                "returns": "table",
+                "args": {}
+            },
+            "getInput": {
+                "name": "getInput",
+                "type": "function",
+                "doc": "Returns the digital value of the redstone on a side",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setOutput": {
+                "name": "setOutput",
+                "type": "function",
+                "doc": "Sets the digital value of the redstone output on a side",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "boolean",
+                        "doc": "The value to set"
+                    }
+                }
+            },
+            "getOutput": {
+                "name": "getOutput",
+                "type": "function",
+                "doc": "Returns the digital value of the redstone that's being output on a side",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getAnalogInput": {
+                "name": "getAnalogInput",
+                "type": "function",
+                "doc": "Returns the analog value of the redstone on a side (1.51+)",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setAnalogOutput": {
+                "name": "setAnalogOutput",
+                "type": "function",
+                "doc": "Sets the analog value of the redstone output on a side (1.51+)",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "number",
+                        "doc": "The value to set"
+                    }
+                }
+            },
+            "getAnalogOutput": {
+                "name": "getAnalogOutput",
+                "type": "function",
+                "doc": "Returns the analog value of the redstone that's being output on a side (1.51+)",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "getBundledInput": {
+                "name": "getBundledInput",
+                "type": "function",
+                "doc": "Returns the value of the bundled redstone on a side",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "setBundledOutput": {
+                "name": "setBundledOutput",
+                "type": "function",
+                "doc": "Sets the value of the bundled redstone output on a side",
+                "returns": "nil",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "colors": {
+                        "name": "colors",
+                        "type": "number",
+                        "doc": "The value to set as a bitmask of colors"
+                    }
+                }
+            },
+            "getBundledOutput": {
+                "name": "getBundledOutput",
+                "type": "function",
+                "doc": "Returns the value of the bundled redstone that's being output on a side",
+                "returns": "number",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    }
+                }
+            },
+            "testBundledOutput": {
+                "name": "testBundledOutput",
+                "type": "function",
+                "doc": "Checks if a color is active in a bundled redstone wire",
+                "returns": "boolean",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string",
+                        "doc": "The side to check"
+                    },
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The value to set as a bitmask"
+                    }
+                }
+            }
+        }
+    },
+    "settings": {
+        "name": "settings",
+        "type": "field",
+        "inherits": [],
+        "doc": "Controls settings for CraftOS and programs (1.77+)",
+        "properties": {
+            "set": {
+                "name": "set",
+                "type": "function",
+                "doc": "Sets a setting in the current settings",
+                "returns": "nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The key for the setting"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "any",
+                        "doc": "The value for the setting"
+                    }
+                }
+            },
+            "get": {
+                "name": "get",
+                "type": "function",
+                "doc": "Gets a setting from the current settings",
+                "returns": "any",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The key for the setting"
+                    },
+                    "[default]": {
+                        "name": "[default]",
+                        "type": "any",
+                        "doc": "The default value to return if it doesn't exist"
+                    }
+                }
+            },
+            "unset": {
+                "name": "unset",
+                "type": "function",
+                "doc": "Removes a setting in the current settings",
+                "returns": "nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The key for the setting"
+                    }
+                }
+            },
+            "clear": {
+                "name": "clear",
+                "type": "function",
+                "doc": "Clears all settings",
+                "returns": "nil",
+                "args": {}
+            },
+            "getNames": {
+                "name": "getNames",
+                "type": "function",
+                "doc": "Returns a list of keys",
+                "returns": "table",
+                "args": {}
+            },
+            "load": {
+                "name": "load",
+                "type": "function",
+                "doc": "Loads settings from a file",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The file to access"
+                    }
+                }
+            },
+            "save": {
+                "name": "save",
+                "type": "function",
+                "doc": "Saves settings to a file",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The file to access"
+                    }
+                }
+            }
+        }
     }
 }
