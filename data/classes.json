@@ -1,4 +1,17 @@
 {
+    "sleep": {
+        "name": "sleep",
+        "type": "function",
+        "doc": "Sleeps for a number of seconds",
+        "returns": "nil",
+        "args": {
+            "time": {
+                "name": "time",
+                "type": "number",
+                "doc": "The number of seconds to sleep"
+            }
+        }
+    },
     "bit": {
         "name": "bit",
         "type": "field",
@@ -2392,7 +2405,7 @@
                         "doc": "The path to the program to run"
                     },
                     "[arguments]": {
-                        "name": "arguments",
+                        "name": "[arguments]",
                         "type": "string",
                         "doc": "Any arguments to pass to the program"
                     }
@@ -2448,6 +2461,461 @@
                 "doc": "Returns the ID of the current tab",
                 "returns": "number",
                 "args": {}
+            }
+        }
+    },
+    "os": {
+        "name": "os",
+        "type": "field",
+        "inherits": [],
+        "doc": "Interfaces with CraftOS and the computer",
+        "properties": {
+            "version": {
+                "name": "version",
+                "type": "function",
+                "doc": "Returns the version of CraftOS running on the computer",
+                "returns": "string",
+                "args": {}
+            },
+            "getComputerID": {
+                "name": "getComputerID",
+                "type": "function",
+                "doc": "Returns the ID of the current computer",
+                "returns": "number",
+                "args": {}
+            },
+            "getComputerLabel": {
+                "name": "getComputerLabel",
+                "type": "function",
+                "doc": "Returns the label of the computer",
+                "returns": "string/nil",
+                "args": {}
+            },
+            "setComputerLabel": {
+                "name": "setComputerLabel",
+                "type": "function",
+                "doc": "Sets the label of the computer",
+                "returns": "nil",
+                "args": {
+                    "label": {
+                        "name": "label",
+                        "type": "string/nil",
+                        "doc": "The new label or nil"
+                    }
+                }
+            },
+            "run": {
+                "name": "run",
+                "type": "function",
+                "doc": "Runs a Lua script with the specified environment",
+                "returns": "boolean",
+                "args": {
+                    "environment": {
+                        "name": "environment",
+                        "type": "table",
+                        "doc": "The environment to pass to the program"
+                    },
+                    "programPath": {
+                        "name": "programPath",
+                        "type": "string",
+                        "doc": "The path to the program to run"
+                    },
+                    "[arguments]": {
+                        "name": "[arguments]",
+                        "type": "string",
+                        "doc": "Any arguments to pass to the program"
+                    }
+                }
+            },
+            "loadAPI": {
+                "name": "loadAPI",
+                "type": "function",
+                "doc": "Loads an API into the global table",
+                "returns": "boolean",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to the API to load"
+                    }
+                }
+            },
+            "unloadAPI": {
+                "name": "unloadAPI",
+                "type": "function",
+                "doc": "Unloads a previously loaded API",
+                "returns": "nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The name of the API"
+                    }
+                }
+            },
+            "pullEvent": {
+                "name": "pullEvent",
+                "type": "function",
+                "doc": "Waits for an event to occur",
+                "returns": "string, any...",
+                "args": {
+                    "[target-event]": {
+                        "name": "[target-event]",
+                        "type": "string",
+                        "doc": "A filter specifying which event to wait for (optional)"
+                    }
+                }
+            },
+            "pullEventRaw": {
+                "name": "pullEventRaw",
+                "type": "function",
+                "doc": "Waits for an event to occur (doesn't terminate)",
+                "returns": "string, any...",
+                "args": {
+                    "[target-event]": {
+                        "name": "[target-event]",
+                        "type": "string",
+                        "doc": "A filter specifying which event to wait for (optional)"
+                    }
+                }
+            },
+            "queueEvent": {
+                "name": "queueEvent",
+                "type": "function",
+                "doc": "Adds an event to the event queue",
+                "returns": "nil",
+                "args": {
+                    "event": {
+                        "name": "event",
+                        "type": "string",
+                        "doc": "The event to queue"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "Any parameters to pass in the event"
+                    }
+                }
+            },
+            "clock": {
+                "name": "clock",
+                "type": "function",
+                "doc": "Returns the amount of time since the computer was started",
+                "returns": "number",
+                "args": {}
+            },
+            "startTimer": {
+                "name": "startTimer",
+                "type": "function",
+                "doc": "Queues an event after an amount of seconds has passed, and returns the ID",
+                "returns": "number",
+                "args": {
+                    "timeout": {
+                        "name": "timeout",
+                        "type": "number",
+                        "doc": "The number of seconds to wait"
+                    }
+                }
+            },
+            "cancelTimer": {
+                "name": "cancelTimer",
+                "type": "function",
+                "doc": "Cancels a previously started timer",
+                "returns": "nil",
+                "args": {
+                    "timerID": {
+                        "name": "timerID",
+                        "type": "number",
+                        "doc": "The ID of the timer"
+                    }
+                }
+            },
+            "time": {
+                "name": "time",
+                "type": "function",
+                "doc": "Returns the current in-game time",
+                "returns": "number",
+                "args": {}
+            },
+            "sleep": {
+                "name": "sleep",
+                "type": "function",
+                "doc": "Sleeps for a number of seconds",
+                "returns": "nil",
+                "args": {
+                    "time": {
+                        "name": "time",
+                        "type": "number",
+                        "doc": "The number of seconds to sleep"
+                    }
+                }
+            },
+            "day": {
+                "name": "day",
+                "type": "function",
+                "doc": "Returns the current in-game day",
+                "returns": "number",
+                "args": {}
+            },
+            "setAlarm": {
+                "name": "setAlarm",
+                "type": "function",
+                "doc": "Sets an alarm to activate at an in-game time, and returns the ID",
+                "returns": "number",
+                "args": {
+                    "time": {
+                        "name": "time",
+                        "type": "number",
+                        "doc": "The time to activate at"
+                    }
+                }
+            },
+            "cancelAlarm": {
+                "name": "cancelAlarm",
+                "type": "function",
+                "doc": "Cancels a previously started alarm",
+                "returns": "nil",
+                "args": {
+                    "alarmID": {
+                        "name": "alarmID",
+                        "type": "number",
+                        "doc": "The ID of the alarm"
+                    }
+                }
+            },
+            "shutdown": {
+                "name": "shutdown",
+                "type": "function",
+                "doc": "Powers off the computer",
+                "returns": "nil",
+                "args": {}
+            },
+            "reboot": {
+                "name": "reboot",
+                "type": "function",
+                "doc": "Reboots the computer",
+                "returns": "nil",
+                "args": {}
+            }
+        }
+    },
+    "paintutils": {
+        "name": "paintutils",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows drawing on the screen (Advanced only)",
+        "properties": {
+            "loadImage": {
+                "name": "loadImage",
+                "type": "function",
+                "doc": "Loads and returns an image from a file",
+                "returns": "table",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to the file to load"
+                    }
+                }
+            },
+            "drawImage": {
+                "name": "drawImage",
+                "type": "function",
+                "doc": "Draws an image on the screen",
+                "returns": "nil",
+                "args": {
+                    "image": {
+                        "name": "image",
+                        "type": "table",
+                        "doc": "The image to draw"
+                    },
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "The X coordinate"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "The Y coordinate"
+                    }
+                }
+            },
+            "drawPixel": {
+                "name": "drawPixel",
+                "type": "function",
+                "doc": "Draws a pixel on the screen",
+                "returns": "nil",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "The X coordinate"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "The Y coordinate"
+                    },
+                    "[color]": {
+                        "name": "[color]",
+                        "type": "color",
+                        "doc": "The color to paint with"
+                    }
+                }
+            },
+            "drawLine": {
+                "name": "drawLine",
+                "type": "function",
+                "doc": "Draws a line on the screen",
+                "returns": "nil",
+                "args": {
+                    "startX": {
+                        "name": "startX",
+                        "type": "number",
+                        "doc": "The first X coordinate"
+                    },
+                    "startY": {
+                        "name": "startY",
+                        "type": "number",
+                        "doc": "The first Y coordinate"
+                    },
+                    "endX": {
+                        "name": "endX",
+                        "type": "number",
+                        "doc": "The second X coordinate"
+                    },
+                    "endY": {
+                        "name": "endY",
+                        "type": "number",
+                        "doc": "The second Y coordinate"
+                    },
+                    "[color]": {
+                        "name": "[color]",
+                        "type": "color",
+                        "doc": "The color to paint with"
+                    }
+                }
+            },
+            "drawBox": {
+                "name": "drawBox",
+                "type": "function",
+                "doc": "Draws a box on the screen (1.64+)",
+                "returns": "nil",
+                "args": {
+                    "startX": {
+                        "name": "startX",
+                        "type": "number",
+                        "doc": "The first X coordinate"
+                    },
+                    "startY": {
+                        "name": "startY",
+                        "type": "number",
+                        "doc": "The first Y coordinate"
+                    },
+                    "endX": {
+                        "name": "endX",
+                        "type": "number",
+                        "doc": "The second X coordinate"
+                    },
+                    "endY": {
+                        "name": "endY",
+                        "type": "number",
+                        "doc": "The second Y coordinate"
+                    },
+                    "[color]": {
+                        "name": "[color]",
+                        "type": "color",
+                        "doc": "The color to paint with"
+                    }
+                }
+            },
+            "drawFilledBox": {
+                "name": "drawFilledBox",
+                "type": "function",
+                "doc": "Draws a filled box on the screen (1.64+)",
+                "returns": "nil",
+                "args": {
+                    "startX": {
+                        "name": "startX",
+                        "type": "number",
+                        "doc": "The first X coordinate"
+                    },
+                    "startY": {
+                        "name": "startY",
+                        "type": "number",
+                        "doc": "The first Y coordinate"
+                    },
+                    "endX": {
+                        "name": "endX",
+                        "type": "number",
+                        "doc": "The second X coordinate"
+                    },
+                    "endY": {
+                        "name": "endY",
+                        "type": "number",
+                        "doc": "The second Y coordinate"
+                    },
+                    "[color]": {
+                        "name": "[color]",
+                        "type": "color",
+                        "doc": "The color to paint with"
+                    }
+                }
+            }
+        }
+    },
+    "parallel": {
+        "name": "parallel",
+        "type": "field",
+        "inherits": [],
+        "doc": "Allows easier multitasking",
+        "properties": {
+            "waitForAny": {
+                "name": "waitForAny",
+                "type": "function",
+                "doc": "Runs the functions all at once and waits for one to return",
+                "returns": "number",
+                "args": {
+                    "function1": {
+                        "name": "function1",
+                        "type": "function",
+                        "doc": "The first function"
+                    },
+                    "function2": {
+                        "name": "function2",
+                        "type": "function",
+                        "doc": "The second function"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "function",
+                        "doc": "Any other functions"
+                    }
+                }
+            },
+            "waitForAll": {
+                "name": "waitForAll",
+                "type": "function",
+                "doc": "Runs the functions all at once and waits for all to return",
+                "returns": "nil",
+                "args": {
+                    "function1": {
+                        "name": "function1",
+                        "type": "function",
+                        "doc": "The first function"
+                    },
+                    "function2": {
+                        "name": "function2",
+                        "type": "function",
+                        "doc": "The second function"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "function",
+                        "doc": "Any other functions"
+                    }
+                }
             }
         }
     }
