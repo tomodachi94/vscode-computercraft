@@ -3626,5 +3626,612 @@
                 }
             }
         }
+    },
+    "shell": {
+        "name": "shell",
+        "type": "field",
+        "inherits": [],
+        "doc": "Interacts with the CraftOS shell - not available to APIs",
+        "properties": {
+            "exit": {
+                "name": "exit",
+                "type": "function",
+                "doc": "Exits the current shell",
+                "returns": "nil",
+                "args": {}
+            },
+            "dir": {
+                "name": "dir",
+                "type": "function",
+                "doc": "Returns the current working directory",
+                "returns": "string",
+                "args": {}
+            },
+            "setDir": {
+                "name": "setDir",
+                "type": "function",
+                "doc": "Sets the current working directory",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The directory to set"
+                    }
+                }
+            },
+            "path": {
+                "name": "path",
+                "type": "function",
+                "doc": "Returns the current PATH",
+                "returns": "string",
+                "args": {}
+            },
+            "setPath": {
+                "name": "setPath",
+                "type": "function",
+                "doc": "Sets the current PATH",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The PATH to set"
+                    }
+                }
+            },
+            "resolve": {
+                "name": "resolve",
+                "type": "function",
+                "doc": "Resolves a local path to an absolute path",
+                "returns": "string",
+                "args": {
+                    "localPath": {
+                        "name": "localPath",
+                        "type": "string",
+                        "doc": "The local path to resolve"
+                    }
+                }
+            },
+            "resolveProgram": {
+                "name": "resolveProgram",
+                "type": "function",
+                "doc": "Returns the path to a program name",
+                "returns": "string",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The name of the program"
+                    }
+                }
+            },
+            "aliases": {
+                "name": "aliases",
+                "type": "function",
+                "doc": "Returns a dictionary of aliases for programs",
+                "returns": "table",
+                "args": {}
+            },
+            "setAlias": {
+                "name": "setAlias",
+                "type": "function",
+                "doc": "Sets an alias for a program",
+                "returns": "nil",
+                "args": {
+                    "alias": {
+                        "name": "alias",
+                        "type": "string",
+                        "doc": "The name of the alias"
+                    },
+                    "program": {
+                        "name": "program",
+                        "type": "string",
+                        "doc": "The name of the program"
+                    }
+                }
+            },
+            "clearAlias": {
+                "name": "clearAlias",
+                "type": "function",
+                "doc": "Removes an alias",
+                "returns": "nil",
+                "args": {
+                    "alias": {
+                        "name": "alias",
+                        "type": "string",
+                        "doc": "The name of the alias"
+                    }
+                }
+            },
+            "programs": {
+                "name": "programs",
+                "type": "function",
+                "doc": "Returns a list of all programs in the working directory and PATH",
+                "returns": "table",
+                "args": {
+                    "[showHidden]": {
+                        "name": "[showHidden]",
+                        "type": "boolean",
+                        "doc": "Whether to show hidden programs"
+                    }
+                }
+            },
+            "getRunningProgram": {
+                "name": "getRunningProgram",
+                "type": "function",
+                "doc": "Returns the absolute path to the current program",
+                "returns": "string",
+                "args": {}
+            },
+            "run": {
+                "name": "run",
+                "type": "function",
+                "doc": "Runs a program/command",
+                "returns": "boolean",
+                "args": {
+                    "command": {
+                        "name": "command",
+                        "type": "string",
+                        "doc": "The command to run"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "string",
+                        "doc": "Any arguments to pass to the program"
+                    }
+                }
+            },
+            "openTab": {
+                "name": "openTab",
+                "type": "function",
+                "doc": "Opens a program in a new tab (1.6+, advanced)",
+                "returns": "number",
+                "args": {
+                    "command": {
+                        "name": "command",
+                        "type": "string",
+                        "doc": "The command to run"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "string",
+                        "doc": "Any arguments to pass to the program"
+                    }
+                }
+            },
+            "switchTab": {
+                "name": "switchTab",
+                "type": "function",
+                "doc": "Changes the current tab (1.6+, advanced)",
+                "returns": "nil",
+                "args": {
+                    "tabID": {
+                        "name": "tabID",
+                        "type": "number",
+                        "doc": "The ID of the tab to switch to"
+                    }
+                }
+            },
+            "complete": {
+                "name": "complete",
+                "type": "function",
+                "doc": "Returns a list of suffixes that could complete a prefix (1.74+)",
+                "returns": "table",
+                "args": {
+                    "prefix": {
+                        "name": "prefix",
+                        "type": "string",
+                        "doc": "The prefix to complete"
+                    }
+                }
+            },
+            "completeProgram": {
+                "name": "completeProgram",
+                "type": "function",
+                "doc": "Returns a list of suffixes that could complete a program prefix (1.74+)",
+                "returns": "table",
+                "args": {
+                    "prefix": {
+                        "name": "prefix",
+                        "type": "string",
+                        "doc": "The prefix to complete"
+                    }
+                }
+            },
+            "setCompletionFunction": {
+                "name": "setCompletionFunction",
+                "type": "function",
+                "doc": "Registers a completion function that is called by shell.complete()",
+                "returns": "nil",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path that this will be called on"
+                    },
+                    "completionFunction": {
+                        "name": "completionFunction",
+                        "type": "function",
+                        "doc": "The function to call"
+                    }
+                }
+            },
+            "getCompletionInfo": {
+                "name": "getCompletionInfo",
+                "type": "function",
+                "doc": "Returns the table containing functions registered for shell.complete()",
+                "returns": "table",
+                "args": {}
+            }
+        }
+    },
+    "string": {
+        "name": "string",
+        "type": "byte",
+        "inherits": [],
+        "doc": "Default Lua string library",
+        "properties": {
+            "byte": {
+                "name": "byte",
+                "type": "function",
+                "doc": "Returns the numerical codes for each character in a string",
+                "returns": "number...",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "[i]": {
+                        "name": "[i]",
+                        "type": "number",
+                        "doc": "The first index (optional)"
+                    },
+                    "[j]": {
+                        "name": "[j]",
+                        "type": "number",
+                        "doc": "The last index (optional)"
+                    }
+                }
+            },
+            "char": {
+                "name": "char",
+                "type": "function",
+                "doc": "Returns a string from numerical codes",
+                "returns": "string",
+                "args": {
+                    "...": {
+                        "name": "...",
+                        "type": "number",
+                        "doc": "The values of the characters"
+                    }
+                }
+            },
+            "dump": {
+                "name": "dump",
+                "type": "function",
+                "doc": "Returns a string containing a binary representation of a function",
+                "returns": "string",
+                "args": {
+                    "function": {
+                        "name": "function",
+                        "type": "function",
+                        "doc": "The function to dump"
+                    }
+                }
+            },
+            "find": {
+                "name": "find",
+                "type": "function",
+                "doc": "Finds the location of a pattern in a string",
+                "returns": "number",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "pattern": {
+                        "name": "pattern",
+                        "type": "string",
+                        "doc": "The pattern to search for"
+                    },
+                    "[init]": {
+                        "name": "[init]",
+                        "type": "number",
+                        "doc": "The first index (optional)"
+                    },
+                    "[plain]": {
+                        "name": "[plain]",
+                        "type": "boolean",
+                        "doc": "Whether the pattern is a plain string, or a special pattern"
+                    }
+                }
+            },
+            "format": {
+                "name": "format",
+                "type": "function",
+                "doc": "Returns a formatted string based on a pattern",
+                "returns": "string",
+                "args": {
+                    "formatstring": {
+                        "name": "formatstring",
+                        "type": "string",
+                        "doc": "The format string"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "The values to substitute"
+                    }
+                }
+            },
+            "gmatch": {
+                "name": "gmatch",
+                "type": "function",
+                "doc": "Returns an iterator function that returns each match in a string",
+                "returns": "function",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "pattern": {
+                        "name": "pattern",
+                        "type": "string",
+                        "doc": "The pattern to search for"
+                    }
+                }
+            },
+            "gsub": {
+                "name": "gsub",
+                "type": "function",
+                "doc": "Returns a copy of a string where a pattern has been replaced",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "pattern": {
+                        "name": "pattern",
+                        "type": "string",
+                        "doc": "The pattern to search for"
+                    },
+                    "repl": {
+                        "name": "repl",
+                        "type": "string/table/function",
+                        "doc": "The replacement (see string.gsub reference)"
+                    }
+                }
+            },
+            "len": {
+                "name": "len",
+                "type": "function",
+                "doc": "Returns the length of a string",
+                "returns": "number",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    }
+                }
+            },
+            "lower": {
+                "name": "lower",
+                "type": "function",
+                "doc": "Returns a copy of a string where all characters are lowercase",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    }
+                }
+            },
+            "match": {
+                "name": "match",
+                "type": "function",
+                "doc": "Returns a list of matches for a pattern in a string",
+                "returns": "string/nil",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "pattern": {
+                        "name": "pattern",
+                        "type": "string",
+                        "doc": "The pattern to search for"
+                    },
+                    "[init]": {
+                        "name": "[init]",
+                        "type": "number",
+                        "doc": "The first index (optional)"
+                    }
+                }
+            },
+            "rep": {
+                "name": "rep",
+                "type": "function",
+                "doc": "Returns a string repeating another string a number of times",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "The number of times to repeat"
+                    }
+                }
+            },
+            "reverse": {
+                "name": "reverse",
+                "type": "function",
+                "doc": "Returns a string that is the reverse of the first string",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    }
+                }
+            },
+            "sub": {
+                "name": "sub",
+                "type": "function",
+                "doc": "Returns a substring starting at i and continuing to j",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    },
+                    "i": {
+                        "name": "i",
+                        "type": "number",
+                        "doc": "The first index"
+                    },
+                    "[j]": {
+                        "name": "[j]",
+                        "type": "number",
+                        "doc": "The last index (optional)"
+                    }
+                }
+            },
+            "upper": {
+                "name": "upper",
+                "type": "function",
+                "doc": "Returns a copy of a string where all characters are uppercase",
+                "returns": "string",
+                "args": {
+                    "s": {
+                        "name": "s",
+                        "type": "string",
+                        "doc": "The string to use"
+                    }
+                }
+            }
+        }
+    },
+    "table": {
+        "name": "table",
+        "type": "field",
+        "inherits": [],
+        "doc": "Default Lua table API",
+        "properties": {
+            "concat": {
+                "name": "concat",
+                "type": "function",
+                "doc": "Inserts values in between every value in a table (or something)",
+                "returns": "table",
+                "args": {
+                    "table": {
+                        "name": "table",
+                        "type": "table",
+                        "doc": "The table to use"
+                    },
+                    "[sep]": {
+                        "name": "[sep]",
+                        "type": "any",
+                        "doc": "A separator to insert between every value (optional)"
+                    },
+                    "[i]": {
+                        "name": "[i]",
+                        "type": "number",
+                        "doc": "The first index (optional)"
+                    },
+                    "[j]": {
+                        "name": "[j]",
+                        "type": "number",
+                        "doc": "The last index (optional)"
+                    }
+                }
+            },
+            "insert": {
+                "name": "insert",
+                "type": "function",
+                "doc": "Inserts a value at a position or the end",
+                "returns": "nil",
+                "args": {
+                    "table": {
+                        "name": "table",
+                        "type": "table",
+                        "doc": "The table to use"
+                    },
+                    "[pos]": {
+                        "name": "[pos]",
+                        "type": "number",
+                        "doc": "The position to place the value at"
+                    },
+                    "value": {
+                        "name": "value",
+                        "type": "any",
+                        "doc": "The value to insert"
+                    }
+                }
+            },
+            "maxn": {
+                "name": "maxn",
+                "type": "function",
+                "doc": "Returns the largest numerical index in a table",
+                "returns": "number",
+                "args": {
+                    "table": {
+                        "name": "table",
+                        "type": "table",
+                        "doc": "The table to use"
+                    }
+                }
+            },
+            "remove": {
+                "name": "remove",
+                "type": "function",
+                "doc": "Removes a value from a table at a position",
+                "returns": "any",
+                "args": {
+                    "table": {
+                        "name": "table",
+                        "type": "table",
+                        "doc": "The table to use"
+                    },
+                    "[pos]": {
+                        "name": "[pos]",
+                        "type": "number",
+                        "doc": "The position to remove the value at"
+                    }
+                }
+            },
+            "sort": {
+                "name": "sort",
+                "type": "function",
+                "doc": "Sorts a table by value, using a function if provided",
+                "returns": "nil",
+                "args": {
+                    "table": {
+                        "name": "table",
+                        "type": "table",
+                        "doc": "The table to use (modified)"
+                    },
+                    "[comp]": {
+                        "name": "[comp]",
+                        "type": "function",
+                        "doc": "A function that determines if a value should come after another"
+                    }
+                }
+            }
+        }
     }
 }
