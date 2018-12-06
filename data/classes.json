@@ -4228,7 +4228,7 @@
                     "[comp]": {
                         "name": "[comp]",
                         "type": "function",
-                        "doc": "A function that determines if a value should come after another"
+                        "doc": "A function that determines if a value should come before another"
                     }
                 }
             }
