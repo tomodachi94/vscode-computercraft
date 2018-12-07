@@ -4423,5 +4423,307 @@
                 "args": {}
             }
         }
+    },
+    "textutils": {
+        "name": "textutils",
+        "type": "field",
+        "inherits": [],
+        "doc": "Formats and manipulates strings",
+        "properties": {
+            "slowWrite": {
+                "name": "slowWrite",
+                "type": "function",
+                "doc": "Writes text to the screen slowly",
+                "returns": "nil",
+                "args": {
+                    "text": {
+                        "name": "text",
+                        "type": "string",
+                        "doc": "The text to write"
+                    },
+                    "rate": {
+                        "name": "rate",
+                        "type": "number",
+                        "doc": "The number of characters to write per second"
+                    }
+                }
+            },
+            "slowPrint": {
+                "name": "slowPrint",
+                "type": "function",
+                "doc": "Writes text to the screen slowly, with a newline",
+                "returns": "nil",
+                "args": {
+                    "text": {
+                        "name": "text",
+                        "type": "string",
+                        "doc": "The text to write"
+                    },
+                    "rate": {
+                        "name": "rate",
+                        "type": "number",
+                        "doc": "The number of characters to write per second"
+                    }
+                }
+            },
+            "formatTime": {
+                "name": "formatTime",
+                "type": "function",
+                "doc": "Returns a string representing a Minecraft time in either 12-hour or 24-hour time",
+                "returns": "string",
+                "args": {
+                    "time": {
+                        "name": "time",
+                        "type": "number",
+                        "doc": "The time to format"
+                    },
+                    "[twentyFourHour]": {
+                        "name": "[twentyFourHour]",
+                        "type": "boolean",
+                        "doc": "Whether to display the time in 24-hour time (optional)"
+                    }
+                }
+            },
+            "tabulate": {
+                "name": "tabulate",
+                "type": "function",
+                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered",
+                "returns": "nil",
+                "args": {
+                    "...": {
+                        "name": "...",
+                        "type": "table/color",
+                        "doc": "The rows to display or the color of the text"
+                    }
+                }
+            },
+            "pagedTabulate": {
+                "name": "tabulate",
+                "type": "function",
+                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered (paged)",
+                "returns": "nil",
+                "args": {
+                    "...": {
+                        "name": "...",
+                        "type": "table/color",
+                        "doc": "The rows to display or the color of the text"
+                    }
+                }
+            },
+            "pagedPrint": {
+                "name": "pagedPrint",
+                "type": "function",
+                "doc": "Prints text, but waits to scroll if too much text is displayed",
+                "returns": "number",
+                "args": {
+                    "text": {
+                        "name": "text",
+                        "type": "string",
+                        "doc": "The text to write"
+                    },
+                    "[freeLines]": {
+                        "name": "[freeLines]",
+                        "type": "number",
+                        "doc": "The number of lines to write before waiting (optional)"
+                    }
+                }
+            },
+            "serialize": {
+                "name": "serialize",
+                "type": "function",
+                "doc": "Converts a value into a string representation",
+                "returns": "string",
+                "args": {
+                    "data": {
+                        "name": "data",
+                        "type": "any",
+                        "doc": "The value to convert"
+                    }
+                }
+            },
+            "serialise": {
+                "name": "serialise",
+                "type": "function",
+                "doc": "Converts a value into a string representation (UK) (1.6+)",
+                "returns": "string",
+                "args": {
+                    "data": {
+                        "name": "data",
+                        "type": "any",
+                        "doc": "The value to convert"
+                    }
+                }
+            },
+            "unserialize": {
+                "name": "unserialize",
+                "type": "function",
+                "doc": "Converts a string representation into a value",
+                "returns": "any",
+                "args": {
+                    "data": {
+                        "name": "serializedData",
+                        "type": "string",
+                        "doc": "The value to convert"
+                    }
+                }
+            },
+            "unserialise": {
+                "name": "unserialise",
+                "type": "function",
+                "doc": "Converts a string representation into a value (UK) (1.6+)",
+                "returns": "any",
+                "args": {
+                    "data": {
+                        "name": "serializedData",
+                        "type": "string",
+                        "doc": "The value to convert"
+                    }
+                }
+            },
+            "serializeJSON": {
+                "name": "serialize",
+                "type": "function",
+                "doc": "Converts a value into a JSON string (1.7+)",
+                "returns": "string",
+                "args": {
+                    "data": {
+                        "name": "data",
+                        "type": "any",
+                        "doc": "The value to convert"
+                    },
+                    "[unquote keys]": {
+                        "name": "[unquote keys]",
+                        "type": "boolean",
+                        "doc": "Whether to strip the quotation marks from keys (for MC commands)"
+                    }
+                }
+            },
+            "serialiseJSON": {
+                "name": "serialise",
+                "type": "function",
+                "doc": "Converts a value into a JSON string (UK) (1.7+)",
+                "returns": "string",
+                "args": {
+                    "data": {
+                        "name": "data",
+                        "type": "any",
+                        "doc": "The value to convert"
+                    },
+                    "[unquote keys]": {
+                        "name": "[unquote keys]",
+                        "type": "boolean",
+                        "doc": "Whether to strip the quotation marks from keys (for MC commands)"
+                    }
+                }
+            },
+            "urlEncode": {
+                "name": "urlEncode",
+                "type": "function",
+                "doc": "Makes a string safe for a URL",
+                "returns": "string",
+                "args": {
+                    "urlUnsafeString": {
+                        "name": "urlUnsafeString",
+                        "type": "string",
+                        "doc": "The string to encode"
+                    }
+                }
+            },
+            "complete": {
+                "name": "complete",
+                "type": "function",
+                "doc": "Returns a list of suffixes that could be combined with a prefix in an environment (1.74+)",
+                "returns": "table",
+                "args": {
+                    "partial name": {
+                        "name": "partial name",
+                        "type": "string",
+                        "doc": "Part of a variable name"
+                    },
+                    "[environment]": {
+                        "name": "[environment]",
+                        "type": "table",
+                        "doc": "The environment to search in (optional)"
+                    }
+                }
+            }
+        }
+    },
+    "vector": {
+        "name": "vector",
+        "type": "field",
+        "inherits": [],
+        "doc": "Creates vector objects",
+        "properties": {
+            "new": {
+                "name": "new",
+                "type": "function",
+                "doc": "Creates a new vector",
+                "returns": "table",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "The X coordinate"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "The Y coordinate"
+                    },
+                    "z": {
+                        "name": "z",
+                        "type": "number",
+                        "doc": "The Z coordinate"
+                    }
+                }
+            }
+        }
+    },
+    "window": {
+        "name": "window",
+        "type": "field",
+        "inherits": [],
+        "doc": "Creates window objects",
+        "properties": {
+            "create": {
+                "name": "create",
+                "type": "function",
+                "doc": "Creates a new window",
+                "returns": "table",
+                "args": {
+                    "parentTerm": {
+                        "name": "parentTerm",
+                        "type": "table",
+                        "doc": "The parent terminal of the window (use term.native() instead of term)"
+                    },
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "The X coordinate"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "The Y coordinate"
+                    },
+                    "width": {
+                        "name": "width",
+                        "type": "number",
+                        "doc": "The width"
+                    },
+                    "height": {
+                        "name": "height",
+                        "type": "number",
+                        "doc": "The height"
+                    },
+                    "[visible]": {
+                        "name": "[visible]",
+                        "type": "boolean",
+                        "doc": "Whether the window is visible by default (optional)"
+                    }
+                }
+            }
+        }
     }
 }
