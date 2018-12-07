@@ -4233,5 +4233,195 @@
                 }
             }
         }
+    },
+    "term": {
+        "name": "term",
+        "type": "field",
+        "inherits": [],
+        "doc": "Provides functions for writing to the terminal",
+        "properties": {
+            "write": {
+                "name": "write",
+                "type": "function",
+                "doc": "Writes text to the screen",
+                "returns": "nil",
+                "args": {
+                    "text": {
+                        "name": "text",
+                        "type": "string",
+                        "doc": "The text to write"
+                    }
+                }
+            },
+            "blit": {
+                "name": "blit",
+                "type": "function",
+                "doc": "Writes text to the screen using specific colors",
+                "returns": "nil",
+                "args": {
+                    "text": {
+                        "name": "text",
+                        "type": "string",
+                        "doc": "The text to write"
+                    },
+                    "text colors": {
+                        "name": "text colors",
+                        "type": "string",
+                        "doc": "The colors of the text"
+                    },
+                    "background colors": {
+                        "name": "background colors",
+                        "type": "string",
+                        "doc": "The colors of the background"
+                    }
+                }
+            },
+            "clear": {
+                "name": "clear",
+                "type": "function",
+                "doc": "Clears the screen",
+                "returns": "nil",
+                "args": {}
+            },
+            "clearLine": {
+                "name": "clearLine",
+                "type": "function",
+                "doc": "Clears the current line",
+                "returns": "nil",
+                "args": {}
+            },
+            "getCursorPos": {
+                "name": "getCursorPos",
+                "type": "function",
+                "doc": "Returns the current position of the cursor",
+                "returns": "number, number",
+                "args": {}
+            },
+            "setCursorPos": {
+                "name": "setCursorPos",
+                "type": "function",
+                "doc": "Sets the current position of the cursor",
+                "returns": "nil",
+                "args": {
+                    "x": {
+                        "name": "x",
+                        "type": "number",
+                        "doc": "The X position"
+                    },
+                    "y": {
+                        "name": "y",
+                        "type": "number",
+                        "doc": "The Y position"
+                    }
+                }
+            },
+            "setCursorBlink": {
+                "name": "setCursorBlink",
+                "type": "function",
+                "doc": "Sets whether the cursor should blink",
+                "returns": "nil",
+                "args": {
+                    "bool": {
+                        "name": "bool",
+                        "type": "boolean",
+                        "doc": "Whether to blink the cursor"
+                    }
+                }
+            },
+            "isColor": {
+                "name": "isColor",
+                "type": "function",
+                "doc": "Returns whether the terminal supports color",
+                "returns": "boolean",
+                "args": {}
+            },
+            "getSize": {
+                "name": "getSize",
+                "type": "function",
+                "doc": "Returns the size of the terminal",
+                "return": "number, number",
+                "args": {}
+            },
+            "scroll": {
+                "name": "scroll",
+                "type": "function",
+                "doc": "Scrolls the screen a number of lines",
+                "returns": "nil",
+                "args": {
+                    "n": {
+                        "name": "n",
+                        "type": "number",
+                        "doc": "The number of lines to scroll"
+                    }
+                }
+            },
+            "redirect": {
+                "name": "redirect",
+                "type": "function",
+                "doc": "Redirects the terminal output to another terminal",
+                "returns": "table",
+                "args": {
+                    "target": {
+                        "name": "target",
+                        "type": "table",
+                        "doc": "The terminal to redirect to"
+                    }
+                }
+            },
+            "current": {
+                "name": "current",
+                "type": "function",
+                "doc": "Returns the current terminal object (1.6+)",
+                "returns": "table",
+                "args": {}
+            },
+            "native": {
+                "name": "native",
+                "type": "function",
+                "doc": "Returns the original terminal object (1.6+)",
+                "returns": "table",
+                "args": {}
+            },
+            "setTextColor": {
+                "name": "setTextColor",
+                "type": "function",
+                "doc": "Sets the current text color",
+                "returns": "nil",
+                "args": {
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The color to set"
+                    }
+                }
+            },
+            "setBackgroundColor": {
+                "name": "setBackgroundColor",
+                "type": "function",
+                "doc": "Sets the current background color",
+                "returns": "nil",
+                "args": {
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The color to set"
+                    }
+                }
+            },
+            "getTextColor": {
+                "name": "getTextColor",
+                "type": "function",
+                "doc": "Gets the current text color (1.74+)",
+                "returns": "color",
+                "args": {}
+            },
+            "getBackgroundColor": {
+                "name": "getBackgroundColor",
+                "type": "function",
+                "doc": "Gets the current background color (1.74+)",
+                "returns": "color",
+                "args": {}
+            }
+        }
     }
 }
