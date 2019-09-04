@@ -3113,8 +3113,8 @@
                     }
                 }
             },
-            "recieve": {
-                "name": "recieve",
+            "receive": {
+                "name": "receive",
                 "type": "function",
                 "doc": "Waits for a message to be sent",
                 "returns": "number, any, number/string",
