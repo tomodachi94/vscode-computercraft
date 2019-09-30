@@ -4725,5 +4725,444 @@
                 }
             }
         }
+    },
+    "turtle": {
+        "name": "turtle",
+        "type": "field",
+        "inherits": [],
+        "doc": "The Turtle API is used to work with your Turtles.",
+        "properties": {
+            "forward": {
+                "name": "forward",
+                "type": "function",
+                "doc": "Try to move the turtle forward",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "back": {
+                "name": "back",
+                "type": "function",
+                "doc": "Try to move the turtle backward",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "up": {
+                "name": "up",
+                "type": "function",
+                "doc": "Try to move the turtle up",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "down": {
+                "name": "down",
+                "type": "function",
+                "doc": "Try to move the turtle down",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "turnLeft": {
+                "name": "turnLeft",
+                "type": "function",
+                "doc": "Turn the turtle left",
+                "returns": "boolean",
+                "args": {}
+            },
+            "turnRight": {
+                "name": "turnRight",
+                "type": "function",
+                "doc": "Turn the turtle right",
+                "returns": "boolean",
+                "args": {}
+            },
+            "select": {
+                "name": "select",
+                "type": "function",
+                "doc": "Make the turtle select slot slotNum",
+                "returns": "boolean",
+                "args": {
+                    "slotNum": {
+                        "name": "slotNum",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right"
+                    }
+                }
+            },
+            "getSelectedSlot": {
+                "name": "getSelectedSlot",
+                "type": "function",
+                "doc": "Indicates the currently selected inventory slot (1.6+)",
+                "returns": "number",
+                "args": {}
+            },
+            "getItemCount": {
+                "name": "getItemCount",
+                "type": "function",
+                "doc": "Counts how many items are in the currently selected slot or, if specified, slotNum slot",
+                "returns": "number",
+                "args": {
+                    "[slotNum]": {
+                        "name": "[slotNum]",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right (optional)"
+                    }
+                }
+            },
+            "getItemSpace": {
+                "name": "getItemSpace",
+                "type": "function",
+                "doc": "Counts how many remaining items you need to fill the stack in the currently selected slot or, if specified, slotNum slot",
+                "returns": "number",
+                "args": {
+                    "[slotNum]": {
+                        "name": "[slotNum]",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right (optional)"
+                    }
+                }
+            },
+            "getItemDetail": {
+                "name": "getItemDetail",
+                "type": "function",
+                "doc": "Returns the ID string, count and damage values of currently selected slot or, if specified, slotNum slot (1.64+)",
+                "returns": "table/nil",
+                "args": {
+                    "[slotNum]": {
+                        "name": "[slotNum]",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right (optional)"
+                    }
+                }
+            },
+            "equipLeft": {
+                "name": "equipLeft",
+                "type": "function",
+                "doc": "Attempts to equip an item in the current slot to the turtle's left side, switching the previously equipped item back into the inventory (1.6+)",
+                "returns": "boolean",
+                "args": {}
+            },
+            "equipRight": {
+                "name": "equipRight",
+                "type": "function",
+                "doc": "Attempts to equip an item in the current slot to the turtle's right side, switching the previously equipped item back into the inventory (1.6+)",
+                "returns": "boolean",
+                "args": {}
+            },
+            "dig": {
+                "name": "dig",
+                "type": "function",
+                "doc": "Breaks and sucks the block in front. With hoe: tills the dirt in front of it",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }
+                }
+            },
+            "digUp": {
+                "name": "digUp",
+                "type": "function",
+                "doc": "Breaks and sucks the block above",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }
+                }
+            },
+            "digDown": {
+                "name": "digDown",
+                "type": "function",
+                "doc": "Breaks and sucks the block below. With hoe: tills the dirt beneath the space below it",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }
+                }
+            },
+            "place": {
+                "name": "place",
+                "type": "function",
+                "doc": "Places a block of the selected slot in front. Engrave signText on signs if provided. Collects water or lava if the currently selected slot is an empty bucket (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {                    
+                    "[signText]": {
+                    "name": "[signText]",
+                    "type": "string",
+                    "doc": "If you're placing a sign and signText is given, then the turtle places the sign putting the text of signText into it. Each line of the sign can be separated using newline (\n) character (optional)"
+                }}
+            },
+            "placeUp": {
+                "name": "placeUp",
+                "type": "function",
+                "doc": "Places a block of the selected slot above. Collects water or lava if the currently selected slot is an empty bucket",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "placeDown": {
+                "name": "placeDown",
+                "type": "function",
+                "doc": "Places a block of the selected slot below. Collects water or lava if the currently selected slot is an empty bucket.",
+                "returns": "boolean, [string]",
+                "args": {}
+            },
+            "attack": {
+                "name": "attack",
+                "type": "function",
+                "doc": "Attacks in front of the turtle (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }       
+                }
+            },
+            "attackUp": {
+                "name": "attackUp",
+                "type": "function",
+                "doc": "Attacks above the turtle (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }
+                }
+            },
+            "attackDown": {
+                "name": "attackDown",
+                "type": "function",
+                "doc": "Attacks under the turtle (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[toolSide]": {
+                        "name": "[toolSide]",
+                        "type": "string",
+                        "doc": "left/right (optional)"
+                    }
+                }
+            },
+            "detect": {
+                "name": "detect",
+                "type": "function",
+                "doc": "Detects if there is a block in front. Does not detect mobs",
+                "returns": "boolean",
+                "args": {}
+            },
+            "detectUp": {
+                "name": "detectUp",
+                "type": "function",
+                "doc": "Detects if there is a block above",
+                "returns": "boolean",
+                "args": {}
+            },
+            "detectDown": {
+                "name": "detectDown",
+                "type": "function",
+                "doc": "Detects if there is a block below",
+                "returns": "boolean",
+                "args": {}
+            },
+            "compare": {
+                "name": "compare",
+                "type": "function",
+                "doc": "Detects if the block in front is the same as the one in the currently selected slot (1.31+)",
+                "returns": "boolean",
+                "args": {}
+            },
+            "compareUp": {
+                "name": "compareUp",
+                "type": "function",
+                "doc": "Detects if the block above is the same as the one in the currently selected slot",
+                "returns": "boolean",
+                "args": {}
+            },
+            "compareDown": {
+                "name": "compareDown",
+                "type": "function",
+                "doc": "Detects if the block below is the same as the one in the currently selected slot",
+                "returns": "boolean",
+                "args": {}
+            },
+            "inspect": {
+                "name": "inspect",
+                "type": "function",
+                "doc": "Returns the ID string and metadata of the block in front of the Turtle (1.64+)",
+                "returns": "boolean, table/string",
+                "args": {}
+            },
+            "inspectUp": {
+                "name": "inspectUp",
+                "type": "function",
+                "doc": "Returns the ID string and metadata of the block above the Turtle (1.64+)",
+                "returns": "boolean, table/string",
+                "args": {}
+            },
+            "inspectDown": {
+                "name": "inspectDown",
+                "type": "function",
+                "doc": "Returns the ID string and metadata of the block below the Turtle (1.64+)",
+                "returns": "boolean, table/string",
+                "args": {}
+            },
+            "compareTo": {
+                "name": "compareTo",
+                "type": "function",
+                "doc": "Compare the current selected slot and the given slot to see if the items are the same. Returns true if they are the same, false if not (1.4+)",
+                "returns": "boolean",
+                "args": {
+                    "[slotNum]": {
+                        "name": "[slotNum]",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right (optional)"
+                    }
+                }
+            },
+            "transferTo": {
+                "name": "transferTo",
+                "type": "function",
+                "doc": "Transfers quantity items from the selected slot to slot. If quantity isn't specified, will attempt to transfer everything in the selected slot to slot (1.45+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "slotNum": {
+                        "name": "slotNum",
+                        "type": "number",
+                        "doc": "1 is top left, 16 (9 in 1.33 and earlier) is bottom right"
+                    },
+                    "[quantity]": {
+                        "name": "[quantity]",
+                        "type": "number",
+                        "doc": "Transfers [quantity] items from the selected slot to the specified slot (optional)"
+                    }
+                }
+            },
+            "drop": {
+                "name": "drop",
+                "type": "function",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e in front of the turtle) it will try to place into the inventory, returning false if the inventory is full",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[count]": {
+                        "name": "[count]",
+                        "type": "number",
+                        "doc": "Drops [count] items (optional)"
+                    }
+                }
+            },
+            "dropUp": {
+                "name": "dropUp",
+                "type": "function",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e above the turtle) it will try to place into the inventory, returning false if the inventory is full (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[count]": {
+                        "name": "[count]",
+                        "type": "number",
+                        "doc": "Drops [count] items (optional)"
+                    }
+                }
+            },
+            "dropDown": {
+                "name": "dropDown",
+                "type": "function",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e below the turtle) it will try to place into the inventory, returning false if the inventory is full. If above a furnace, will place item in the top slot (1.4+)",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[count]": {
+                        "name": "[count]",
+                        "type": "number",
+                        "doc": "Drops [count] items (optional)"
+                    }
+                }
+            },
+            "suck": {
+                "name": "suck",
+                "type": "function",
+                "doc": "Picks up an item stack of any number, from the ground or an inventory in front of the turtle, then places it in the selected slot. If the turtle can't pick up the item, the function returns false (1.4+). The [amount] parameter requires ComputerCraft 1.6 or later",
+                "returns": "boolean, [string]",
+                "args": {
+                    "[amount]": {
+                        "name": "[amount]",
+                        "type": "number",
+                        "doc": "The turtle will attempt to pick up at most the specified number of items (optional)"
+                    }
+                }
+            },
+            "suckUp": {
+                "name": "suckUp",
+                "type": "function",
+                "doc": "Picks up an item stack of any number, from the ground or an inventory above the turtle, then places it in the selected slot. If the turtle can't pick up the item, the function returns false (1.4+). The [amount] parameter requires ComputerCraft 1.6 or later",
+                "returns": "boolean",
+                "args": {
+                    "[amount]": {
+                        "name": "[amount]",
+                        "type": "number",
+                        "doc": "The turtle will attempt to pick up at most the specified number of items (optional)"
+                    }
+                }
+            },
+            "suckDown": {
+                "name": "suckDown",
+                "type": "function",
+                "doc": "Picks up an item stack of any number, from the ground or an inventory below the turtle, then places it in the selected slot. If the turtle can't pick up the item, the function returns false (1.4+). The [amount] parameter requires ComputerCraft 1.6 or later",
+                "returns": "boolean",
+                "args": {
+                    "[amount]": {
+                        "name": "[amount]",
+                        "type": "number",
+                        "doc": "The turtle will attempt to pick up at most the specified number of items (optional)"
+                    }
+                }
+            },
+            "getFuelLevel": {
+                "name": "getFuelLevel",
+                "type": "function",
+                "doc": "Returns the current fuel level of the turtle, this is the number of blocks the turtle can move. If turtleNeedFuel = 0 then it returns unlimited (1.4+)",
+                "returns": "number/string",
+                "args": {}
+            },
+            "getFuelLimit": {
+                "name": "getFuelLimit",
+                "type": "function",
+                "doc": "Returns the maximum amount of fuel a turtle can store - by default, 20,000 for regular turtles, 100,000 for advanced. If turtleNeedFuel = 0 then it returns unlimited (1.6+)",
+                "returns": "number/string",
+                "args": {}
+            },
+            "refuel": {
+                "name": "refuel",
+                "type": "function",
+                "doc": "If the current selected slot contains a fuel item, it will consume it to give the turtle the ability to move. Added in 1.4 and is only needed in needfuel mode. If the current slot doesn't contain a fuel item, it returns false. If a [quantity] is specified, it will refuel only up to that many items, otherwise, it will consume all the items in the slot (1.4+)",
+                "returns": "boolean",
+                "args": {
+                    "[quantity]": {
+                        "name": "[quantity]",
+                        "type": "number",
+                        "doc": "If a [quantity] is specified, it will refuel only up to that many items, otherwise, it will consume all the items in the slot (optional)"
+                    }
+                }
+            },
+            "craft": {
+                "name": "craft",
+                "type": "function",
+                "doc": "(Only Crafty Turtle) Craft items using ingredients anywhere in the turtle's inventory and place results in the active slot. If a quantity is specified, it will craft only up to that many items, otherwise, it will craft as many of the items as possible (1.4+)",
+                "returns": "boolean",
+                "args": {
+                    "[quantity]": {
+                        "name": "[quantity]",
+                        "type": "number",
+                        "doc": "A parameter can also be supplied to specify the quantity of items to craft. If the quantity specified is 0, will return true if a valid recipe has been found in the turtle's inventory, and false otherwise (optional)"
+                    }
+                }
+            }
+        }
     }
 }
