@@ -1,7 +1,9 @@
 # ComputerCraft API autocomplete extension
-This extension provides autocomplete for ComputerCraft 1.8.
+This extension provides autocomplete for ComputerCraft/CC: Tweaked 1.94.0.
 
 ## Features
+
+Note: these screenshots are of the original base extension for Factorio; they do not represent the ComputerCraft updated fork.
 
 - Autocomplete of Lua classes and globals
 

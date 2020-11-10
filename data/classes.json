@@ -22,7 +22,7 @@
                 "name": "blshift",
                 "type": "function",
                 "returns": "number",
-                "doc": "Shifts bits left",
+                "doc": "Shifts bits left.",
                 "args": {
                     "n": {
                         "name": "n",
@@ -39,7 +39,7 @@
             "brshift": {
                 "name": "brshift",
                 "type": "function",
-                "doc": "Shifts bits right arithmetically",
+                "doc": "Shifts bits right arithmetically.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -57,7 +57,7 @@
             "blogic_rshift": {
                 "name": "blogic_rshift",
                 "type": "function",
-                "doc": "Shifts bits right logically",
+                "doc": "Shifts bits right logically.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -75,7 +75,7 @@
             "bxor": {
                 "name": "bxor",
                 "type": "function",
-                "doc": "Performs an exclusive OR on two numbers",
+                "doc": "Performs an exclusive OR on two numbers.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -93,7 +93,7 @@
             "bor": {
                 "name": "bor",
                 "type": "function",
-                "doc": "Performs an OR on two numbers",
+                "doc": "Performs an OR on two numbers.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -111,7 +111,7 @@
             "band": {
                 "name": "band",
                 "type": "function",
-                "doc": "Performs an AND on two numbers",
+                "doc": "Performs an AND on two numbers.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -129,7 +129,7 @@
             "bnot": {
                 "name": "bnot",
                 "type": "function",
-                "doc": "Performs a NOT on a number",
+                "doc": "Performs a NOT on a number.",
                 "returns": "number",
                 "args": {
                     "n": {
@@ -145,7 +145,7 @@
         "name": "colors",
         "type": "field",
         "inherits": [],
-        "doc": "Provides constants for colors",
+        "doc": "Provides constants for colors.",
         "properties": {
             "combine": {
                 "name": "combine",
@@ -208,6 +208,55 @@
                         "name": "color",
                         "type": "color",
                         "doc": "The color to test for"
+                    }
+                }
+            },
+            "packRGB": {
+                "name": "packRGB",
+                "type": "function",
+                "doc": "Combines a three-color RGB value into one hexadecimal representation. (CC:T)",
+                "returns": "number",
+                "args": {
+                    "r": {
+                        "name": "r",
+                        "type": "number",
+                        "doc": "The red value, from 0.0 to 1.0."
+                    },
+                    "g": {
+                        "name": "g",
+                        "type": "number",
+                        "doc": "The green value, from 0.0 to 1.0."
+                    },
+                    "b": {
+                        "name": "b",
+                        "type": "number",
+                        "doc": "The blue value, from 0.0 to 1.0."
+                    }
+                }
+            },
+            "unpackRGB": {
+                "name": "unpackRGB",
+                "type": "function",
+                "doc": "Separates a hexadecimal RGB color into its three constituent channels. (CC:T)",
+                "returns": "number, number, number",
+                "args": {
+                    "rgb": {
+                        "name": "rgb",
+                        "type": "number",
+                        "doc": "The RGB hex value to unpack."
+                    }
+                }
+            },
+            "toBlit": {
+                "name": "toBlit",
+                "type": "function",
+                "doc": "Converts the given color to a paint/blit hex character (0-9, a-f). (CC:T 1.94+)",
+                "returns": "string",
+                "args": {
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The color to convert."
                     }
                 }
             },
@@ -305,13 +354,13 @@
                 "doc": "Combines one or more colours (or sets of colours) into a larger set.",
                 "returns": "color",
                 "args": {
-                    "color1": {
-                        "name": "color1",
+                    "colour1": {
+                        "name": "colour1",
                         "type": "color",
                         "doc": "First colour"
                     },
-                    "color2": {
-                        "name": "color2",
+                    "colour2": {
+                        "name": "colour2",
                         "type": "color",
                         "doc": "Second colour"
                     },
@@ -328,13 +377,13 @@
                 "doc": "Removes one or more colours (or sets of colours) from an initial set.",
                 "returns": "color",
                 "args": {
-                    "colors": {
-                        "name": "colors",
+                    "colours": {
+                        "name": "colours",
                         "type": "color",
                         "doc": "Combined colour"
                     },
-                    "color1": {
-                        "name": "color1",
+                    "colour1": {
+                        "name": "colour1",
                         "type": "color",
                         "doc": "First colour"
                     },
@@ -352,14 +401,63 @@
                 "returns": "boolean",
                 "args": {
                     "colors": {
-                        "name": "colors",
+                        "name": "colours",
                         "type": "color",
                         "doc": "A set of colours"
                     },
                     "color": {
-                        "name": "color",
+                        "name": "colour",
                         "type": "color",
                         "doc": "The colour to test for"
+                    }
+                }
+            },
+            "packRGB": {
+                "name": "packRGB",
+                "type": "function",
+                "doc": "Combines a three-colour RGB value into one hexadecimal representation. (CC:T)",
+                "returns": "number",
+                "args": {
+                    "r": {
+                        "name": "r",
+                        "type": "number",
+                        "doc": "The red value, from 0.0 to 1.0."
+                    },
+                    "g": {
+                        "name": "g",
+                        "type": "number",
+                        "doc": "The green value, from 0.0 to 1.0."
+                    },
+                    "b": {
+                        "name": "b",
+                        "type": "number",
+                        "doc": "The blue value, from 0.0 to 1.0."
+                    }
+                }
+            },
+            "unpackRGB": {
+                "name": "unpackRGB",
+                "type": "function",
+                "doc": "Separates a hexadecimal RGB colour into its three constituent channels. (CC:T)",
+                "returns": "number, number, number",
+                "args": {
+                    "rgb": {
+                        "name": "rgb",
+                        "type": "number",
+                        "doc": "The RGB hex value to unpack."
+                    }
+                }
+            },
+            "toBlit": {
+                "name": "toBlit",
+                "type": "function",
+                "doc": "Converts the given colour to a paint/blit hex character (0-9, a-f). (CC:T 1.94+)",
+                "returns": "string",
+                "args": {
+                    "colour": {
+                        "name": "colour",
+                        "type": "color",
+                        "doc": "The colour to convert."
                     }
                 }
             },
@@ -449,12 +547,12 @@
         "name": "commands",
         "type": "field",
         "inherits": [],
-        "doc": "Command computers only: allows executing Minecraft commands (1.7+)",
+        "doc": "Command computers only: allows executing Minecraft commands. (1.7+)",
         "properties": {
             "exec": {
                 "name": "exec",
                 "type": "function",
-                "doc": "Executes a command string synchronously",
+                "doc": "Executes a command string synchronously.",
                 "returns": "boolean, table",
                 "args": {
                     "command": {
@@ -467,7 +565,7 @@
             "execAsync": {
                 "name": "execAsync",
                 "type": "function",
-                "doc": "Executes a command string asynchronously",
+                "doc": "Executes a command string asynchronously.",
                 "returns": "number",
                 "args": {
                     "command": {
@@ -480,21 +578,21 @@
             "list": {
                 "name": "list",
                 "type": "function",
-                "doc": "Returns a list of commands",
+                "doc": "Returns a list of commands.",
                 "returns": "table",
                 "args": {}
             },
             "getBlockPosition": {
                 "name": "getBlockPosition",
                 "type": "function",
-                "doc": "Returns the world position of the computer",
+                "doc": "Returns the world position of the computer.",
                 "returns": "number, number, number",
                 "args": {}
             },
             "getBlockInfo": {
                 "name": "getBlockInfo",
                 "type": "function",
-                "doc": "Returns information about the block at a position",
+                "doc": "Returns information about the block at a position.",
                 "returns": "table",
                 "args": {
                     "x": {
@@ -517,7 +615,7 @@
             "getBlockInfos": {
                 "name": "getBlockInfos",
                 "type": "function",
-                "doc": "Returns information about blocks between two positions",
+                "doc": "Returns information about blocks between two positions.",
                 "returns": "table",
                 "args": {
                     "x1": {
@@ -557,13 +655,13 @@
     "coroutine": {
         "name": "coroutine",
         "type": "field",
-        "doc": "Creates and manages parallel tasks",
+        "doc": "Creates and manages parallel tasks.",
         "inherits": [],
         "properties": {
             "create": {
                 "name": "create",
                 "type": "function",
-                "doc": "Creates a coroutine",
+                "doc": "Creates a coroutine.",
                 "returns": "coroutine",
                 "args": {
                     "f": {
@@ -576,7 +674,7 @@
             "resume": {
                 "name": "resume",
                 "type": "function",
-                "doc": "Starts or resumes a coroutine",
+                "doc": "Starts or resumes a coroutine.",
                 "returns": "any",
                 "args": {
                     "coro": {
@@ -594,14 +692,14 @@
             "running": {
                 "name": "running",
                 "type": "function",
-                "doc": "Returns the currently running coroutine",
+                "doc": "Returns the currently running coroutine.",
                 "returns": "coroutine",
                 "args": {}
             },
             "status": {
                 "name": "status",
                 "type": "function",
-                "doc": "Returns the status of a coroutine",
+                "doc": "Returns the status of a coroutine.",
                 "returns": "string",
                 "args": {
                     "coro": {
@@ -614,7 +712,7 @@
             "wrap": {
                 "name": "wrap",
                 "type": "function",
-                "doc": "Wraps a coroutine in a function",
+                "doc": "Wraps a coroutine in a function.",
                 "returns": "function",
                 "args": {
                     "f": {
@@ -627,7 +725,7 @@
             "yield": {
                 "name": "yield",
                 "type": "function",
-                "doc": "Pauses the current coroutine and returns execution to the caller",
+                "doc": "Pauses the current coroutine and returns execution to the caller.",
                 "returns": "any",
                 "args": {
                     "...": {
@@ -643,12 +741,12 @@
         "name": "disk",
         "type": "field",
         "inherits": [],
-        "doc": "Allows accessing data about disk drives",
+        "doc": "Allows accessing data about disk drives.",
         "properties": {
             "isPresent": {
                 "name": "isPresent",
                 "type": "function",
-                "doc": "Returns whether an item is in the drive",
+                "doc": "Returns whether an item is in the drive.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -661,7 +759,7 @@
             "hasData": {
                 "name": "hasData",
                 "type": "function",
-                "doc": "Returns whether a floppy disk is in the drive",
+                "doc": "Returns whether a floppy disk is in the drive.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -674,7 +772,7 @@
             "getMountPath": {
                 "name": "getMountPath",
                 "type": "function",
-                "doc": "Returns the mount point of the disk",
+                "doc": "Returns the mount point of the disk.",
                 "returns": "string/nil",
                 "args": {
                     "side": {
@@ -687,7 +785,7 @@
             "setLabel": {
                 "name": "setLabel",
                 "type": "function",
-                "doc": "Sets the label of a disk",
+                "doc": "Sets the label of a disk.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -705,7 +803,7 @@
             "getLabel": {
                 "name": "getLabel",
                 "type": "function",
-                "doc": "Returns the label of a floppy disk",
+                "doc": "Returns the label of a floppy disk.",
                 "returns": "string/nil",
                 "args": {
                     "side": {
@@ -718,7 +816,7 @@
             "getID": {
                 "name": "getID",
                 "type": "function",
-                "doc": "Returns the ID of a disk",
+                "doc": "Returns the ID of a disk.",
                 "returns": "number/nil",
                 "args": {
                     "side": {
@@ -731,7 +829,7 @@
             "hasAudio": {
                 "name": "hasAudio",
                 "type": "function",
-                "doc": "Returns whether a music disc is in the drive",
+                "doc": "Returns whether a music disc is in the drive.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -744,7 +842,7 @@
             "getAudioTitle": {
                 "name": "getAudioTitle",
                 "type": "function",
-                "doc": "Returns the name of the music disc inserted",
+                "doc": "Returns the name of the music disc inserted.",
                 "returns": "string/nil",
                 "args": {
                     "side": {
@@ -757,7 +855,7 @@
             "playAudio": {
                 "name": "playAudio",
                 "type": "function",
-                "doc": "Plays the music disc in the drive",
+                "doc": "Plays the music disc in the drive.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -770,7 +868,7 @@
             "stopAudio": {
                 "name": "stopAudio",
                 "type": "function",
-                "doc": "Stops the music disc in the drive",
+                "doc": "Stops the music disc in the drive.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -783,7 +881,7 @@
             "eject": {
                 "name": "eject",
                 "type": "function",
-                "doc": "Ejects the object from the drive",
+                "doc": "Ejects the object from the drive.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -799,12 +897,12 @@
         "name": "fs",
         "type": "field",
         "inherits": [],
-        "doc": "Allows performing operations on files and directories",
+        "doc": "Allows performing operations on files and directories.",
         "properties": {
             "list": {
                 "name": "list",
                 "type": "function",
-                "doc": "Returns a list of files and folders in a directory",
+                "doc": "Returns a list of files and folders in a directory.",
                 "returns": "table",
                 "args": {
                     "path": {
@@ -817,7 +915,7 @@
             "exists": {
                 "name": "exists",
                 "type": "function",
-                "doc": "Checks whether the path exists",
+                "doc": "Checks whether the path exists.",
                 "returns": "boolean",
                 "args": {
                     "path": {
@@ -830,7 +928,7 @@
             "isDir": {
                 "name": "isDir",
                 "type": "function",
-                "doc": "Checks whether the path is a directory",
+                "doc": "Checks whether the path is a directory.",
                 "returns": "boolean",
                 "args": {
                     "path": {
@@ -843,7 +941,7 @@
             "isReadOnly": {
                 "name": "isReadOnly",
                 "type": "function",
-                "doc": "Checks whether the path is read only",
+                "doc": "Checks whether the path is read only.",
                 "returns": "boolean",
                 "args": {
                     "path": {
@@ -856,7 +954,7 @@
             "getName": {
                 "name": "getName",
                 "type": "function",
-                "doc": "Returns the basename of the path",
+                "doc": "Returns the basename of the path.",
                 "returns": "string",
                 "args": {
                     "path": {
@@ -870,7 +968,7 @@
                 "name": "getDrive",
                 "type": "function",
                 "returns": "string/nil",
-                "doc": "Returns the storage medium holding a path",
+                "doc": "Returns the storage medium holding a path.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -883,7 +981,7 @@
                 "name": "getSize",
                 "type": "function",
                 "returns": "number",
-                "doc": "Returns the size of a file in bytes",
+                "doc": "Returns the size of a file in bytes.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -896,7 +994,7 @@
                 "name": "getFreeSpace",
                 "type": "function",
                 "returns": "number",
-                "doc": "Returns the space available in the directory",
+                "doc": "Returns the space available in the directory.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -909,7 +1007,7 @@
                 "name": "makeDir",
                 "type": "function",
                 "returns": "nil",
-                "doc": "Creates a directory at the path, creating parents as needed",
+                "doc": "Creates a directory at the path, creating parents as needed.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -922,7 +1020,7 @@
                 "name": "move",
                 "type": "function",
                 "returns": "nil",
-                "doc": "Moves a file or directory to a new location",
+                "doc": "Moves a file or directory to a new location.",
                 "args": {
                     "fromPath": {
                         "name": "fromPath",
@@ -940,7 +1038,7 @@
                 "name": "copy",
                 "type": "function",
                 "returns": "nil",
-                "doc": "Copies a file or directory to a new location",
+                "doc": "Copies a file or directory to a new location.",
                 "args": {
                     "fromPath": {
                         "name": "fromPath",
@@ -958,7 +1056,7 @@
                 "name": "delete",
                 "type": "function",
                 "returns": "nil",
-                "doc": "Deletes a file or directory",
+                "doc": "Deletes a file or directory.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -971,7 +1069,7 @@
                 "name": "combine",
                 "type": "function",
                 "returns": "string",
-                "doc": "Combines two path components, so that the second path is nested inside the first",
+                "doc": "Combines two path components, so that the second path is nested inside the first.",
                 "args": {
                     "basePath": {
                         "name": "basePath",
@@ -989,7 +1087,7 @@
                 "name": "open",
                 "type": "function",
                 "returns": "table",
-                "doc": "Opens a file for reading or writing",
+                "doc": "Opens a file for reading or writing.",
                 "args": {
                     "path": {
                         "name": "path",
@@ -1007,7 +1105,7 @@
                 "name": "find",
                 "type": "function",
                 "returns": "table",
-                "doc": "Searches the filesystem for files matching a pattern, and returns a list of results (1.6+)",
+                "doc": "Searches the filesystem for files matching a pattern, and returns a list of results. (1.6+)",
                 "args": {
                     "wildcard": {
                         "name": "wildcard",
@@ -1020,7 +1118,7 @@
                 "name": "getDir",
                 "type": "function",
                 "returns": "string",
-                "doc": "Returns the parent directory of a path (1.63+)",
+                "doc": "Returns the parent directory of a path. (1.63+)",
                 "args": {
                     "path": {
                         "name": "path",
@@ -1033,7 +1131,7 @@
                 "name": "complete",
                 "type": "function",
                 "returns": "table",
-                "doc": "Returns a list of possible completions for a directory and a partial name (1.74+)",
+                "doc": "Returns a list of possible completions for a directory and a partial name. (1.74+)",
                 "args": {
                     "partial name": {
                         "name": "partial name",
@@ -1056,6 +1154,45 @@
                         "doc": "Whether to include slashes (optional)"
                     }
                 }
+            },
+            "isDriveRoot": {
+                "name": "isDriveRoot",
+                "type": "function",
+                "returns": "boolean",
+                "doc": "Returns true if a path is mounted to the parent filesystem. (CC:T 1.88+)",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to check"
+                    }
+                }
+            },
+            "getCapacity": {
+                "name": "getCapacity",
+                "type": "function",
+                "returns": "number",
+                "doc": "Returns the amount of free space (in bytes) available on the drive the path is located on. (CC:T 1.87+)",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to get the capacity of"
+                    }
+                }
+            },
+            "attributes": {
+                "name": "attributes",
+                "type": "function",
+                "returns": "table",
+                "doc": "Gets attributes about a specific file or folder. (CC:T 1.87+)",
+                "args": {
+                    "path": {
+                        "name": "path",
+                        "type": "string",
+                        "doc": "The path to get attributes for"
+                    }
+                }
             }
         }
     },
@@ -1063,12 +1200,12 @@
         "name": "gps",
         "type": "field",
         "inherits": [],
-        "doc": "Allows locating the position of a computer or turtle via trilateration over rednet",
+        "doc": "Allows locating the position of a computer or turtle via trilateration over rednet.",
         "properties": {
             "locate": {
                 "name": "locate",
                 "type": "function",
-                "doc": "Locates the current computer or turtle if possible",
+                "doc": "Locates the current computer or turtle if possible.",
                 "returns": "number, number, number; or nil",
                 "args": {
                     "[timeout]": {
@@ -1089,19 +1226,19 @@
         "name": "help",
         "type": "field",
         "inherits": [],
-        "doc": "Provides functions for viewing help documents",
+        "doc": "Provides functions for viewing help documents.",
         "properties": {
             "path": {
                 "name": "path",
                 "type": "function",
-                "doc": "Returns a string listing the directories to search for help topics in, separated by colons",
+                "doc": "Returns a string listing the directories to search for help topics in, separated by colons.",
                 "returns": "string",
                 "args": {}
             },
             "setPath": {
                 "name": "setPath",
                 "type": "function",
-                "doc": "Sets the paths to search for help topics",
+                "doc": "Sets the paths to search for help topics.",
                 "returns": "nil",
                 "args": {
                     "path": {
@@ -1114,7 +1251,7 @@
             "lookup": {
                 "name": "lookup",
                 "type": "function",
-                "doc": "Returns the path to the file containing a help topic",
+                "doc": "Returns the path to the file containing a help topic.",
                 "returns": "string/nil",
                 "args": {
                     "topic": {
@@ -1127,14 +1264,14 @@
             "topics": {
                 "name": "topics",
                 "type": "function",
-                "doc": "Returns a list of help topics available",
+                "doc": "Returns a list of help topics available.",
                 "returns": "table",
                 "args": {}
             },
             "completeTopic": {
                 "name": "completeTopic",
                 "type": "function",
-                "doc": "Returns a list of suffixes that can be appended to the prefix to create a topic name (1.74+)",
+                "doc": "Returns a list of suffixes that can be appended to the prefix to create a topic name. (1.74+)",
                 "returns": "table",
                 "args": {
                     "topic prefix": {
@@ -1150,12 +1287,12 @@
         "name": "http",
         "type": "field",
         "inherits": [],
-        "doc": "Allows accessing the internet through HTTP requests",
+        "doc": "Allows accessing the internet through HTTP requests.",
         "properties": {
             "request": {
                 "name": "request",
                 "type": "function",
-                "doc": "Asynchronously sends an HTTP request",
+                "doc": "Asynchronously sends an HTTP request.",
                 "returns": "nil",
                 "args": {
                     "url": {
@@ -1172,14 +1309,24 @@
                         "name": "[headers]",
                         "type": "table",
                         "doc": "The headers to set in the request (optional)"
+                    },
+                    "[binary]": {
+                        "name": "[binary]",
+                        "type": "boolean",
+                        "doc": "Whether to send a binary request (optional) (CC 1.8+)"
+                    },
+                    "[redirect]": {
+                        "name": "[redirect]",
+                        "type": "boolean",
+                        "doc": "Whether to automatically redirect on HTTP 300 responses (optional) (CC 1.8+)"
                     }
                 }
             },
             "get": {
                 "name": "get",
                 "type": "function",
-                "doc": "Synchronously sends an HTTP GET request, and returns a file handle",
-                "returns": "table",
+                "doc": "Synchronously sends an HTTP GET request, and returns a file handle.",
+                "returns": "table | nil, string[, table]",
                 "args": {
                     "url": {
                         "name": "url",
@@ -1190,14 +1337,24 @@
                         "name": "[headers]",
                         "type": "table",
                         "doc": "The headers to set in the request (optional)"
+                    },
+                    "[binary]": {
+                        "name": "[binary]",
+                        "type": "boolean",
+                        "doc": "Whether to send a binary request (optional) (CC 1.8+)"
+                    },
+                    "[redirect]": {
+                        "name": "[redirect]",
+                        "type": "boolean",
+                        "doc": "Whether to automatically redirect on HTTP 300 responses (optional) (CC 1.8+)"
                     }
                 }
             },
             "post": {
                 "name": "post",
                 "type": "function",
-                "doc": "Synchronously sends an HTTP POST request, and returns a file handle",
-                "returns": "table",
+                "doc": "Synchronously sends an HTTP POST request, and returns a file handle.",
+                "returns": "table | nil, string[, table]",
                 "args": {
                     "url": {
                         "name": "url",
@@ -1213,19 +1370,78 @@
                         "name": "[headers]",
                         "type": "table",
                         "doc": "The headers to set in the request (optional)"
+                    },
+                    "[binary]": {
+                        "name": "[binary]",
+                        "type": "boolean",
+                        "doc": "Whether to send a binary request (optional) (CC 1.8+)"
+                    },
+                    "[redirect]": {
+                        "name": "[redirect]",
+                        "type": "boolean",
+                        "doc": "Whether to automatically redirect on HTTP 300 responses (optional) (CC 1.8+)"
                     }
                 }
             },
             "checkURL": {
                 "name": "checkURL",
                 "type": "function",
-                "doc": "Checks if a URL is valid and in the whitelist",
+                "doc": "Checks if a URL is valid and in the whitelist.",
                 "returns": "boolean[, string]",
                 "args": {
                     "url": {
                         "name": "url",
                         "type": "string",
-                        "doc": "The URL te check"
+                        "doc": "The URL to check"
+                    }
+                }
+            },
+            "checkURLAsync": {
+                "name": "checkURLAsync",
+                "type": "function",
+                "doc": "Asynchronously hecks if a URL is valid and in the whitelist.",
+                "returns": "nil",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to check"
+                    }
+                }
+            },
+            "websocket": {
+                "name": "websocket",
+                "type": "function",
+                "doc": "Opens a websocket. (CC:T)",
+                "returns": "table | nil, string",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to connect to"
+                    },
+                    "[headers]": {
+                        "name": "[headers]",
+                        "type": "table",
+                        "doc": "Any headers to send in the HTTP request"
+                    }
+                }
+            },
+            "websocketAsync": {
+                "name": "websocketAsync",
+                "type": "function",
+                "doc": "Asynchronously opens a websocket. (CC:T)",
+                "returns": "nil",
+                "args": {
+                    "url": {
+                        "name": "url",
+                        "type": "string",
+                        "doc": "The URL to connect to"
+                    },
+                    "[headers]": {
+                        "name": "[headers]",
+                        "type": "table",
+                        "doc": "Any headers to send in the HTTP request"
                     }
                 }
             }
@@ -1240,7 +1456,7 @@
             "close": {
                 "name": "close",
                 "type": "function",
-                "doc": "Closes a file handle",
+                "doc": "Closes a file handle.",
                 "returns": "nil",
                 "args": {
                     "[file]": {
@@ -1253,14 +1469,14 @@
             "flush": {
                 "name": "flush",
                 "type": "function",
-                "doc": "Flushes the terminal",
+                "doc": "Flushes the current output file.",
                 "returns": "nil",
                 "args": {}
             },
             "input": {
                 "name": "input",
                 "type": "function",
-                "doc": "Either opens a filename and sets the default input file handle, sets the defualt input handle to the handle passed in, or returns the current input handle",
+                "doc": "Either opens a filename and sets the default input file handle, sets the defualt input handle to the handle passed in, or returns the current input handle.",
                 "returns": "table/nil",
                 "args": {
                     "[file]": {
@@ -1273,7 +1489,7 @@
             "lines": {
                 "name": "lines",
                 "type": "function",
-                "doc": "Returns an iterator function that returns each line in a file",
+                "doc": "Returns an iterator function that returns each line in a file.",
                 "returns": "function",
                 "args": {
                     "[filename]": {
@@ -1286,7 +1502,7 @@
             "open": {
                 "name": "open",
                 "type": "function",
-                "doc": "Opens a file for reading or writing",
+                "doc": "Opens a file for reading or writing.",
                 "returns": "table/(nil, string)",
                 "args": {
                     "filename": {
@@ -1304,7 +1520,7 @@
             "output": {
                 "name": "output",
                 "type": "function",
-                "doc": "Either opens a filename and sets the default output file handle, sets the defualt output handle to the handle passed in, or returns the current output handle",
+                "doc": "Either opens a filename and sets the default output file handle, sets the defualt output handle to the handle passed in, or returns the current output handle.",
                 "returns": "table/nil",
                 "args": {
                     "[file]": {
@@ -1317,7 +1533,7 @@
             "read": {
                 "name": "read",
                 "type": "function",
-                "doc": "Reads the next line from the input file",
+                "doc": "Reads the next line from the input file.",
                 "returns": "string/nil...",
                 "args": {
                     "...": {
@@ -1343,7 +1559,7 @@
             "write": {
                 "name": "write",
                 "type": "function",
-                "doc": "Writes a string or number to the default output",
+                "doc": "Writes a string or number to the default output.",
                 "returns": "nil",
                 "args": {
                     "str": {
@@ -1359,12 +1575,12 @@
         "name": "keys",
         "type": "field",
         "inherits": [],
-        "doc": "Provides constants for key codes",
+        "doc": "Provides constants for key codes.",
         "properties": {
             "getName": {
                 "name": "getName",
                 "type": "function",
-                "doc": "Returns a human-readable string for the key code",
+                "doc": "Returns a human-readable string for the key code.",
                 "returns": "string",
                 "args": {
                     "code": {
@@ -1960,7 +2176,7 @@
             "abs": {
                 "name": "abs",
                 "type": "function",
-                "doc": "Returns the absolute value of x",
+                "doc": "Returns the absolute value of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -1973,7 +2189,7 @@
             "acos": {
                 "name": "acos",
                 "type": "function",
-                "doc": "Returns the arc cosine of x",
+                "doc": "Returns the arc cosine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -1986,7 +2202,7 @@
             "asin": {
                 "name": "asin",
                 "type": "function",
-                "doc": "Returns the arc sine of x",
+                "doc": "Returns the arc sine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -1999,7 +2215,7 @@
             "atan": {
                 "name": "atan",
                 "type": "function",
-                "doc": "Returns the arc tangent of x",
+                "doc": "Returns the arc tangent of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2012,7 +2228,7 @@
             "atan2": {
                 "name": "atan2",
                 "type": "function",
-                "doc": "Returns the arc tangent of y/x",
+                "doc": "Returns the arc tangent of y/x.",
                 "returns": "number",
                 "args": {
                     "y": {
@@ -2030,7 +2246,7 @@
             "ceil": {
                 "name": "ceil",
                 "type": "function",
-                "doc": "Returns x rounded up to the nearest integer",
+                "doc": "Returns x rounded up to the nearest integer.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2043,7 +2259,7 @@
             "cos": {
                 "name": "cos",
                 "type": "function",
-                "doc": "Returns the cosine of x",
+                "doc": "Returns the cosine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2056,7 +2272,7 @@
             "cosh": {
                 "name": "cosh",
                 "type": "function",
-                "doc": "Returns the hyperbolic cosine of x",
+                "doc": "Returns the hyperbolic cosine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2069,7 +2285,7 @@
             "deg": {
                 "name": "deg",
                 "type": "function",
-                "doc": "Converts radians to degrees",
+                "doc": "Converts radians to degrees.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2082,7 +2298,7 @@
             "exp": {
                 "name": "exp",
                 "type": "function",
-                "doc": "Returns the value of e^x",
+                "doc": "Returns the value of e^x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2095,7 +2311,7 @@
             "floor": {
                 "name": "floor",
                 "type": "function",
-                "doc": "Returns x rounded down to the nearest integer",
+                "doc": "Returns x rounded down to the nearest integer.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2108,7 +2324,7 @@
             "fmod": {
                 "name": "fmod",
                 "type": "function",
-                "doc": "Returns the remainder of x/y",
+                "doc": "Returns the remainder of x/y.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2126,7 +2342,7 @@
             "frexp": {
                 "name": "frexp",
                 "type": "function",
-                "doc": "Returns m and e such that x = m*2^e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero)",
+                "doc": "Returns m and e such that x = m*2^e, e is an integer and the absolute value of m is in the range [0.5, 1) (or zero when x is zero).",
                 "returns": "number, number",
                 "args": {
                     "x": {
@@ -2144,7 +2360,7 @@
             "ldexp": {
                 "name": "ldexp",
                 "type": "function",
-                "doc": "Returns m*2^e",
+                "doc": "Returns m*2^e.",
                 "returns": "number",
                 "args": {
                     "m": {
@@ -2162,7 +2378,7 @@
             "log": {
                 "name": "log",
                 "type": "function",
-                "doc": "Returns the natural logarithm of x",
+                "doc": "Returns the natural logarithm of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2175,7 +2391,7 @@
             "log10": {
                 "name": "log10",
                 "type": "function",
-                "doc": "Returns the base-10 logarithm of x",
+                "doc": "Returns the base-10 logarithm of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2188,7 +2404,7 @@
             "max": {
                 "name": "max",
                 "type": "function",
-                "doc": "Returns the maximum value of a set of numbers",
+                "doc": "Returns the maximum value of a set of numbers.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2206,7 +2422,7 @@
             "min": {
                 "name": "min",
                 "type": "function",
-                "doc": "Returns the minimum value of a set of numbers",
+                "doc": "Returns the minimum value of a set of numbers.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2224,7 +2440,7 @@
             "modf": {
                 "name": "modf",
                 "type": "function",
-                "doc": "Returns the integral and fractional parts of x",
+                "doc": "Returns the integral and fractional parts of x.",
                 "returns": "number, number",
                 "args": {
                     "x": {
@@ -2237,12 +2453,12 @@
             "pi": {
                 "name": "pi",
                 "type": "number",
-                "value": "The mathematical constant pi"
+                "doc": "The mathematical constant pi"
             },
             "pow": {
                 "name": "pow",
                 "type": "function",
-                "doc": "Returns x^y",
+                "doc": "Returns x^y.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2260,7 +2476,7 @@
             "rad": {
                 "name": "rad",
                 "type": "function",
-                "doc": "Converts degrees to radians",
+                "doc": "Converts degrees to radians.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2273,7 +2489,7 @@
             "random": {
                 "name": "random",
                 "type": "function",
-                "doc": "Returns a random number with the range [0, 1), [1, m], or [m, n]",
+                "doc": "Returns a random number with the range [0, 1), [1, m], or [m, n].",
                 "returns": "number",
                 "args": {
                     "[m]": {
@@ -2291,7 +2507,7 @@
             "randomseed": {
                 "name": "",
                 "type": "function",
-                "doc": "Seeds the RNG with x",
+                "doc": "Seeds the RNG with x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2304,7 +2520,7 @@
             "sin": {
                 "name": "sin",
                 "type": "function",
-                "doc": "Returns the sine of x",
+                "doc": "Returns the sine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2317,7 +2533,7 @@
             "sinh": {
                 "name": "sinh",
                 "type": "function",
-                "doc": "Returns the hyperbolic sine of x",
+                "doc": "Returns the hyperbolic sine of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2330,7 +2546,7 @@
             "sqrt": {
                 "name": "sqrt",
                 "type": "function",
-                "doc": "Returns the square root of x",
+                "doc": "Returns the square root of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2343,7 +2559,7 @@
             "tan": {
                 "name": "tan",
                 "type": "function",
-                "doc": "Returns the tangent of x",
+                "doc": "Returns the tangent of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2356,7 +2572,7 @@
             "tanh": {
                 "name": "tanh",
                 "type": "function",
-                "doc": "Returns the hyperbolic tangent of x",
+                "doc": "Returns the hyperbolic tangent of x.",
                 "returns": "number",
                 "args": {
                     "x": {
@@ -2372,26 +2588,26 @@
         "name": "multishell",
         "type": "field",
         "inherits": [],
-        "doc": "Allows running multiple terminal sessions at once (1.6+) (Advanced only)",
+        "doc": "Allows running multiple terminal sessions at once. (1.6+) (Advanced only)",
         "properties": {
             "getCurrent": {
                 "name": "getCurrent",
                 "type": "function",
-                "doc": "Returns the current tab ID",
+                "doc": "Returns the current tab ID.",
                 "returns": "number",
                 "args": {}
             },
             "getCount": {
                 "name": "getCount",
                 "type": "function",
-                "doc": "Returns the number of tabs open",
+                "doc": "Returns the number of tabs open.",
                 "returns": "number",
                 "args": {}
             },
             "launch": {
                 "name": "launch",
                 "type": "function",
-                "doc": "Starts a program in a new tab",
+                "doc": "Starts a program in a new tab.",
                 "returns": "number",
                 "args": {
                     "environment": {
@@ -2414,7 +2630,7 @@
             "setFocus": {
                 "name": "setFocus",
                 "type": "function",
-                "doc": "Sets the tab as the current tab",
+                "doc": "Sets the tab as the current tab.",
                 "returns": "boolean",
                 "args": {
                     "tabID": {
@@ -2427,7 +2643,7 @@
             "setTitle": {
                 "name": "setTitle",
                 "type": "function",
-                "doc": "Sets the title of the tab",
+                "doc": "Sets the title of the tab.",
                 "returns": "nil",
                 "args": {
                     "tabID": {
@@ -2445,7 +2661,7 @@
             "getTitle": {
                 "name": "getTitle",
                 "type": "function",
-                "doc": "Returns the title of a tab",
+                "doc": "Returns the title of a tab.",
                 "returns": "string",
                 "args": {
                     "tabID": {
@@ -2458,7 +2674,7 @@
             "getFocus": {
                 "name": "getFocus",
                 "type": "function",
-                "doc": "Returns the ID of the current tab",
+                "doc": "Returns the ID of the current tab.",
                 "returns": "number",
                 "args": {}
             }
@@ -2468,33 +2684,33 @@
         "name": "os",
         "type": "field",
         "inherits": [],
-        "doc": "Interfaces with CraftOS and the computer",
+        "doc": "Interfaces with CraftOS and the computer.",
         "properties": {
             "version": {
                 "name": "version",
                 "type": "function",
-                "doc": "Returns the version of CraftOS running on the computer",
+                "doc": "Returns the version of CraftOS running on the computer.",
                 "returns": "string",
                 "args": {}
             },
             "getComputerID": {
                 "name": "getComputerID",
                 "type": "function",
-                "doc": "Returns the ID of the current computer",
+                "doc": "Returns the ID of the current computer.",
                 "returns": "number",
                 "args": {}
             },
             "getComputerLabel": {
                 "name": "getComputerLabel",
                 "type": "function",
-                "doc": "Returns the label of the computer",
+                "doc": "Returns the label of the computer.",
                 "returns": "string/nil",
                 "args": {}
             },
             "setComputerLabel": {
                 "name": "setComputerLabel",
                 "type": "function",
-                "doc": "Sets the label of the computer",
+                "doc": "Sets the label of the computer.",
                 "returns": "nil",
                 "args": {
                     "label": {
@@ -2507,7 +2723,7 @@
             "run": {
                 "name": "run",
                 "type": "function",
-                "doc": "Runs a Lua script with the specified environment",
+                "doc": "Runs a Lua script with the specified environment.",
                 "returns": "boolean",
                 "args": {
                     "environment": {
@@ -2530,7 +2746,7 @@
             "loadAPI": {
                 "name": "loadAPI",
                 "type": "function",
-                "doc": "Loads an API into the global table",
+                "doc": "Loads an API into the global table. (Deprecated)",
                 "returns": "boolean",
                 "args": {
                     "path": {
@@ -2543,7 +2759,7 @@
             "unloadAPI": {
                 "name": "unloadAPI",
                 "type": "function",
-                "doc": "Unloads a previously loaded API",
+                "doc": "Unloads a previously loaded API. (Deprecated)",
                 "returns": "nil",
                 "args": {
                     "name": {
@@ -2556,7 +2772,7 @@
             "pullEvent": {
                 "name": "pullEvent",
                 "type": "function",
-                "doc": "Waits for an event to occur",
+                "doc": "Waits for an event to occur.",
                 "returns": "string, any...",
                 "args": {
                     "[target-event]": {
@@ -2569,7 +2785,7 @@
             "pullEventRaw": {
                 "name": "pullEventRaw",
                 "type": "function",
-                "doc": "Waits for an event to occur (doesn't terminate)",
+                "doc": "Waits for an event to occur (doesn't terminate when Ctrl-T is pressed).",
                 "returns": "string, any...",
                 "args": {
                     "[target-event]": {
@@ -2582,7 +2798,7 @@
             "queueEvent": {
                 "name": "queueEvent",
                 "type": "function",
-                "doc": "Adds an event to the event queue",
+                "doc": "Adds an event to the event queue.",
                 "returns": "nil",
                 "args": {
                     "event": {
@@ -2600,14 +2816,14 @@
             "clock": {
                 "name": "clock",
                 "type": "function",
-                "doc": "Returns the amount of time since the computer was started",
+                "doc": "Returns the amount of time since the computer was started.",
                 "returns": "number",
                 "args": {}
             },
             "startTimer": {
                 "name": "startTimer",
                 "type": "function",
-                "doc": "Queues an event after an amount of seconds has passed, and returns the ID",
+                "doc": "Queues an event after an amount of seconds has passed, and returns the ID.",
                 "returns": "number",
                 "args": {
                     "timeout": {
@@ -2620,7 +2836,7 @@
             "cancelTimer": {
                 "name": "cancelTimer",
                 "type": "function",
-                "doc": "Cancels a previously started timer",
+                "doc": "Cancels a previously started timer.",
                 "returns": "nil",
                 "args": {
                     "timerID": {
@@ -2633,14 +2849,38 @@
             "time": {
                 "name": "time",
                 "type": "function",
-                "doc": "Returns the current in-game time",
+                "doc": "Returns the current time in the selected locale.",
                 "returns": "number",
-                "args": {}
+                "args": {
+                    "[locale]": {
+                        "name": "[locale]",
+                        "type": "string",
+                        "doc": "One of 'ingame', 'utc', or 'local'. Defaults to 'ingame'. (1.8+)"
+                    }
+                }
+            },
+            "date": {
+                "name": "date",
+                "type": "function",
+                "doc": "Returns a string or table with the current or provided time representation. (CC:T)",
+                "returns": "string/table",
+                "args": {
+                    "[format]": {
+                        "name": "[format]",
+                        "type": "string",
+                        "doc": "The format for the date string. If set to '*t', returns a table instead."
+                    },
+                    "[time]": {
+                        "name": "[time]",
+                        "type": "number",
+                        "doc": "The time to convert. Defaults to the current local time, or current UTC time if the format is prefixed with '!'."
+                    }
+                }
             },
             "sleep": {
                 "name": "sleep",
                 "type": "function",
-                "doc": "Sleeps for a number of seconds",
+                "doc": "Sleeps for a number of seconds.",
                 "returns": "nil",
                 "args": {
                     "time": {
@@ -2653,14 +2893,33 @@
             "day": {
                 "name": "day",
                 "type": "function",
-                "doc": "Returns the current in-game day",
+                "doc": "Returns the current day for the selected locale.",
                 "returns": "number",
-                "args": {}
+                "args": {
+                    "[locale]": {
+                        "name": "[locale]",
+                        "type": "string",
+                        "doc": "One of 'ingame', 'utc', or 'local'. Defaults to 'ingame'. (1.8+)"
+                    }
+                }
+            },
+            "epoch": {
+                "name": "epoch",
+                "type": "function",
+                "doc": "Returns the time in seconds since an epoch depending on the locale.",
+                "returns": "number",
+                "args": {
+                    "[locale]": {
+                        "name": "[locale]",
+                        "type": "string",
+                        "doc": "One of 'ingame', 'utc', or 'local'. Defaults to 'ingame'. (1.8+)"
+                    }
+                }
             },
             "setAlarm": {
                 "name": "setAlarm",
                 "type": "function",
-                "doc": "Sets an alarm to activate at an in-game time, and returns the ID",
+                "doc": "Sets an alarm to activate at an in-game time, and returns the ID.",
                 "returns": "number",
                 "args": {
                     "time": {
@@ -2673,7 +2932,7 @@
             "cancelAlarm": {
                 "name": "cancelAlarm",
                 "type": "function",
-                "doc": "Cancels a previously started alarm",
+                "doc": "Cancels a previously started alarm.",
                 "returns": "nil",
                 "args": {
                     "alarmID": {
@@ -2686,14 +2945,14 @@
             "shutdown": {
                 "name": "shutdown",
                 "type": "function",
-                "doc": "Powers off the computer",
+                "doc": "Powers off the computer.",
                 "returns": "nil",
                 "args": {}
             },
             "reboot": {
                 "name": "reboot",
                 "type": "function",
-                "doc": "Reboots the computer",
+                "doc": "Reboots the computer.",
                 "returns": "nil",
                 "args": {}
             }
@@ -2703,12 +2962,12 @@
         "name": "paintutils",
         "type": "field",
         "inherits": [],
-        "doc": "Allows drawing on the screen (Advanced only)",
+        "doc": "Allows drawing on the screen.",
         "properties": {
             "loadImage": {
                 "name": "loadImage",
                 "type": "function",
-                "doc": "Loads and returns an image from a file",
+                "doc": "Loads and returns an image from a file.",
                 "returns": "table",
                 "args": {
                     "path": {
@@ -2721,7 +2980,7 @@
             "drawImage": {
                 "name": "drawImage",
                 "type": "function",
-                "doc": "Draws an image on the screen",
+                "doc": "Draws an image on the screen.",
                 "returns": "nil",
                 "args": {
                     "image": {
@@ -2744,7 +3003,7 @@
             "drawPixel": {
                 "name": "drawPixel",
                 "type": "function",
-                "doc": "Draws a pixel on the screen",
+                "doc": "Draws a pixel on the screen.",
                 "returns": "nil",
                 "args": {
                     "x": {
@@ -2767,7 +3026,7 @@
             "drawLine": {
                 "name": "drawLine",
                 "type": "function",
-                "doc": "Draws a line on the screen",
+                "doc": "Draws a line on the screen.",
                 "returns": "nil",
                 "args": {
                     "startX": {
@@ -2800,7 +3059,7 @@
             "drawBox": {
                 "name": "drawBox",
                 "type": "function",
-                "doc": "Draws a box on the screen (1.64+)",
+                "doc": "Draws a box on the screen. (1.64+)",
                 "returns": "nil",
                 "args": {
                     "startX": {
@@ -2833,7 +3092,7 @@
             "drawFilledBox": {
                 "name": "drawFilledBox",
                 "type": "function",
-                "doc": "Draws a filled box on the screen (1.64+)",
+                "doc": "Draws a filled box on the screen. (1.64+)",
                 "returns": "nil",
                 "args": {
                     "startX": {
@@ -2874,7 +3133,7 @@
             "waitForAny": {
                 "name": "waitForAny",
                 "type": "function",
-                "doc": "Runs the functions all at once and waits for one to return",
+                "doc": "Runs the functions all at once and waits for one to return.",
                 "returns": "number",
                 "args": {
                     "function1": {
@@ -2897,7 +3156,7 @@
             "waitForAll": {
                 "name": "waitForAll",
                 "type": "function",
-                "doc": "Runs the functions all at once and waits for all to return",
+                "doc": "Runs the functions all at once and waits for all to return.",
                 "returns": "nil",
                 "args": {
                     "function1": {
@@ -2923,12 +3182,12 @@
         "name": "peripheral",
         "type": "field",
         "inherits": [],
-        "doc": "Interacts with peripherals",
+        "doc": "Interacts with peripherals.",
         "properties": {
             "isPresent": {
                 "name": "isPresent",
                 "type": "function",
-                "doc": "Checks if a peripheral is present on a side",
+                "doc": "Checks if a peripheral is present on a side.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -2941,20 +3200,20 @@
             "getType": {
                 "name": "getType",
                 "type": "function",
-                "doc": "Returns the type of peripheral on a side",
+                "doc": "Returns the type of peripheral on a side.",
                 "returns": "string/nil",
                 "args": {
                     "side": {
                         "name": "side",
-                        "type": "string",
-                        "doc": "The side to check"
+                        "type": "string/table",
+                        "doc": "The side or wrapped peripheral to check"
                     }
                 }
             },
             "getMethods": {
                 "name": "getMethods",
                 "type": "function",
-                "doc": "Returns a list of methods that the peripheral has",
+                "doc": "Returns a list of methods that the peripheral has.",
                 "returns": "table/nil",
                 "args": {
                     "side": {
@@ -2964,10 +3223,23 @@
                     }
                 }
             },
+            "getName": {
+                "name": "getName",
+                "type": "function",
+                "doc": "Returns the side a wrapped peripheral is on. (CC:1 1.88+)",
+                "returns": "string/nil",
+                "args": {
+                    "peripheral": {
+                        "name": "peripheral",
+                        "type": "table",
+                        "doc": "The peripheral to check"
+                    }
+                }
+            },
             "call": {
                 "name": "call",
                 "type": "function",
-                "doc": "Calls a method in a peripheral",
+                "doc": "Calls a method on a peripheral.",
                 "returns": "any",
                 "args": {
                     "side": {
@@ -2990,7 +3262,7 @@
             "wrap": {
                 "name": "wrap",
                 "type": "function",
-                "doc": "Returns a table containing all of the methods of a peripheral",
+                "doc": "Returns a table containing all of the methods of a peripheral.",
                 "returns": "table/nil",
                 "args": {
                     "side": {
@@ -3003,7 +3275,7 @@
             "find": {
                 "name": "find",
                 "type": "function",
-                "doc": "Finds peripherals of a type and returns their tables of methods (1.6+)",
+                "doc": "Finds peripherals of a type and returns their tables of methods. (1.6+)",
                 "returns": "table/nil",
                 "args": {
                     "type": {
@@ -3011,8 +3283,8 @@
                         "type": "string",
                         "doc": "The type of peripheral to find"
                     },
-                    "fnFilter": {
-                        "name": "fnFilter",
+                    "[fnFilter]": {
+                        "name": "[fnFilter]",
                         "type": "function",
                         "doc": "A function that filters through the entries",
                         "returns": "boolean",
@@ -3034,7 +3306,7 @@
             "getNames": {
                 "name": "getNames",
                 "type": "function",
-                "doc": "Returns a list of names of connected peripherals",
+                "doc": "Returns a list of names of connected peripherals.",
                 "returns": "table",
                 "args": {}
             }
@@ -3044,12 +3316,12 @@
         "name": "rednet",
         "type": "field",
         "inherits": [],
-        "doc": "Controls transferring data over modems",
+        "doc": "Controls transferring data over modems.",
         "properties": {
             "open": {
                 "name": "open",
                 "type": "function",
-                "doc": "Opens a side for transcieving",
+                "doc": "Opens a side for transcieving.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3062,7 +3334,7 @@
             "close": {
                 "name": "close",
                 "type": "function",
-                "doc": "Closes a side for transcieving",
+                "doc": "Closes a side for transcieving.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3075,7 +3347,7 @@
             "send": {
                 "name": "send",
                 "type": "function",
-                "doc": "Sends a message to a computer",
+                "doc": "Sends a message to a computer.",
                 "returns": "nil",
                 "args": {
                     "recieverID": {
@@ -3098,7 +3370,7 @@
             "broadcast": {
                 "name": "broadcast",
                 "type": "function",
-                "doc": "Sends a message to all computers",
+                "doc": "Sends a message to all computers.",
                 "returns": "nil",
                 "args": {
                     "message": {
@@ -3116,7 +3388,7 @@
             "receive": {
                 "name": "receive",
                 "type": "function",
-                "doc": "Waits for a message to be sent",
+                "doc": "Waits for a message to be received, then returns the received message.",
                 "returns": "number, any, number/string",
                 "args": {
                     "[protocolFilter]": {
@@ -3134,7 +3406,7 @@
             "isOpen": {
                 "name": "isOpen",
                 "type": "function",
-                "doc": "Checks if a modem is open",
+                "doc": "Checks if a modem is open.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3147,7 +3419,7 @@
             "host": {
                 "name": "host",
                 "type": "function",
-                "doc": "Adds a hostname for a protocol for rednet.lookup() (1.6+)",
+                "doc": "Adds a hostname for a protocol for rednet.lookup(). (1.6+)",
                 "returns": "nil",
                 "args": {
                     "protocol": {
@@ -3165,7 +3437,7 @@
             "unhost": {
                 "name": "unhost",
                 "type": "function",
-                "doc": "Removes a hostname for a protocol for rednet.lookup() (1.6+)",
+                "doc": "Removes a hostname for a protocol for rednet.lookup(). (1.6+)",
                 "returns": "nil",
                 "args": {
                     "protocol": {
@@ -3183,7 +3455,7 @@
             "lookup": {
                 "name": "lookup",
                 "type": "function",
-                "doc": "Searches for a hostname or a protocol (1.6+)",
+                "doc": "Searches for a hostname or a protocol. (1.6+)",
                 "returns": "nil",
                 "args": {
                     "protocol": {
@@ -3204,19 +3476,19 @@
         "name": "redstone",
         "type": "field",
         "inherits": [],
-        "doc": "Controls redstone inputs and outputs",
+        "doc": "Controls redstone inputs and outputs.",
         "properties": {
             "getSides": {
                 "name": "getSides",
                 "type": "function",
-                "doc": "Returns the sides available for redstone",
+                "doc": "Returns the sides available for redstone.",
                 "returns": "table",
                 "args": {}
             },
             "getInput": {
                 "name": "getInput",
                 "type": "function",
-                "doc": "Returns the digital value of the redstone on a side",
+                "doc": "Returns the digital value of the redstone on a side.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3229,7 +3501,7 @@
             "setOutput": {
                 "name": "setOutput",
                 "type": "function",
-                "doc": "Sets the digital value of the redstone output on a side",
+                "doc": "Sets the digital value of the redstone output on a side.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3247,7 +3519,7 @@
             "getOutput": {
                 "name": "getOutput",
                 "type": "function",
-                "doc": "Returns the digital value of the redstone that's being output on a side",
+                "doc": "Returns the digital value of the redstone that's being output on a side.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3260,7 +3532,7 @@
             "getAnalogInput": {
                 "name": "getAnalogInput",
                 "type": "function",
-                "doc": "Returns the analog value of the redstone on a side (1.51+)",
+                "doc": "Returns the analog value of the redstone on a side. (1.51+)",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3273,7 +3545,7 @@
             "setAnalogOutput": {
                 "name": "setAnalogOutput",
                 "type": "function",
-                "doc": "Sets the analog value of the redstone output on a side (1.51+)",
+                "doc": "Sets the analog value of the redstone output on a side. (1.51+)",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3291,7 +3563,7 @@
             "getAnalogOutput": {
                 "name": "getAnalogOutput",
                 "type": "function",
-                "doc": "Returns the analog value of the redstone that's being output on a side (1.51+)",
+                "doc": "Returns the analog value of the redstone that's being output on a side. (1.51+)",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3304,7 +3576,7 @@
             "getBundledInput": {
                 "name": "getBundledInput",
                 "type": "function",
-                "doc": "Returns the value of the bundled redstone on a side",
+                "doc": "Returns the value of the bundled redstone on a side.",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3317,7 +3589,7 @@
             "setBundledOutput": {
                 "name": "setBundledOutput",
                 "type": "function",
-                "doc": "Sets the value of the bundled redstone output on a side",
+                "doc": "Sets the value of the bundled redstone output on a side.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3335,7 +3607,7 @@
             "getBundledOutput": {
                 "name": "getBundledOutput",
                 "type": "function",
-                "doc": "Returns the value of the bundled redstone that's being output on a side",
+                "doc": "Returns the value of the bundled redstone that's being output on a side.",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3348,7 +3620,7 @@
             "testBundledOutput": {
                 "name": "testBundledOutput",
                 "type": "function",
-                "doc": "Checks if a color is active in a bundled redstone wire",
+                "doc": "Checks if a color is active in a bundled redstone wire.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3369,19 +3641,19 @@
         "name": "rs",
         "type": "field",
         "inherits": [],
-        "doc": "Controls redstone inputs and outputs",
+        "doc": "Controls redstone inputs and outputs.",
         "properties": {
             "getSides": {
                 "name": "getSides",
                 "type": "function",
-                "doc": "Returns the sides available for redstone",
+                "doc": "Returns the sides available for redstone.",
                 "returns": "table",
                 "args": {}
             },
             "getInput": {
                 "name": "getInput",
                 "type": "function",
-                "doc": "Returns the digital value of the redstone on a side",
+                "doc": "Returns the digital value of the redstone on a side.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3394,7 +3666,7 @@
             "setOutput": {
                 "name": "setOutput",
                 "type": "function",
-                "doc": "Sets the digital value of the redstone output on a side",
+                "doc": "Sets the digital value of the redstone output on a side.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3412,7 +3684,7 @@
             "getOutput": {
                 "name": "getOutput",
                 "type": "function",
-                "doc": "Returns the digital value of the redstone that's being output on a side",
+                "doc": "Returns the digital value of the redstone that's being output on a side.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3425,7 +3697,7 @@
             "getAnalogInput": {
                 "name": "getAnalogInput",
                 "type": "function",
-                "doc": "Returns the analog value of the redstone on a side (1.51+)",
+                "doc": "Returns the analog value of the redstone on a side. (1.51+)",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3438,7 +3710,7 @@
             "setAnalogOutput": {
                 "name": "setAnalogOutput",
                 "type": "function",
-                "doc": "Sets the analog value of the redstone output on a side (1.51+)",
+                "doc": "Sets the analog value of the redstone output on a side. (1.51+)",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3456,7 +3728,7 @@
             "getAnalogOutput": {
                 "name": "getAnalogOutput",
                 "type": "function",
-                "doc": "Returns the analog value of the redstone that's being output on a side (1.51+)",
+                "doc": "Returns the analog value of the redstone that's being output on a side. (1.51+)",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3469,7 +3741,7 @@
             "getBundledInput": {
                 "name": "getBundledInput",
                 "type": "function",
-                "doc": "Returns the value of the bundled redstone on a side",
+                "doc": "Returns the value of the bundled redstone on a side.",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3482,7 +3754,7 @@
             "setBundledOutput": {
                 "name": "setBundledOutput",
                 "type": "function",
-                "doc": "Sets the value of the bundled redstone output on a side",
+                "doc": "Sets the value of the bundled redstone output on a side.",
                 "returns": "nil",
                 "args": {
                     "side": {
@@ -3500,7 +3772,7 @@
             "getBundledOutput": {
                 "name": "getBundledOutput",
                 "type": "function",
-                "doc": "Returns the value of the bundled redstone that's being output on a side",
+                "doc": "Returns the value of the bundled redstone that's being output on a side.",
                 "returns": "number",
                 "args": {
                     "side": {
@@ -3513,7 +3785,7 @@
             "testBundledOutput": {
                 "name": "testBundledOutput",
                 "type": "function",
-                "doc": "Checks if a color is active in a bundled redstone wire",
+                "doc": "Checks if a color is active in a bundled redstone wire.",
                 "returns": "boolean",
                 "args": {
                     "side": {
@@ -3534,12 +3806,12 @@
         "name": "settings",
         "type": "field",
         "inherits": [],
-        "doc": "Controls settings for CraftOS and programs (1.77+)",
+        "doc": "Controls settings for CraftOS and programs. (1.77+)",
         "properties": {
             "set": {
                 "name": "set",
                 "type": "function",
-                "doc": "Sets a setting in the current settings",
+                "doc": "Sets a setting in the current settings.",
                 "returns": "nil",
                 "args": {
                     "name": {
@@ -3557,7 +3829,7 @@
             "get": {
                 "name": "get",
                 "type": "function",
-                "doc": "Gets a setting from the current settings",
+                "doc": "Gets a setting from the current settings.",
                 "returns": "any",
                 "args": {
                     "name": {
@@ -3575,7 +3847,7 @@
             "unset": {
                 "name": "unset",
                 "type": "function",
-                "doc": "Removes a setting in the current settings",
+                "doc": "Removes a setting in the current settings.",
                 "returns": "nil",
                 "args": {
                     "name": {
@@ -3588,21 +3860,21 @@
             "clear": {
                 "name": "clear",
                 "type": "function",
-                "doc": "Clears all settings",
+                "doc": "Clears all settings.",
                 "returns": "nil",
                 "args": {}
             },
             "getNames": {
                 "name": "getNames",
                 "type": "function",
-                "doc": "Returns a list of keys",
+                "doc": "Returns a list of keys.",
                 "returns": "table",
                 "args": {}
             },
             "load": {
                 "name": "load",
                 "type": "function",
-                "doc": "Loads settings from a file",
+                "doc": "Loads settings from a file.",
                 "returns": "nil",
                 "args": {
                     "path": {
@@ -3615,13 +3887,57 @@
             "save": {
                 "name": "save",
                 "type": "function",
-                "doc": "Saves settings to a file",
+                "doc": "Saves settings to a file.",
                 "returns": "nil",
                 "args": {
                     "path": {
                         "name": "path",
                         "type": "string",
                         "doc": "The file to access"
+                    }
+                }
+            },
+            "getDetails": {
+                "name": "getDetails",
+                "type": "function",
+                "doc": "Returns a table with details about a setting. (CC:t 1.87+)",
+                "returns": "table/nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The name of the setting"
+                    }
+                }
+            },
+            "define": {
+                "name": "define",
+                "type": "function",
+                "doc": "Defines a new setting, optionally specifying various properties about it. (CC:T 1.87+)",
+                "returns": "nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The name of the setting to define"
+                    },
+                    "[options]": {
+                        "name": "[options]",
+                        "type": "table",
+                        "doc": "A table with any of the fields 'description', 'default', and 'type'."
+                    }
+                }
+            },
+            "undefine": {
+                "name": "undefine",
+                "type": "function",
+                "doc": "Removes a previously defined setting. (CC:T 1.87+)",
+                "returns": "nil",
+                "args": {
+                    "name": {
+                        "name": "name",
+                        "type": "string",
+                        "doc": "The name of the setting to undefine"
                     }
                 }
             }
@@ -3631,26 +3947,26 @@
         "name": "shell",
         "type": "field",
         "inherits": [],
-        "doc": "Interacts with the CraftOS shell - not available to APIs",
+        "doc": "Interacts with the CraftOS shell - not available to APIs.",
         "properties": {
             "exit": {
                 "name": "exit",
                 "type": "function",
-                "doc": "Exits the current shell",
+                "doc": "Exits the current shell.",
                 "returns": "nil",
                 "args": {}
             },
             "dir": {
                 "name": "dir",
                 "type": "function",
-                "doc": "Returns the current working directory",
+                "doc": "Returns the current working directory.",
                 "returns": "string",
                 "args": {}
             },
             "setDir": {
                 "name": "setDir",
                 "type": "function",
-                "doc": "Sets the current working directory",
+                "doc": "Sets the current working directory.",
                 "returns": "nil",
                 "args": {
                     "path": {
@@ -3663,14 +3979,14 @@
             "path": {
                 "name": "path",
                 "type": "function",
-                "doc": "Returns the current PATH",
+                "doc": "Returns the current PATH.",
                 "returns": "string",
                 "args": {}
             },
             "setPath": {
                 "name": "setPath",
                 "type": "function",
-                "doc": "Sets the current PATH",
+                "doc": "Sets the current PATH.",
                 "returns": "nil",
                 "args": {
                     "path": {
@@ -3683,7 +3999,7 @@
             "resolve": {
                 "name": "resolve",
                 "type": "function",
-                "doc": "Resolves a local path to an absolute path",
+                "doc": "Resolves a local path to an absolute path.",
                 "returns": "string",
                 "args": {
                     "localPath": {
@@ -3696,7 +4012,7 @@
             "resolveProgram": {
                 "name": "resolveProgram",
                 "type": "function",
-                "doc": "Returns the path to a program name",
+                "doc": "Returns the path to a program name.",
                 "returns": "string",
                 "args": {
                     "name": {
@@ -3709,14 +4025,14 @@
             "aliases": {
                 "name": "aliases",
                 "type": "function",
-                "doc": "Returns a dictionary of aliases for programs",
+                "doc": "Returns a dictionary of aliases for programs.",
                 "returns": "table",
                 "args": {}
             },
             "setAlias": {
                 "name": "setAlias",
                 "type": "function",
-                "doc": "Sets an alias for a program",
+                "doc": "Sets an alias for a program.",
                 "returns": "nil",
                 "args": {
                     "alias": {
@@ -3734,7 +4050,7 @@
             "clearAlias": {
                 "name": "clearAlias",
                 "type": "function",
-                "doc": "Removes an alias",
+                "doc": "Removes an alias.",
                 "returns": "nil",
                 "args": {
                     "alias": {
@@ -3747,7 +4063,7 @@
             "programs": {
                 "name": "programs",
                 "type": "function",
-                "doc": "Returns a list of all programs in the working directory and PATH",
+                "doc": "Returns a list of all programs in the working directory and PATH.",
                 "returns": "table",
                 "args": {
                     "[showHidden]": {
@@ -3760,14 +4076,14 @@
             "getRunningProgram": {
                 "name": "getRunningProgram",
                 "type": "function",
-                "doc": "Returns the absolute path to the current program",
+                "doc": "Returns the absolute path to the current program.",
                 "returns": "string",
                 "args": {}
             },
             "run": {
                 "name": "run",
                 "type": "function",
-                "doc": "Runs a program/command",
+                "doc": "Runs a program/command.",
                 "returns": "boolean",
                 "args": {
                     "command": {
@@ -3785,7 +4101,7 @@
             "openTab": {
                 "name": "openTab",
                 "type": "function",
-                "doc": "Opens a program in a new tab (1.6+, advanced)",
+                "doc": "Opens a program in a new tab. (1.6+, advanced)",
                 "returns": "number",
                 "args": {
                     "command": {
@@ -3803,7 +4119,7 @@
             "switchTab": {
                 "name": "switchTab",
                 "type": "function",
-                "doc": "Changes the current tab (1.6+, advanced)",
+                "doc": "Changes the current tab. (1.6+, advanced)",
                 "returns": "nil",
                 "args": {
                     "tabID": {
@@ -3816,7 +4132,7 @@
             "complete": {
                 "name": "complete",
                 "type": "function",
-                "doc": "Returns a list of suffixes that could complete a prefix (1.74+)",
+                "doc": "Returns a list of suffixes that could complete a prefix. (1.74+)",
                 "returns": "table",
                 "args": {
                     "prefix": {
@@ -3829,7 +4145,7 @@
             "completeProgram": {
                 "name": "completeProgram",
                 "type": "function",
-                "doc": "Returns a list of suffixes that could complete a program prefix (1.74+)",
+                "doc": "Returns a list of suffixes that could complete a program prefix. (1.74+)",
                 "returns": "table",
                 "args": {
                     "prefix": {
@@ -3842,7 +4158,7 @@
             "setCompletionFunction": {
                 "name": "setCompletionFunction",
                 "type": "function",
-                "doc": "Registers a completion function that is called by shell.complete()",
+                "doc": "Registers a completion function that is called by shell.complete().",
                 "returns": "nil",
                 "args": {
                     "path": {
@@ -3860,7 +4176,7 @@
             "getCompletionInfo": {
                 "name": "getCompletionInfo",
                 "type": "function",
-                "doc": "Returns the table containing functions registered for shell.complete()",
+                "doc": "Returns the table containing functions registered for shell.complete().",
                 "returns": "table",
                 "args": {}
             }
@@ -3875,7 +4191,7 @@
             "byte": {
                 "name": "byte",
                 "type": "function",
-                "doc": "Returns the numerical codes for each character in a string",
+                "doc": "Returns the numerical codes for each character in a string.",
                 "returns": "number...",
                 "args": {
                     "s": {
@@ -3898,7 +4214,7 @@
             "char": {
                 "name": "char",
                 "type": "function",
-                "doc": "Returns a string from numerical codes",
+                "doc": "Returns a string from numerical codes.",
                 "returns": "string",
                 "args": {
                     "...": {
@@ -3911,7 +4227,7 @@
             "dump": {
                 "name": "dump",
                 "type": "function",
-                "doc": "Returns a string containing a binary representation of a function",
+                "doc": "Returns a string containing a binary representation of a function.",
                 "returns": "string",
                 "args": {
                     "function": {
@@ -3924,7 +4240,7 @@
             "find": {
                 "name": "find",
                 "type": "function",
-                "doc": "Finds the location of a pattern in a string",
+                "doc": "Finds the location of a pattern in a string.",
                 "returns": "number",
                 "args": {
                     "s": {
@@ -3952,7 +4268,7 @@
             "format": {
                 "name": "format",
                 "type": "function",
-                "doc": "Returns a formatted string based on a pattern",
+                "doc": "Returns a formatted string based on a pattern.",
                 "returns": "string",
                 "args": {
                     "formatstring": {
@@ -3970,7 +4286,7 @@
             "gmatch": {
                 "name": "gmatch",
                 "type": "function",
-                "doc": "Returns an iterator function that returns each match in a string",
+                "doc": "Returns an iterator function that returns each match in a string.",
                 "returns": "function",
                 "args": {
                     "s": {
@@ -3988,7 +4304,7 @@
             "gsub": {
                 "name": "gsub",
                 "type": "function",
-                "doc": "Returns a copy of a string where a pattern has been replaced",
+                "doc": "Returns a copy of a string where a pattern has been replaced.",
                 "returns": "string",
                 "args": {
                     "s": {
@@ -4011,7 +4327,7 @@
             "len": {
                 "name": "len",
                 "type": "function",
-                "doc": "Returns the length of a string",
+                "doc": "Returns the length of a string.",
                 "returns": "number",
                 "args": {
                     "s": {
@@ -4024,7 +4340,7 @@
             "lower": {
                 "name": "lower",
                 "type": "function",
-                "doc": "Returns a copy of a string where all characters are lowercase",
+                "doc": "Returns a copy of a string where all characters are lowercase.",
                 "returns": "string",
                 "args": {
                     "s": {
@@ -4037,7 +4353,7 @@
             "match": {
                 "name": "match",
                 "type": "function",
-                "doc": "Returns a list of matches for a pattern in a string",
+                "doc": "Returns a list of matches for a pattern in a string.",
                 "returns": "string/nil",
                 "args": {
                     "s": {
@@ -4060,7 +4376,7 @@
             "rep": {
                 "name": "rep",
                 "type": "function",
-                "doc": "Returns a string repeating another string a number of times",
+                "doc": "Returns a string repeating another string a number of times.",
                 "returns": "string",
                 "args": {
                     "s": {
@@ -4078,7 +4394,7 @@
             "reverse": {
                 "name": "reverse",
                 "type": "function",
-                "doc": "Returns a string that is the reverse of the first string",
+                "doc": "Returns a string that is the reverse of the first string.",
                 "returns": "string",
                 "args": {
                     "s": {
@@ -4091,7 +4407,7 @@
             "sub": {
                 "name": "sub",
                 "type": "function",
-                "doc": "Returns a substring starting at i and continuing to j",
+                "doc": "Returns a substring starting at i and continuing to j.",
                 "returns": "string",
                 "args": {
                     "s": {
@@ -4114,13 +4430,67 @@
             "upper": {
                 "name": "upper",
                 "type": "function",
-                "doc": "Returns a copy of a string where all characters are uppercase",
+                "doc": "Returns a copy of a string where all characters are uppercase.",
                 "returns": "string",
                 "args": {
                     "s": {
                         "name": "s",
                         "type": "string",
                         "doc": "The string to use"
+                    }
+                }
+            },
+            "pack": {
+                "name": "pack",
+                "type": "function",
+                "doc": "Returns a string with the binary representation of a set of arguments, using the specified format. (CC:T 1.91+)",
+                "returns": "string",
+                "args": {
+                    "format": {
+                        "name": "format",
+                        "type": "string",
+                        "doc": "The format of the output data"
+                    },
+                    "...": {
+                        "name": "...",
+                        "type": "any",
+                        "doc": "The values to store as binary data"
+                    }
+                }
+            },
+            "unpack": {
+                "name": "unpack",
+                "type": "function",
+                "doc": "Unpacks values from a binary string using the specified format. (CC:T 1.91+)",
+                "returns": "any...",
+                "args": {
+                    "format": {
+                        "name": "format",
+                        "type": "string",
+                        "doc": "The format of the binary data string"
+                    },
+                    "packstr": {
+                        "name": "packstr",
+                        "type": "string",
+                        "doc": "The data to unpack"
+                    },
+                    "[n]": {
+                        "name": "[n]",
+                        "type": "number",
+                        "doc": "The index in the data string to start from"
+                    }
+                }
+            },
+            "packsize": {
+                "name": "packsize",
+                "type": "function",
+                "doc": "Returns the number of bytes used for a specific format string. (CC:T 1.91+)",
+                "returns": "number",
+                "args": {
+                    "format": {
+                        "name": "format",
+                        "type": "string",
+                        "doc": "THe format to get the size of"
                     }
                 }
             }
@@ -4135,13 +4505,13 @@
             "concat": {
                 "name": "concat",
                 "type": "function",
-                "doc": "Inserts values in between every value in a table (or something)",
-                "returns": "table",
+                "doc": "Combines values in a table into a single string, with an optional separator between each value.",
+                "returns": "string",
                 "args": {
                     "table": {
                         "name": "table",
                         "type": "table",
-                        "doc": "The table to use"
+                        "doc": "The table to concatenate"
                     },
                     "[sep]": {
                         "name": "[sep]",
@@ -4163,7 +4533,7 @@
             "insert": {
                 "name": "insert",
                 "type": "function",
-                "doc": "Inserts a value at a position or the end",
+                "doc": "Inserts a value at a position or the end.",
                 "returns": "nil",
                 "args": {
                     "table": {
@@ -4186,7 +4556,7 @@
             "maxn": {
                 "name": "maxn",
                 "type": "function",
-                "doc": "Returns the largest numerical index in a table",
+                "doc": "Returns the largest numerical index in a table.",
                 "returns": "number",
                 "args": {
                     "table": {
@@ -4199,7 +4569,7 @@
             "remove": {
                 "name": "remove",
                 "type": "function",
-                "doc": "Removes a value from a table at a position",
+                "doc": "Removes a value from a table at a position.",
                 "returns": "any",
                 "args": {
                     "table": {
@@ -4217,7 +4587,7 @@
             "sort": {
                 "name": "sort",
                 "type": "function",
-                "doc": "Sorts a table by value, using a function if provided",
+                "doc": "Sorts a table by value, using a function if provided.",
                 "returns": "nil",
                 "args": {
                     "table": {
@@ -4238,12 +4608,12 @@
         "name": "term",
         "type": "field",
         "inherits": [],
-        "doc": "Provides functions for writing to the terminal",
+        "doc": "Provides functions for writing to the terminal.",
         "properties": {
             "write": {
                 "name": "write",
                 "type": "function",
-                "doc": "Writes text to the screen",
+                "doc": "Writes text to the screen.",
                 "returns": "nil",
                 "args": {
                     "text": {
@@ -4256,7 +4626,7 @@
             "blit": {
                 "name": "blit",
                 "type": "function",
-                "doc": "Writes text to the screen using specific colors",
+                "doc": "Writes text to the screen using specific colors.",
                 "returns": "nil",
                 "args": {
                     "text": {
@@ -4279,28 +4649,28 @@
             "clear": {
                 "name": "clear",
                 "type": "function",
-                "doc": "Clears the screen",
+                "doc": "Clears the screen.",
                 "returns": "nil",
                 "args": {}
             },
             "clearLine": {
                 "name": "clearLine",
                 "type": "function",
-                "doc": "Clears the current line",
+                "doc": "Clears the current line.",
                 "returns": "nil",
                 "args": {}
             },
             "getCursorPos": {
                 "name": "getCursorPos",
                 "type": "function",
-                "doc": "Returns the current position of the cursor",
+                "doc": "Returns the current position of the cursor.",
                 "returns": "number, number",
                 "args": {}
             },
             "setCursorPos": {
                 "name": "setCursorPos",
                 "type": "function",
-                "doc": "Sets the current position of the cursor",
+                "doc": "Sets the current position of the cursor.",
                 "returns": "nil",
                 "args": {
                     "x": {
@@ -4318,7 +4688,7 @@
             "setCursorBlink": {
                 "name": "setCursorBlink",
                 "type": "function",
-                "doc": "Sets whether the cursor should blink",
+                "doc": "Sets whether the cursor should blink.",
                 "returns": "nil",
                 "args": {
                     "bool": {
@@ -4328,24 +4698,38 @@
                     }
                 }
             },
+            "getCursorBlink": {
+                "name": "getCursorBlink",
+                "type": "function",
+                "doc": "Returns whether the cursor blinks.",
+                "returns": "boolean",
+                "args": {}
+            },
             "isColor": {
                 "name": "isColor",
                 "type": "function",
-                "doc": "Returns whether the terminal supports color",
+                "doc": "Returns whether the terminal supports color.",
+                "returns": "boolean",
+                "args": {}
+            },
+            "isColour": {
+                "name": "isColour",
+                "type": "function",
+                "doc": "Returns whether the terminal supports colour.",
                 "returns": "boolean",
                 "args": {}
             },
             "getSize": {
                 "name": "getSize",
                 "type": "function",
-                "doc": "Returns the size of the terminal",
+                "doc": "Returns the size of the terminal.",
                 "return": "number, number",
                 "args": {}
             },
             "scroll": {
                 "name": "scroll",
                 "type": "function",
-                "doc": "Scrolls the screen a number of lines",
+                "doc": "Scrolls the screen a number of lines.",
                 "returns": "nil",
                 "args": {
                     "n": {
@@ -4358,7 +4742,7 @@
             "redirect": {
                 "name": "redirect",
                 "type": "function",
-                "doc": "Redirects the terminal output to another terminal",
+                "doc": "Redirects the terminal output to another terminal.",
                 "returns": "table",
                 "args": {
                     "target": {
@@ -4371,34 +4755,47 @@
             "current": {
                 "name": "current",
                 "type": "function",
-                "doc": "Returns the current terminal object (1.6+)",
+                "doc": "Returns the current terminal object. (1.6+)",
                 "returns": "table",
                 "args": {}
             },
             "native": {
                 "name": "native",
                 "type": "function",
-                "doc": "Returns the original terminal object (1.6+)",
+                "doc": "Returns the original terminal object. (1.6+)",
                 "returns": "table",
                 "args": {}
             },
             "setTextColor": {
                 "name": "setTextColor",
                 "type": "function",
-                "doc": "Sets the current text color",
+                "doc": "Sets the current text color.",
                 "returns": "nil",
                 "args": {
                     "color": {
                         "name": "color",
                         "type": "color",
                         "doc": "The color to set"
+                    }
+                }
+            },
+            "setTextColour": {
+                "name": "setTextColour",
+                "type": "function",
+                "doc": "Sets the current text colour.",
+                "returns": "nil",
+                "args": {
+                    "colour": {
+                        "name": "colour",
+                        "type": "color",
+                        "doc": "The colour to set"
                     }
                 }
             },
             "setBackgroundColor": {
                 "name": "setBackgroundColor",
                 "type": "function",
-                "doc": "Sets the current background color",
+                "doc": "Sets the current background color.",
                 "returns": "nil",
                 "args": {
                     "color": {
@@ -4408,19 +4805,72 @@
                     }
                 }
             },
+            "setBackgroundColour": {
+                "name": "setBackgroundColour",
+                "type": "function",
+                "doc": "Sets the current background colour.",
+                "returns": "nil",
+                "args": {
+                    "colour": {
+                        "name": "colour",
+                        "type": "color",
+                        "doc": "The colour to set"
+                    }
+                }
+            },
             "getTextColor": {
                 "name": "getTextColor",
                 "type": "function",
-                "doc": "Gets the current text color (1.74+)",
+                "doc": "Gets the current text color. (1.74+)",
+                "returns": "color",
+                "args": {}
+            },
+            "getTextColour": {
+                "name": "getTextColour",
+                "type": "function",
+                "doc": "Gets the current text colour. (1.74+)",
                 "returns": "color",
                 "args": {}
             },
             "getBackgroundColor": {
                 "name": "getBackgroundColor",
                 "type": "function",
-                "doc": "Gets the current background color (1.74+)",
+                "doc": "Gets the current background color. (1.74+)",
                 "returns": "color",
                 "args": {}
+            },
+            "getBackgroundColour": {
+                "name": "getBackgroundColour",
+                "type": "function",
+                "doc": "Gets the current background colour. (1.74+)",
+                "returns": "color",
+                "args": {}
+            },
+            "nativePaletteColor": {
+                "name": "nativePaletteColor",
+                "type": "function",
+                "doc": "Returns the original RGB values of the specified color. (CC:T 1.81+)",
+                "returns": "number, number, number",
+                "args": {
+                    "color": {
+                        "name": "color",
+                        "type": "color",
+                        "doc": "The color to get the default for"
+                    }
+                }
+            },
+            "nativePaletteColour": {
+                "name": "nativePaletteColour",
+                "type": "function",
+                "doc": "Returns the original RGB values of the specified colour. (CC:T 1.81+)",
+                "returns": "number, number, number",
+                "args": {
+                    "color": {
+                        "name": "colour",
+                        "type": "color",
+                        "doc": "The colour to get the default for"
+                    }
+                }
             }
         }
     },
@@ -4428,12 +4878,12 @@
         "name": "textutils",
         "type": "field",
         "inherits": [],
-        "doc": "Formats and manipulates strings",
+        "doc": "Formats and manipulates strings.",
         "properties": {
             "slowWrite": {
                 "name": "slowWrite",
                 "type": "function",
-                "doc": "Writes text to the screen slowly",
+                "doc": "Writes text to the screen slowly.",
                 "returns": "nil",
                 "args": {
                     "text": {
@@ -4451,7 +4901,7 @@
             "slowPrint": {
                 "name": "slowPrint",
                 "type": "function",
-                "doc": "Writes text to the screen slowly, with a newline",
+                "doc": "Writes text to the screen slowly, with a newline.",
                 "returns": "nil",
                 "args": {
                     "text": {
@@ -4469,7 +4919,7 @@
             "formatTime": {
                 "name": "formatTime",
                 "type": "function",
-                "doc": "Returns a string representing a Minecraft time in either 12-hour or 24-hour time",
+                "doc": "Returns a string representing a Minecraft time in either 12-hour or 24-hour time.",
                 "returns": "string",
                 "args": {
                     "time": {
@@ -4487,7 +4937,7 @@
             "tabulate": {
                 "name": "tabulate",
                 "type": "function",
-                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered",
+                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered.",
                 "returns": "nil",
                 "args": {
                     "...": {
@@ -4500,7 +4950,7 @@
             "pagedTabulate": {
                 "name": "tabulate",
                 "type": "function",
-                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered (paged)",
+                "doc": "Prints rows of values in an ordered form, changing the text color if one is encountered (paged).",
                 "returns": "nil",
                 "args": {
                     "...": {
@@ -4513,7 +4963,7 @@
             "pagedPrint": {
                 "name": "pagedPrint",
                 "type": "function",
-                "doc": "Prints text, but waits to scroll if too much text is displayed",
+                "doc": "Prints text, but waits to scroll if too much text is displayed.",
                 "returns": "number",
                 "args": {
                     "text": {
@@ -4531,7 +4981,7 @@
             "serialize": {
                 "name": "serialize",
                 "type": "function",
-                "doc": "Converts a value into a string representation",
+                "doc": "Converts a value into a string representation.",
                 "returns": "string",
                 "args": {
                     "data": {
@@ -4544,7 +4994,7 @@
             "serialise": {
                 "name": "serialise",
                 "type": "function",
-                "doc": "Converts a value into a string representation (UK) (1.6+)",
+                "doc": "Converts a value into a string representation. (1.6+)",
                 "returns": "string",
                 "args": {
                     "data": {
@@ -4557,7 +5007,7 @@
             "unserialize": {
                 "name": "unserialize",
                 "type": "function",
-                "doc": "Converts a string representation into a value",
+                "doc": "Converts a string representation into a value.",
                 "returns": "any",
                 "args": {
                     "data": {
@@ -4570,7 +5020,7 @@
             "unserialise": {
                 "name": "unserialise",
                 "type": "function",
-                "doc": "Converts a string representation into a value (UK) (1.6+)",
+                "doc": "Converts a string representation into a value. (1.6+)",
                 "returns": "any",
                 "args": {
                     "data": {
@@ -4583,7 +5033,7 @@
             "serializeJSON": {
                 "name": "serialize",
                 "type": "function",
-                "doc": "Converts a value into a JSON string (1.7+)",
+                "doc": "Converts a value into a JSON string. (1.7+)",
                 "returns": "string",
                 "args": {
                     "data": {
@@ -4601,7 +5051,7 @@
             "serialiseJSON": {
                 "name": "serialise",
                 "type": "function",
-                "doc": "Converts a value into a JSON string (UK) (1.7+)",
+                "doc": "Converts a value into a JSON string. (1.7+)",
                 "returns": "string",
                 "args": {
                     "data": {
@@ -4616,10 +5066,56 @@
                     }
                 }
             },
+            "unserializeJSON": {
+                "name": "unserializeJSON",
+                "type": "function",
+                "doc": "Converts a JSON string into a Lua value. (CC:T 1.87+)",
+                "returns": "any",
+                "args": {
+                    "string": {
+                        "name": "string",
+                        "type": "string",
+                        "doc": "The JSON string to decode"
+                    },
+                    "[options]": {
+                        "name": "[options]",
+                        "type": "table",
+                        "doc": "A table with any of the fields 'nbt_style' and 'parse_null'"
+                    }
+                }
+            },
+            "unserialiseJSON": {
+                "name": "unserialiseJSON",
+                "type": "function",
+                "doc": "Converts a JSON string into a Lua value. (CC:T 1.87+)",
+                "returns": "any",
+                "args": {
+                    "string": {
+                        "name": "string",
+                        "type": "string",
+                        "doc": "The JSON string to decode"
+                    },
+                    "[options]": {
+                        "name": "[options]",
+                        "type": "table",
+                        "doc": "A table with any of the fields 'nbt_style' and 'parse_null'"
+                    }
+                }
+            },
+            "empty_json_array": {
+                "name": "empty_json_array",
+                "type": "table",
+                "doc": "A table representing an empty JSON array."
+            },
+            "json_null": {
+                "name": "json_null",
+                "type": "table",
+                "doc": "A table representing the JSON null value."
+            },
             "urlEncode": {
                 "name": "urlEncode",
                 "type": "function",
-                "doc": "Makes a string safe for a URL",
+                "doc": "Makes a string safe for a URL.",
                 "returns": "string",
                 "args": {
                     "urlUnsafeString": {
@@ -4632,7 +5128,7 @@
             "complete": {
                 "name": "complete",
                 "type": "function",
-                "doc": "Returns a list of suffixes that could be combined with a prefix in an environment (1.74+)",
+                "doc": "Returns a list of suffixes that could be combined with a prefix in an environment. (1.74+)",
                 "returns": "table",
                 "args": {
                     "partial name": {
@@ -4653,12 +5149,12 @@
         "name": "vector",
         "type": "field",
         "inherits": [],
-        "doc": "Creates vector objects",
+        "doc": "Creates vector objects.",
         "properties": {
             "new": {
                 "name": "new",
                 "type": "function",
-                "doc": "Creates a new vector",
+                "doc": "Creates a new vector.",
                 "returns": "table",
                 "args": {
                     "x": {
@@ -4684,12 +5180,12 @@
         "name": "window",
         "type": "field",
         "inherits": [],
-        "doc": "Creates window objects",
+        "doc": "Creates window objects.",
         "properties": {
             "create": {
                 "name": "create",
                 "type": "function",
-                "doc": "Creates a new window",
+                "doc": "Creates a new window.",
                 "returns": "table",
                 "args": {
                     "parentTerm": {
@@ -4735,49 +5231,49 @@
             "forward": {
                 "name": "forward",
                 "type": "function",
-                "doc": "Try to move the turtle forward",
+                "doc": "Try to move the turtle forward.",
                 "returns": "boolean, [string]",
                 "args": {}
             },
             "back": {
                 "name": "back",
                 "type": "function",
-                "doc": "Try to move the turtle backward",
+                "doc": "Try to move the turtle backward.",
                 "returns": "boolean, [string]",
                 "args": {}
             },
             "up": {
                 "name": "up",
                 "type": "function",
-                "doc": "Try to move the turtle up",
+                "doc": "Try to move the turtle up.",
                 "returns": "boolean, [string]",
                 "args": {}
             },
             "down": {
                 "name": "down",
                 "type": "function",
-                "doc": "Try to move the turtle down",
+                "doc": "Try to move the turtle down.",
                 "returns": "boolean, [string]",
                 "args": {}
             },
             "turnLeft": {
                 "name": "turnLeft",
                 "type": "function",
-                "doc": "Turn the turtle left",
+                "doc": "Turn the turtle left.",
                 "returns": "boolean",
                 "args": {}
             },
             "turnRight": {
                 "name": "turnRight",
                 "type": "function",
-                "doc": "Turn the turtle right",
+                "doc": "Turn the turtle right.",
                 "returns": "boolean",
                 "args": {}
             },
             "select": {
                 "name": "select",
                 "type": "function",
-                "doc": "Make the turtle select slot slotNum",
+                "doc": "Make the turtle select slot slotNum.",
                 "returns": "boolean",
                 "args": {
                     "slotNum": {
@@ -4790,14 +5286,14 @@
             "getSelectedSlot": {
                 "name": "getSelectedSlot",
                 "type": "function",
-                "doc": "Indicates the currently selected inventory slot (1.6+)",
+                "doc": "Indicates the currently selected inventory slot. (1.6+)",
                 "returns": "number",
                 "args": {}
             },
             "getItemCount": {
                 "name": "getItemCount",
                 "type": "function",
-                "doc": "Counts how many items are in the currently selected slot or, if specified, slotNum slot",
+                "doc": "Counts how many items are in the currently selected slot or, if specified, slotNum slot.",
                 "returns": "number",
                 "args": {
                     "[slotNum]": {
@@ -4810,7 +5306,7 @@
             "getItemSpace": {
                 "name": "getItemSpace",
                 "type": "function",
-                "doc": "Counts how many remaining items you need to fill the stack in the currently selected slot or, if specified, slotNum slot",
+                "doc": "Counts how many remaining items you need to fill the stack in the currently selected slot or, if specified, slotNum slot.",
                 "returns": "number",
                 "args": {
                     "[slotNum]": {
@@ -4823,7 +5319,7 @@
             "getItemDetail": {
                 "name": "getItemDetail",
                 "type": "function",
-                "doc": "Returns the ID string, count and damage values of currently selected slot or, if specified, slotNum slot (1.64+)",
+                "doc": "Returns the ID string, count and damage values of currently selected slot or, if specified, slotNum slot. (1.64+)",
                 "returns": "table/nil",
                 "args": {
                     "[slotNum]": {
@@ -4836,21 +5332,21 @@
             "equipLeft": {
                 "name": "equipLeft",
                 "type": "function",
-                "doc": "Attempts to equip an item in the current slot to the turtle's left side, switching the previously equipped item back into the inventory (1.6+)",
+                "doc": "Attempts to equip an item in the current slot to the turtle's left side, switching the previously equipped item back into the inventory. (1.6+)",
                 "returns": "boolean",
                 "args": {}
             },
             "equipRight": {
                 "name": "equipRight",
                 "type": "function",
-                "doc": "Attempts to equip an item in the current slot to the turtle's right side, switching the previously equipped item back into the inventory (1.6+)",
+                "doc": "Attempts to equip an item in the current slot to the turtle's right side, switching the previously equipped item back into the inventory. (1.6+)",
                 "returns": "boolean",
                 "args": {}
             },
             "dig": {
                 "name": "dig",
                 "type": "function",
-                "doc": "Breaks and sucks the block in front. With hoe: tills the dirt in front of it",
+                "doc": "Breaks and sucks the block in front. With hoe: tills the dirt in front of it.",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4863,7 +5359,7 @@
             "digUp": {
                 "name": "digUp",
                 "type": "function",
-                "doc": "Breaks and sucks the block above",
+                "doc": "Breaks and sucks the block above.",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4876,7 +5372,7 @@
             "digDown": {
                 "name": "digDown",
                 "type": "function",
-                "doc": "Breaks and sucks the block below. With hoe: tills the dirt beneath the space below it",
+                "doc": "Breaks and sucks the block below. With hoe: tills the dirt beneath the space below it.",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4889,7 +5385,7 @@
             "place": {
                 "name": "place",
                 "type": "function",
-                "doc": "Places a block of the selected slot in front. Engrave signText on signs if provided. Collects water or lava if the currently selected slot is an empty bucket (1.4+)",
+                "doc": "Places a block of the selected slot in front. Engrave signText on signs if provided. Collects water or lava if the currently selected slot is an empty bucket. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {                    
                     "[signText]": {
@@ -4901,7 +5397,7 @@
             "placeUp": {
                 "name": "placeUp",
                 "type": "function",
-                "doc": "Places a block of the selected slot above. Collects water or lava if the currently selected slot is an empty bucket",
+                "doc": "Places a block of the selected slot above. Collects water or lava if the currently selected slot is an empty bucket.",
                 "returns": "boolean, [string]",
                 "args": {}
             },
@@ -4915,7 +5411,7 @@
             "attack": {
                 "name": "attack",
                 "type": "function",
-                "doc": "Attacks in front of the turtle (1.4+)",
+                "doc": "Attacks in front of the turtle. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4928,7 +5424,7 @@
             "attackUp": {
                 "name": "attackUp",
                 "type": "function",
-                "doc": "Attacks above the turtle (1.4+)",
+                "doc": "Attacks above the turtle. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4941,7 +5437,7 @@
             "attackDown": {
                 "name": "attackDown",
                 "type": "function",
-                "doc": "Attacks under the turtle (1.4+)",
+                "doc": "Attacks under the turtle. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "[toolSide]": {
@@ -4954,35 +5450,35 @@
             "detect": {
                 "name": "detect",
                 "type": "function",
-                "doc": "Detects if there is a block in front. Does not detect mobs",
+                "doc": "Detects if there is a block in front. Does not detect mobs.",
                 "returns": "boolean",
                 "args": {}
             },
             "detectUp": {
                 "name": "detectUp",
                 "type": "function",
-                "doc": "Detects if there is a block above",
+                "doc": "Detects if there is a block above.",
                 "returns": "boolean",
                 "args": {}
             },
             "detectDown": {
                 "name": "detectDown",
                 "type": "function",
-                "doc": "Detects if there is a block below",
+                "doc": "Detects if there is a block below.",
                 "returns": "boolean",
                 "args": {}
             },
             "compare": {
                 "name": "compare",
                 "type": "function",
-                "doc": "Detects if the block in front is the same as the one in the currently selected slot (1.31+)",
+                "doc": "Detects if the block in front is the same as the one in the currently selected slot. (1.31+)",
                 "returns": "boolean",
                 "args": {}
             },
             "compareUp": {
                 "name": "compareUp",
                 "type": "function",
-                "doc": "Detects if the block above is the same as the one in the currently selected slot",
+                "doc": "Detects if the block above is the same as the one in the currently selected slot.",
                 "returns": "boolean",
                 "args": {}
             },
@@ -4996,28 +5492,28 @@
             "inspect": {
                 "name": "inspect",
                 "type": "function",
-                "doc": "Returns the ID string and metadata of the block in front of the Turtle (1.64+)",
+                "doc": "Returns the ID string and metadata of the block in front of the Turtle. (1.64+)",
                 "returns": "boolean, table/string",
                 "args": {}
             },
             "inspectUp": {
                 "name": "inspectUp",
                 "type": "function",
-                "doc": "Returns the ID string and metadata of the block above the Turtle (1.64+)",
+                "doc": "Returns the ID string and metadata of the block above the Turtle. (1.64+)",
                 "returns": "boolean, table/string",
                 "args": {}
             },
             "inspectDown": {
                 "name": "inspectDown",
                 "type": "function",
-                "doc": "Returns the ID string and metadata of the block below the Turtle (1.64+)",
+                "doc": "Returns the ID string and metadata of the block below the Turtle. (1.64+)",
                 "returns": "boolean, table/string",
                 "args": {}
             },
             "compareTo": {
                 "name": "compareTo",
                 "type": "function",
-                "doc": "Compare the current selected slot and the given slot to see if the items are the same. Returns true if they are the same, false if not (1.4+)",
+                "doc": "Compare the current selected slot and the given slot to see if the items are the same. Returns true if they are the same, false if not. (1.4+)",
                 "returns": "boolean",
                 "args": {
                     "[slotNum]": {
@@ -5030,7 +5526,7 @@
             "transferTo": {
                 "name": "transferTo",
                 "type": "function",
-                "doc": "Transfers quantity items from the selected slot to slot. If quantity isn't specified, will attempt to transfer everything in the selected slot to slot (1.45+)",
+                "doc": "Transfers quantity items from the selected slot to slot. If quantity isn't specified, will attempt to transfer everything in the selected slot to slot. (1.45+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "slotNum": {
@@ -5048,7 +5544,7 @@
             "drop": {
                 "name": "drop",
                 "type": "function",
-                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e in front of the turtle) it will try to place into the inventory, returning false if the inventory is full",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e in front of the turtle) it will try to place into the inventory, returning false if the inventory is full.",
                 "returns": "boolean, [string]",
                 "args": {
                     "[count]": {
@@ -5061,7 +5557,7 @@
             "dropUp": {
                 "name": "dropUp",
                 "type": "function",
-                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e above the turtle) it will try to place into the inventory, returning false if the inventory is full (1.4+)",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e above the turtle) it will try to place into the inventory, returning false if the inventory is full. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "[count]": {
@@ -5074,7 +5570,7 @@
             "dropDown": {
                 "name": "dropDown",
                 "type": "function",
-                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e below the turtle) it will try to place into the inventory, returning false if the inventory is full. If above a furnace, will place item in the top slot (1.4+)",
+                "doc": "Drops all items in the selected slot, or specified, drops [count] items.  /  [>= 1.4 only:] If there is a inventory on the side (i.e below the turtle) it will try to place into the inventory, returning false if the inventory is full. If above a furnace, will place item in the top slot. (1.4+)",
                 "returns": "boolean, [string]",
                 "args": {
                     "[count]": {
@@ -5126,21 +5622,21 @@
             "getFuelLevel": {
                 "name": "getFuelLevel",
                 "type": "function",
-                "doc": "Returns the current fuel level of the turtle, this is the number of blocks the turtle can move. If turtleNeedFuel = 0 then it returns unlimited (1.4+)",
+                "doc": "Returns the current fuel level of the turtle, this is the number of blocks the turtle can move. If turtleNeedFuel = 0 then it returns unlimited.(1.4+)",
                 "returns": "number/string",
                 "args": {}
             },
             "getFuelLimit": {
                 "name": "getFuelLimit",
                 "type": "function",
-                "doc": "Returns the maximum amount of fuel a turtle can store - by default, 20,000 for regular turtles, 100,000 for advanced. If turtleNeedFuel = 0 then it returns unlimited (1.6+)",
+                "doc": "Returns the maximum amount of fuel a turtle can store - by default, 20,000 for regular turtles, 100,000 for advanced. If turtleNeedFuel = 0 then it returns unlimited. (1.6+)",
                 "returns": "number/string",
                 "args": {}
             },
             "refuel": {
                 "name": "refuel",
                 "type": "function",
-                "doc": "If the current selected slot contains a fuel item, it will consume it to give the turtle the ability to move. Added in 1.4 and is only needed in needfuel mode. If the current slot doesn't contain a fuel item, it returns false. If a [quantity] is specified, it will refuel only up to that many items, otherwise, it will consume all the items in the slot (1.4+)",
+                "doc": "If the current selected slot contains a fuel item, it will consume it to give the turtle the ability to move. Added in 1.4 and is only needed in needfuel mode. If the current slot doesn't contain a fuel item, it returns false. If a [quantity] is specified, it will refuel only up to that many items, otherwise, it will consume all the items in the slot. (1.4+)",
                 "returns": "boolean",
                 "args": {
                     "[quantity]": {
@@ -5153,7 +5649,7 @@
             "craft": {
                 "name": "craft",
                 "type": "function",
-                "doc": "(Only Crafty Turtle) Craft items using ingredients anywhere in the turtle's inventory and place results in the active slot. If a quantity is specified, it will craft only up to that many items, otherwise, it will craft as many of the items as possible (1.4+)",
+                "doc": "(Only Crafty Turtle) Craft items using ingredients anywhere in the turtle's inventory and place results in the active slot. If a quantity is specified, it will craft only up to that many items, otherwise, it will craft as many of the items as possible. (1.4+)",
                 "returns": "boolean",
                 "args": {
                     "[quantity]": {
