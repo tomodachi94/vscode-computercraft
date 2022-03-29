@@ -17,19 +17,19 @@ export class L4RCHover implements vscode.HoverProvider {
             let lineText = document.lineAt(position.line).text
             let wordRange = document.getWordRangeAtPosition(position)
 
-            if (!wordRange) return reject()
+            if (!wordRange) return null
 
             let lineTillCurrentWord = lineText.substr(0, wordRange.end.character)
             let match = getLastMatch(wordsRegex, lineTillCurrentWord)
             let wordsStr = match ? match[1] : null
 
-            if (!wordsStr) return reject()
+            if (!wordsStr) return null
 
             let words = wordsStr.split(".")
             let word = words.pop()
             let type = this.apiData.findType(words)
 
-            if (!type) return reject()
+            if (!type) return null
 
             let target
 
@@ -38,7 +38,7 @@ export class L4RCHover implements vscode.HoverProvider {
             } else if (type[word]) {
                 target = type[word]
             } else if (!target || (!target.type && !target.name)) {
-                return reject()
+                return null
             }
 
             let content = "```javascript\n(property) " + word + ": " + target.type + "\n```"

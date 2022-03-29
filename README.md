@@ -1,5 +1,5 @@
 # ComputerCraft API autocomplete extension
-This extension provides autocomplete for ComputerCraft/CC: Tweaked 1.94.0.
+This extension provides autocomplete for ComputerCraft/CC: Tweaked 1.100.0.
 
 ## Features
 

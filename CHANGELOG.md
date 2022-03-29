@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1 - 2022-03-28
+- Updated for CC: Tweaked 1.100.0
+- Fixed an exception when hovering
+
 ## 1.1.0 - 2020-11-10
 - Updated for CC: Tweaked 1.94.0
 

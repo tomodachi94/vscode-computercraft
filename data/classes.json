@@ -3200,13 +3200,31 @@
             "getType": {
                 "name": "getType",
                 "type": "function",
-                "doc": "Returns the type of peripheral on a side.",
-                "returns": "string/nil",
+                "doc": "Returns the type(s) of peripheral on a side.",
+                "returns": "string/nil...",
                 "args": {
                     "side": {
                         "name": "side",
                         "type": "string/table",
                         "doc": "The side or wrapped peripheral to check"
+                    }
+                }
+            },
+            "hasType": {
+                "name": "hasType",
+                "type": "function",
+                "doc": "Returns whether the peripheral on a side has the specified type.",
+                "returns": "string/nil...",
+                "args": {
+                    "side": {
+                        "name": "side",
+                        "type": "string/table",
+                        "doc": "The side or wrapped peripheral to check"
+                    },
+                    "type": {
+                        "name": "type",
+                        "type": "string",
+                        "doc": "The name of the type to check for"
                     }
                 }
             },
@@ -3276,7 +3294,7 @@
                 "name": "find",
                 "type": "function",
                 "doc": "Finds peripherals of a type and returns their tables of methods. (1.6+)",
-                "returns": "table/nil",
+                "returns": "table/nil...",
                 "args": {
                     "type": {
                         "name": "type",
