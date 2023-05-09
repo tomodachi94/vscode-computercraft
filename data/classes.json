@@ -4741,7 +4741,7 @@
                 "name": "getSize",
                 "type": "function",
                 "doc": "Returns the size of the terminal.",
-                "return": "number, number",
+                "returns": "number, number",
                 "args": {}
             },
             "scroll": {
